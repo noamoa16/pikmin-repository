@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+
+<script src="{{url_for('static', filename = 'js/Matrix.js')}}"></script>
+
+<input id="break" type="button" value="割る">
+<input id="reset" type="button" value="リセット">
+<input id="save" type="button" value="保存">
+<br>
+<br>
+<canvas id="canvas" width="600" height="480"></canvas>
+
+<script>
+
+const canvas = document.getElementById("canvas");
+/** @type {CanvasRenderingContext2D} */
+const context = canvas.getContext("2d");
+const objectNames = ["egg", "nectar", "wnectar", "spicy", "bitter", "mitites"];
+const imageSize = 48;
+const width = 10;
+const height = 10;
+let image = {};
+
+let cell = Matrix.makeFilled(width, height, "egg");
+
+let breakingStarted = false;
+let broken;
+
+function spawnFromEgg(){
+    let r = Math.random();
+    if(r < 0.5) return "nectar";
+    else if(r < 0.85) return "wnectar";
+    else if(r < 0.9) return "spicy";
+    else if(r < 0.95) return "bitter";
+    else return "mitites";
+}
+
+$(function(){
+    const fps = 30;
+    setInterval(update, 1000 / fps);
+
+    for(let objectName of objectNames){
+        image[objectName] = new Image();
+        image[objectName].src = "{{url_for('static', filename = 'images')}}/" + objectName + ".png";
+    }
+
+	$('#break').on('click', function (e) {
+        breakingStarted = true;
+        broken = 0;
+        $('#break').prop("disabled", true); // breakを無効に
+    })
+
+    $('#reset').on('click', function (e) {
+        breakingStarted = false;
+        cell = Matrix.makeFilled(width, height, "egg");
+        $('#break').prop("disabled", false); // breakを有効に
+    })
+
+    $('#save').on('click', function (e) {
+        let filename = "egg-lottery-" 
+            + objectNames
+            .filter(name => name != "egg")
+            .map(name => cell.count(name))
+            .join("-") + ".png";
+
+        let a = document.createElement('a');
+        a.href = canvas.toDataURL(/*'image/png', 0.85*/);
+        a.download = filename;
+        a.click();
+    })
+});
+
+function update(){
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    if(breakingStarted){
+        if(broken < width * height){
+            let x = broken % width;
+            let y = Math.floor(broken / width);
+            cell.set(x, y, spawnFromEgg());
+            broken++;
+        }
+    }
+    
+    for(let y = 0; y < height; y++){
+        for(let x = 0; x < width; x++){
+            context.drawImage(
+                image[cell.get(x, y)], x * imageSize, y * imageSize, 
+                imageSize, imageSize
+            );
+        }
+    }
+
+    context.font = "16px Arial";
+    context.fillStyle = 'black';
+    context.fillText(
+        "エキス : " + cell.count("nectar"), 480, 30);
+    context.fillText(
+        "2エキス : " + cell.count("wnectar"), 480, 60);
+    context.fillText(
+        "ゲキカラ : " + cell.count("spicy"), 480, 90);
+    context.fillText(
+        "ゲキニガ : " + cell.count("bitter"), 480, 120);
+    context.fillText(
+        "タマゴムシ : " + cell.count("mitites"), 480, 150);
+}
+
+</script>
+
+{% endblock %}

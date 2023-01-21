@@ -1,0 +1,37 @@
+site:
+  name: Pikmin Repository
+  home_favicon: images/rock-pikmin.png
+
+document_info:
+  pikmin1:
+    title: ピクミン1
+    icon: fas fa-star fa-fw color-red fa-pulse
+    structure:
+      carrying-speed:
+        title: 運搬速度
+        icon: fas fa-people-carry fa-fw faa-passing animated color-orangered
+        favicon: images/ship-parts/Nova_Blaster.jpg
+      time-required-for-works:
+        title: 作業に必要な時間
+        icon: fas fa-cog fa-fw color-orangered
+        favicon: images/ship-parts/Geiger_Counter.jpg
+  pikmin2:
+    title: ピクミン2
+    icon: fas fa-star fa-fw color-gold fa-pulse
+    structure:
+      buried-treasures:
+        title: 埋まりお宝
+        icon: fas fa-gem fa-fw color-skyblue
+        favicon: images/ship-parts/Automatic_Gear.jpg
+  minigames:
+    title: ミニゲーム
+    icon: fas fa-dice fa-fw color-green
+    structure:
+      egg-lottery:
+        title: タマゴくじ
+        icon: fas fa-egg fa-fw color-gold faa-horizontal animated
+        favicon: images/egg.png
+      30parts-puzzle:
+        title: 30パーツパズル
+        icon: fas fa-puzzle-piece fa-fw faa-horizontal animated color-green
+        favicon: images/ship-parts/Gluon_Drive.jpg

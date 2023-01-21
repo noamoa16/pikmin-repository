@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>概要</h3><br>
+物体の運搬速度は重さ$w$、最大運搬数$m$、そして運搬能$P$によって決まります。<br>
+「1ペレットを花ピクミン1匹で運んだときに0.5秒間に進む距離」を
+「1$\mathrm{pm}$ (ピクメートル)」とすると、運搬速度$v$は
+\[
+    v(w, m, P) [\mathrm{pm / s}] = \frac{P - w + 1}{m} + 1
+\]
+となります。<br>
+ここで、運搬能$P$は以下の式で定まります。
+\[
+    P  = 葉ピクミンの数 + 蕾ピクミンの数 \cdot 1.5 + 花ピクミンの数 \cdot 2
+\]
+
+<br>
+
+<h4>運搬速度計算ツール</h4>
+<table style="font-size:14">
+  <tr>
+    <td style="padding:10">重さ :</td>
+    <td style="padding:10"><input id="weight" type="number" min=1></td>
+    <td style="padding:10">最大運搬数 :</td>
+    <td style="padding:10"><input id="max-carriers" type="number" min=1></td>
+  </tr>
+  <tr>
+    <td style="padding:10">葉ピクミン :</td>
+    <td style="padding:10"><input id="leaf" type="number" min=0></td>
+  </tr>
+  <tr>
+    <td style="padding:10">蕾ピクミン :</td>
+    <td style="padding:10"><input id="bud" type="number" min=0></td>
+  </tr>
+  <tr>
+    <td style="padding:10">花ピクミン :</td>
+    <td style="padding:10"><input id="flower" type="number" min=0></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <p style='margin:5;'></p>
+      <button id="calc-button">計算</button>
+      <p style='margin:5;'></p>    
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:10">
+      速度 ($\mathrm{pm/s}$) :    
+    </td>
+    <td style="padding:10"><input id="speed" type="number" readonly></td>
+    <td><span id="text"></span></td>
+  </tr>
+</table>
+
+<br><br>
+
+参考 : <a href=https://www.pikminwiki.com/Carry#Pikmin>Carry - Pikipedia, the Pikmin wiki</a>
+
+<script>
+$(function(){
+    $('#calc-button').click(function() {
+        const inputs = [
+            ["weight", 1],
+            ["max-carriers", 1],
+            ["leaf", 0],
+            ["bud", 0],
+            ["flower", 0]
+        ];
+        let valueOf = {}; // string -> number
+        for(let input of inputs){
+            let obj = $("#" + input[0]);
+            let val = obj.val() !== "" ? parseInt(obj.val()) : input[1];
+            valueOf[input[0]] = val;
+            obj.val(val);
+        }
+        let pikmin = valueOf["leaf"] + valueOf["bud"] + valueOf["flower"];
+        let carriable = 
+            valueOf["weight"] <= pikmin && pikmin <= valueOf["max-carriers"]; // bool
+        let speed = 
+            (valueOf["leaf"] + 1.5 * valueOf["bud"] + 2 * valueOf["flower"] 
+            - valueOf["weight"] + 1)
+            / valueOf["max-carriers"] + 1;
+
+        $("#speed").val(speed);
+        $("#text").html(carriable ? 
+            "運搬可能" : 
+            "運搬不可能"
+        );
+    })
+});
+</script>
+
+{% endblock %}
