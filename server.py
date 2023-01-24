@@ -28,16 +28,19 @@ def index():
         title = config['site']['name'],
         favicon = config['site']['home_favicon'],
         document_info = document_info,
+        full_title = config['site']['name'],
     )
 
 @app.route('/<category>/<page_name>.html', methods=['GET'])
 def page(category: str, page_name: str):
     try:
+        title = get_title(category, page_name)
         return flask.render_template(
             f'/{category}/{page_name}.html', 
-            title = get_title(category, page_name), 
+            title = title, 
             favicon = get_favicon(category, page_name), 
             document_info = document_info,
+            full_title = title + ' - ' + document_info[category]['title'],
         )
     except:
         return flask.render_template('404.html')
