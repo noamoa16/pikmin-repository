@@ -38,7 +38,7 @@ def get_data(category: str, page_name: str) -> dict[str, str | flask.Markup]:
         data_files = document_info[category]['structure'][page_name]['data']
         data: dict[str, str] = {}
         for data_file in data_files:
-            path = Path(__file__).parent / f'static/data/{data_file}'
+            path = Path(__file__).parent / f'data/{data_file}'
             data[data_file] = load_data_file(path)
         if (category, page_name) == ('pikmin2', 'cave-surveys'):
             data['pikmin2-cave-surveys.yaml'] = \
