@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+import json
 import yaml
 import flask
 from pathlib import Path
+from typing import Any
+
+import pikmin2_cave_surveys
 
 app = flask.Flask(__name__)
 
@@ -20,6 +24,28 @@ def get_favicon(category: str, page_name: str) -> str:
         return document_info[category]['structure'][page_name]['favicon']
     except:
         return ''
+    
+def load_data_file(data_file: Path) -> str:
+    assert data_file.exists()
+    suffix = data_file.suffix
+    if suffix in ['.yml', '.yaml']:
+        return json.dumps(yaml.safe_load(open(data_file, encoding='utf-8').read()))
+    else:
+        return open(data_file).read()
+
+def get_data(category: str, page_name: str) -> dict[str, str | flask.Markup]:
+    try:
+        data_files = document_info[category]['structure'][page_name]['data']
+        data: dict[str, str] = {}
+        for data_file in data_files:
+            path = Path(__file__).parent / f'static/data/{data_file}'
+            data[data_file] = load_data_file(path)
+        if (category, page_name) == ('pikmin2', 'cave-surveys'):
+            data['pikmin2-cave-surveys.yaml'] = \
+                pikmin2_cave_surveys.parse_data(data['pikmin2-cave-surveys.yaml'])
+        return data
+    except:
+        return {}
 
 @app.route('/')
 def index():
@@ -35,12 +61,16 @@ def index():
 def page(category: str, page_name: str):
     try:
         title = get_title(category, page_name)
+        context = {
+            'title': title,
+            'favicon': get_favicon(category, page_name), 
+            'document_info': document_info,
+            'full_title': title + ' - ' + document_info[category]['title'],
+            'data': get_data(category, page_name)
+        }
         return flask.render_template(
             f'/{category}/{page_name}.html', 
-            title = title, 
-            favicon = get_favicon(category, page_name), 
-            document_info = document_info,
-            full_title = title + ' - ' + document_info[category]['title'],
+            **context,
         )
     except:
         return flask.render_template('404.html')

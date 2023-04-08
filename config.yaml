@@ -19,6 +19,12 @@ document_info:
     title: ピクミン2
     icon: fas fa-star fa-fw color-gold fa-pulse
     structure:
+      cave-surveys:
+        title: 洞窟調査
+        icon: fas fa-sharp fa-solid fa-archway color-brown
+        favicon: images/ship-parts/Libra.jpg
+        data:
+          - pikmin2-cave-surveys.yaml
       buried-treasures:
         title: 埋まりお宝
         icon: fas fa-gem fa-fw color-skyblue
