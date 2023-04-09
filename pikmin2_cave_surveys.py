@@ -132,11 +132,29 @@ def parse_data(data_str: str):
         result: dict[str, Any] = trial['result']
         bold = soup.new_tag('b')
         jp_stage_name = data[stage_name]['name']
+        if '-' in stage_name:
+            sublevel: int = int(stage_name.split('-')[1])
+            jp_stage_name += f' (地下{sublevel}階)'
         bold.append(f'{jp_stage_name} (seed = {seed}, ..., {seed + num_to_generate - 1})')
         soup.append(bold)
         soup.append(soup.new_tag('p', style = 'margin:20px'))
 
-        if stage_name == 'CH28':
+        if stage_name == 'SR-6':
+            soup.append('オオガネモチ出現率')
+            array = np.full((4, 4), '', dtype = object)
+            array[1, 0] = '件数／確率'
+            array[2 : 4, 0] = '↓'
+            array[0, 3] = '合計'
+            array[0, 1 : 3] = ['あり', 'なし']
+            array[1 : 4, 1] = get_count_prob_tuple(result['{onarashi: true}'], num_to_generate)
+            array[1 : 4, 2] = get_count_prob_tuple(result['{onarashi: false}'], num_to_generate)
+            array[1 : 4, 3] = get_count_prob_tuple(num_to_generate, num_to_generate)
+            background_color = np.full((4, 4), '', dtype = object)
+            background_color[0, :] = '#d0d0d0'
+            background_color[1, :] = '#e0e0e0'
+            table = create_table(soup, array, background_color = background_color)
+            soup.append(table)
+        elif stage_name == 'CH28':
             soup.append('タマゴ出現数')
             array = np.full((7, 8), '', dtype = object)
             array[0, 0] = 'タマゴ'
