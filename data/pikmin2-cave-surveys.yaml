@@ -1,6 +1,6 @@
-# FC-7:
-#   name: 辺境の洞窟
-#   trial:
+FC-7:
+  name: 辺境の洞窟
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{oogane: true}": 75122690, "{oogane: false}": 59095038}}
 SR-6:
   name: シャワールーム
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{onarashi: false}": 9138760, "{onarashi: true}": 125078968}}
