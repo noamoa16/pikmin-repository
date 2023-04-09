@@ -140,7 +140,7 @@ def parse_data(data_str: str):
         soup.append(soup.new_tag('p', style = 'margin:20px'))
 
         if stage_name == 'SR-6':
-            soup.append('オオガネモチ出現率')
+            soup.append('オナラシ出現率')
             array = np.full((4, 4), '', dtype = object)
             array[1, 0] = '件数／確率'
             array[2 : 4, 0] = '↓'
