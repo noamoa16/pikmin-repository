@@ -62,12 +62,8 @@ def create_count_table(soup: BeautifulSoup, counts: list[int], title: str) -> bs
     array[0, len(counts) + 1] = '合計'
     for i, count in enumerate(counts):
         array[0, 1 + i] = i
-        array[1, 1 + i] = count
-        array[2, 1 + i] = get_percentage_str(count / num_to_generate)
-        array[3, 1 + i] = get_fraction_str(count / num_to_generate)
-    array[1, len(counts) + 1] = num_to_generate
-    array[2, len(counts) + 1] = get_percentage_str(1.)
-    array[3, len(counts) + 1] = get_fraction_str(1.)
+        array[1 : 4, 1 + i] = get_count_prob_tuple(count, num_to_generate)
+    array[1 : 4, len(counts) + 1] = get_count_prob_tuple(num_to_generate, num_to_generate)
     background_color = np.full((4, len(counts) + 2), '', dtype = object)
     background_color[0, :] = '#d0d0d0'
     background_color[1, :] = '#e0e0e0'
@@ -85,8 +81,7 @@ def create_mitites_table(soup: BeautifulSoup, egg_probs: list[float]) -> bs4.Tag
             egg_probs[eggs] * calc_mitites_prob(eggs, mitites) 
             for eggs in range(mitites, len(egg_probs))
         )
-        array[1, 1 + mitites] = get_percentage_str(prob)
-        array[2, 1 + mitites] = get_fraction_str(prob)
+        array[1 : 3, 1 + mitites] = get_prob_tuple(prob)
     background_color = np.full((3, len(egg_probs) + 1), '', dtype = object)
     background_color[0, :] = '#d0d0d0'
     background_color[1, 0] = '#e0e0e0'
@@ -109,6 +104,14 @@ def get_fraction_str(probability: float) -> str:
         return f'1/{1 / probability:.4g}'
     else:
         return f'1/{int(1 / probability)}'
+
+def get_prob_tuple(probability: float):
+    assert 0 <= probability <= 1
+    return (get_percentage_str(probability), get_fraction_str(probability))
+        
+def get_count_prob_tuple(count: int, num_to_generate: int):
+    assert 0 <= count <= num_to_generate
+    return (count, get_percentage_str(count / num_to_generate), get_fraction_str(count / num_to_generate))
     
 def calc_mitites_prob(num_eggs: int, mitites: int) -> float:
     mprob = 1 / 20
@@ -149,20 +152,12 @@ def parse_data(data_str: str):
                 elec_true = result.get(f'{{eggs: {eggs}, elec: true}}', 0)
                 elec_false = result.get(f'{{eggs: {eggs}, elec: false}}', 0)
                 array[0, 1 + eggs] = eggs
-                array[1, 1 + eggs] = elec_true
-                array[2, 1 + eggs] = get_percentage_str(elec_true / num_to_generate)
-                array[3, 1 + eggs] = get_fraction_str(elec_true / num_to_generate)
-                array[4, 1 + eggs] = elec_false
-                array[5, 1 + eggs] = get_percentage_str(elec_false / num_to_generate)
-                array[6, 1 + eggs] = get_fraction_str(elec_false / num_to_generate)
+                array[1 : 4, 1 + eggs] = get_count_prob_tuple(elec_true, num_to_generate)
+                array[4 : 7, 1 + eggs] = get_count_prob_tuple(elec_false, num_to_generate)
             elec_true_sum = sum(v for k, v in result.items() if yaml.safe_load(k)['elec'])
             elec_false_sum = sum(v for k, v in result.items() if not yaml.safe_load(k)['elec'])
-            array[1, 7] = elec_true_sum
-            array[2, 7] = get_percentage_str(elec_true_sum / num_to_generate)
-            array[3, 7] = get_fraction_str(elec_true_sum / num_to_generate)
-            array[4, 7] = elec_false_sum
-            array[5, 7] = get_percentage_str(elec_false_sum / num_to_generate)
-            array[6, 7] = get_fraction_str(elec_false_sum / num_to_generate)
+            array[1 : 4, 7] = get_count_prob_tuple(elec_true_sum, num_to_generate)
+            array[4 : 7, 7] = get_count_prob_tuple(elec_false_sum, num_to_generate)
             background_color = np.full((7, 8), '', dtype = object)
             background_color[0, :] = '#d0d0d0'
             background_color[[1, 4], :] = '#e0e0e0'
