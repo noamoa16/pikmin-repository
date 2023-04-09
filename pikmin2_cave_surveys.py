@@ -131,17 +131,13 @@ def parse_data(data_str: str):
         num_to_generate: int = trial['num']
         result: dict[str, Any] = trial['result']
         bold = soup.new_tag('b')
-        text = soup.new_tag('div')
         jp_stage_name = data[stage_name]['name']
-        text.string = f'{jp_stage_name} (seed = {seed}, ..., {seed + num_to_generate - 1})'
-        bold.append(text)
+        bold.append(f'{jp_stage_name} (seed = {seed}, ..., {seed + num_to_generate - 1})')
         soup.append(bold)
         soup.append(soup.new_tag('p', style = 'margin:20px'))
 
         if stage_name == 'CH28':
-            text = soup.new_tag('div')
-            text.string = 'タマゴ出現数'
-            soup.append(text)
+            soup.append('タマゴ出現数')
             array = np.full((7, 8), '', dtype = object)
             array[0, 0] = 'タマゴ'
             array[1, 0] = 'エレキショイグモあり'
@@ -166,25 +162,19 @@ def parse_data(data_str: str):
 
             soup.append(soup.new_tag('p', style = 'margin:20px'))
 
-            text = soup.new_tag('div')
-            text.string = 'タマゴムシの確率（キショイグモあり）'
-            soup.append(text)
+            soup.append('タマゴムシの確率（キショイグモあり）')
             egg_probs = [result.get(f'{{eggs: {eggs}, elec: true}}', 0) / num_to_generate for eggs in range(6)]
             table = create_mitites_table(soup, egg_probs)
             soup.append(table)
         elif stage_name == 'CH29':
-            text = soup.new_tag('div')
-            text.string = 'タマゴ出現数'
-            soup.append(text)
+            soup.append('タマゴ出現数')
             max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
             eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
             table = create_count_table(soup, eggs, 'タマゴ')
             soup.append(table)
 
             soup.append(soup.new_tag('p', style = 'margin:20px'))
-            text = soup.new_tag('div')
-            text.string = 'タマゴムシの確率'
-            soup.append(text)
+            soup.append('タマゴムシの確率')
             egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
             table = create_mitites_table(soup, egg_probs)
             soup.append(table)
