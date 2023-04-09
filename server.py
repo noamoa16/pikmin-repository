@@ -27,25 +27,21 @@ def get_favicon(category: str, page_name: str) -> str:
     
 def load_data_file(data_file: Path) -> str:
     assert data_file.exists()
-    suffix = data_file.suffix
-    if suffix in ['.yml', '.yaml']:
-        return json.dumps(yaml.safe_load(open(data_file, encoding='utf-8').read()))
-    else:
-        return open(data_file).read()
+    return open(data_file, encoding = 'utf-8').read()
 
 def get_data(category: str, page_name: str) -> dict[str, str | flask.Markup]:
     try:
         data_files = document_info[category]['structure'][page_name]['data']
-        data: dict[str, str] = {}
-        for data_file in data_files:
-            path = Path(__file__).parent / f'data/{data_file}'
-            data[data_file] = load_data_file(path)
-        if (category, page_name) == ('pikmin2', 'cave-surveys'):
-            data['pikmin2-cave-surveys.yaml'] = \
-                pikmin2_cave_surveys.parse_data(data['pikmin2-cave-surveys.yaml'])
-        return data
     except:
         return {}
+    data: dict[str, str] = {}
+    for data_file in data_files:
+        path = Path(__file__).parent / f'data/{data_file}'
+        data[data_file] = load_data_file(path)
+    if (category, page_name) == ('pikmin2', 'cave-surveys'):
+        data['pikmin2-cave-surveys.yaml'] = \
+            pikmin2_cave_surveys.parse_data(data['pikmin2-cave-surveys.yaml'])
+    return data
 
 @app.route('/')
 def index():

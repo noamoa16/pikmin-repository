@@ -1,3 +1,6 @@
 CH28:
   name: どっすん迷路
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{eggs: 5, elec: true}": 22958633, "{eggs: 3, elec: true}": 35881570, "{eggs: 4, elec: false}": 1348931, "{eggs: 4, elec: true}": 28291325, "{eggs: 2, elec: false}": 2106043, "{eggs: 5, elec: false}": 1289117, "{eggs: 0, elec: true}": 394703, "{eggs: 2, elec: true}": 37878577, "{eggs: 3, elec: false}": 1749229, "{eggs: 1, elec: true}": 2319600}}
+CH29:
+  name: スナイパールーム
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{eggs: 0}": 90491162, "{eggs: 4}": 607, "{eggs: 3}": 47541, "{eggs: 2}": 1800438, "{eggs: 1}": 41877963, "{eggs: 6}": 1, "{eggs: 5}": 16}}
