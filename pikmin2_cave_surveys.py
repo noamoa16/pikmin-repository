@@ -142,7 +142,7 @@ def parse_data(data_str: str):
         if '-' in stage_name:
             sublevel: int = int(stage_name.split('-')[1])
             jp_stage_name += f' (地下{sublevel}階)'
-        bold.append(f'{jp_stage_name} (seed = {seed}, ..., {seed + num_to_generate - 1})')
+        bold.append(f'{jp_stage_name} (seed = 0x{seed:08X}, ..., 0x{seed + num_to_generate - 1:08X})')
         soup.append(bold)
         soup.append(soup.new_tag('p', style = 'margin:20px'))
 
