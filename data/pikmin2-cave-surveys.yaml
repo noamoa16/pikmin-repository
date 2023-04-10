@@ -4,6 +4,9 @@ FC-7:
 SR-6:
   name: シャワールーム
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{onarashi: false}": 9138760, "{onarashi: true}": 125078968}}
+CH2-2:
+  name: 新参者の試練場
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{room: circle, mitites: 1}": 1399437523, "{room: circle, mitites: 2}": 2484, "{room: circle_s, mitites: 1}": 455734545, "{room: circle_s, mitites: 2}": 656382, "{room: crescent, mitites: 1}": 280458906, "{room: crescent, mitites: 2}": 11193808}}
 CH8:
   name: 赤の洞窟
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{kocha: 8}": 1288473, "{kocha: 7}": 98744, "{kocha: 6}": 13312, "{kocha: 5}": 2051, "{kocha: 14}": 8493297, "{kocha: 4}": 527, "{kocha: 15}": 103414735, "{kocha: 3}": 1, "{kocha: 10}": 2157434, "{kocha: 11}": 3805974, "{kocha: 12}": 10286344, "{kocha: 13}": 3625426, "{kocha: 9}": 1031410}}

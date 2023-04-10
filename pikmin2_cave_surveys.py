@@ -176,6 +176,54 @@ def parse_data(data_str: str):
             background_color[1, :] = '#e0e0e0'
             table = create_table(soup, array, background_color = background_color)
             soup.append(table)
+        elif stage_name == 'CH2-2':
+            soup.append('地形とタマゴムシ')
+            array = np.full((13, 4), '', dtype = object)
+            array[0, 0] = '地形＼タマゴムシ'
+            array[[1, 4, 7, 10], 0] = ('丸部屋', '丸部屋 (S字)', '三日月', '合計')
+            array[[2, 3, 5, 6, 8, 9, 11, 12], 0] = '↓'
+            for mitites in [1, 2]:
+                array[0, mitites] = mitites
+                array[1 : 4, mitites] = get_count_prob_tuple(result[f'{{room: circle, mitites: {mitites}}}'], num_to_generate)
+                array[4 : 7, mitites] = get_count_prob_tuple(result[f'{{room: circle_s, mitites: {mitites}}}'], num_to_generate)
+                array[7 : 10, mitites] = get_count_prob_tuple(result[f'{{room: crescent, mitites: {mitites}}}'], num_to_generate)
+                array[10 : 13, mitites] = get_count_prob_tuple(sum(result[f'{{room: {room}, mitites: {mitites}}}'] for room in ['circle', 'circle_s', 'crescent']), num_to_generate)
+            array[0, 3] = '合計'
+            array[1 : 4, 3] = get_count_prob_tuple(sum(result[f'{{room: circle, mitites: {mitites}}}'] for mitites in [1, 2]), num_to_generate)
+            array[4 : 7, 3] = get_count_prob_tuple(sum(result[f'{{room: circle_s, mitites: {mitites}}}'] for mitites in [1, 2]), num_to_generate)
+            array[7 : 10, 3] = get_count_prob_tuple(sum(result[f'{{room: crescent, mitites: {mitites}}}'] for mitites in [1, 2]), num_to_generate)
+            array[10 : 13, 3] = get_count_prob_tuple(num_to_generate, num_to_generate)
+            background_color = np.full((13, 4), '', dtype = object)
+            background_color[0, :] = '#d0d0d0'
+            background_color[[1, 4, 7, 10], :] = '#e0e0e0'
+            table = create_table(soup, array, background_color = background_color)
+            soup.append(table)
+
+            soup.append(soup.new_tag('p', style = 'margin:20px'))
+            
+            soup.append('タマゴムシの確率 (B1とB2の合計)')
+            b1_mitites_probs = [calc_mitites_prob(2, mitites) for mitites in range(3)]
+            b2_mitites_probs = [
+                sum(result[f'{{room: {room}, mitites: {mitites}}}'] 
+                    for room in ['circle', 'circle_s', 'crescent']) / num_to_generate 
+                    for mitites in [1, 2]]
+            mities_probs = [0] * (len(b1_mitites_probs) + len(b2_mitites_probs) - 1)
+            for i in range(len(b1_mitites_probs)):
+                for j in range(len(b2_mitites_probs)):
+                    mities_probs[i + j] += b1_mitites_probs[i] * b2_mitites_probs[j] 
+            array = np.full((3, 5), '', dtype = object)
+            array[0, 0] = 'タマゴムシのセット数'
+            array[1, 0] = '確率'
+            array[2, 0] = '↓'
+            for mitites, mities_prob in enumerate(mities_probs):
+                array[0, mitites + 1] = mitites + 1
+                array[1 : 3, mitites + 1] = get_prob_tuple(mities_prob)
+            background_color = np.full((3, 5), '', dtype = object)
+            background_color[0, :] = '#d0d0d0'
+            background_color[1, 0] = '#e0e0e0'
+            table = create_table(soup, array, background_color = background_color)
+                    
+            soup.append(table)
         elif stage_name == 'CH8':
             soup.append('コチャ出現数')
             max_kochas: int = max(yaml.safe_load(k)['kocha'] for k in result.keys())
@@ -220,6 +268,7 @@ def parse_data(data_str: str):
             soup.append(table)
 
             soup.append(soup.new_tag('p', style = 'margin:20px'))
+
             soup.append('タマゴムシの確率')
             egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
             table = create_mitites_table(soup, egg_probs)
