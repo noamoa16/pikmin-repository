@@ -56,15 +56,22 @@ def create_table(
 
 def create_count_table(soup: BeautifulSoup, counts: list[int], title: str) -> bs4.Tag:
     num_to_generate = sum(counts)
-    array = np.full((4, len(counts) + 2), '', dtype = object)
+    left_skip = 0
+    for i in range(len(counts)):
+        if counts[i] == 0:
+            left_skip += 1
+        else:
+            break
+    array = np.full((4, len(counts[left_skip:]) + 2), '', dtype = object)
     array[1, 0] = '件数／確率'
     array[2 : 4, 0] = '↓'
-    array[0, len(counts) + 1] = '合計'
-    for i, count in enumerate(counts):
-        array[0, 1 + i] = i
+    array[0, len(counts[left_skip:]) + 1] = '合計'
+    for i, count in enumerate(counts[left_skip:]):
+        array[0, 1 + i] = i + left_skip
         array[1 : 4, 1 + i] = get_count_prob_tuple(count, num_to_generate)
-    array[1 : 4, len(counts) + 1] = get_count_prob_tuple(num_to_generate, num_to_generate)
-    background_color = np.full((4, len(counts) + 2), '', dtype = object)
+    array[1 : 4, len(counts[left_skip:]) + 1] = \
+        get_count_prob_tuple(num_to_generate, num_to_generate)
+    background_color = np.full((4, len(counts[left_skip:]) + 2), '', dtype = object)
     background_color[0, :] = '#d0d0d0'
     background_color[1, :] = '#e0e0e0'
     table = create_table(soup, array, background_color = background_color)
@@ -90,7 +97,7 @@ def create_mitites_table(soup: BeautifulSoup, egg_probs: list[float]) -> bs4.Tag
 
 def get_percentage_str(probability: float) -> str:
     assert 0 <= probability <= 1
-    if probability * 100 <= 1e-8 or 1 <= probability * 100:
+    if probability * 100 <= 1e-6 or 1 <= probability * 100:
         return f'{probability * 100:.4g}%'
     else:
         digits = -math.floor(math.log10(probability * 100))
@@ -100,7 +107,7 @@ def get_fraction_str(probability: float) -> str:
     assert 0 <= probability <= 1
     if probability == 0:
         return '1/∞'
-    elif 1 <= 1 / probability <= 1e4 or 1e8 <= 1 / probability:
+    elif 1 <= 1 / probability <= 1e4 or 1e6 <= 1 / probability:
         return f'1/{1 / probability:.4g}'
     else:
         return f'1/{int(1 / probability)}'
@@ -168,6 +175,12 @@ def parse_data(data_str: str):
             background_color[0, :] = '#d0d0d0'
             background_color[1, :] = '#e0e0e0'
             table = create_table(soup, array, background_color = background_color)
+            soup.append(table)
+        elif stage_name == 'CH8':
+            soup.append('コチャ出現数')
+            max_kochas: int = max(yaml.safe_load(k)['kocha'] for k in result.keys())
+            kochas = [result.get(f'{{kocha: {kocha}}}', 0) for kocha in range(max_kochas + 1)]
+            table = create_count_table(soup, kochas, 'コチャ')
             soup.append(table)
         elif stage_name == 'CH28':
             soup.append('タマゴ出現数')
