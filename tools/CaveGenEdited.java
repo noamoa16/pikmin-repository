@@ -9,7 +9,10 @@ public CaveGen() {
         caveGenStep(i);
         
         String key;
-        if(specialCaveInfoName.equals("FC") && sublevel == 7){
+        if(
+            (specialCaveInfoName.equals("FC") && sublevel == 7) ||
+            (specialCaveInfoName.equals("SC") && sublevel == 4)
+            ){
             boolean oogane = false;
             for(Teki teki : placedTekis){
                 if(teki.tekiName.equals("Wealthy")){
@@ -17,6 +20,15 @@ public CaveGen() {
                 }
             }
             key = "{oogane: " + oogane + "}";
+        }
+        else if(specialCaveInfoName.equals("GK") && sublevel == 5){
+            boolean murasakipom = false;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("BlackPom")){
+                    murasakipom = true;
+                }
+            }
+            key = "{murasakipom: " + murasakipom + "}";
         }
         else if(specialCaveInfoName.equals("SR") && sublevel == 6){
             boolean onarashi = false;
@@ -68,7 +80,7 @@ public CaveGen() {
             key = "{eggs: " + eggs + "}";
         }
         else{
-            throw new UnsupportedOperationException(specialCaveInfoName);
+            throw new UnsupportedOperationException(specialCaveInfoName + "-" + sublevel);
         }
         counter.put(key, counter.getOrDefault(key, 0) + 1);
     }
