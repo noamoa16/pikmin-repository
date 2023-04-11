@@ -54,7 +54,17 @@ def create_table(
         table.append(table_row)
     return table
 
-def create_count_table(soup: BeautifulSoup, counts: list[int], title: str) -> bs4.Tag:
+def create_count_table(
+        soup: BeautifulSoup, 
+        counts: list[int], 
+        *, 
+        labels: list[str] | None = None,
+        ) -> bs4.Tag:
+    
+    assert labels is None or len(counts) == len(labels)
+    if labels is None:
+        labels = [str(i) for i in range(len(counts))]
+
     num_to_generate = sum(counts)
     left_skip = 0
     for i in range(len(counts)):
@@ -67,7 +77,7 @@ def create_count_table(soup: BeautifulSoup, counts: list[int], title: str) -> bs
     array[2 : 4, 0] = '↓'
     array[0, len(counts[left_skip:]) + 1] = '合計'
     for i, count in enumerate(counts[left_skip:]):
-        array[0, 1 + i] = i + left_skip
+        array[0, 1 + i] = labels[i + left_skip]
         array[1 : 4, 1 + i] = get_count_prob_tuple(count, num_to_generate)
     array[1 : 4, len(counts[left_skip:]) + 1] = \
         get_count_prob_tuple(num_to_generate, num_to_generate)
@@ -78,20 +88,7 @@ def create_count_table(soup: BeautifulSoup, counts: list[int], title: str) -> bs
     return table
 
 def create_true_false_table(soup: BeautifulSoup, counts: list[int]) -> bs4.Tag:
-    num_to_generate = sum(counts)
-    array = np.full((4, 4), '', dtype = object)
-    array[1, 0] = '件数／確率'
-    array[2 : 4, 0] = '↓'
-    array[0, 3] = '合計'
-    array[0, 1 : 3] = ['あり', 'なし']
-    array[1 : 4, 1] = get_count_prob_tuple(counts[0], num_to_generate)
-    array[1 : 4, 2] = get_count_prob_tuple(counts[1], num_to_generate)
-    array[1 : 4, 3] = get_count_prob_tuple(num_to_generate, num_to_generate)
-    background_color = np.full((4, 4), '', dtype = object)
-    background_color[0, :] = '#d0d0d0'
-    background_color[1, :] = '#e0e0e0'
-    table = create_table(soup, array, background_color = background_color)
-    return table
+    return create_count_table(soup, counts, labels = ['あり', 'なし'])
 
 def create_mitites_table(soup: BeautifulSoup, egg_probs: list[float]) -> bs4.Tag:
     array = np.full((3, len(egg_probs) + 1), '', dtype = object)
@@ -223,7 +220,7 @@ def parse_data(data_str: str):
             soup.append('コチャ出現数')
             max_kochas: int = max(yaml.safe_load(k)['kocha'] for k in result.keys())
             kochas = [result.get(f'{{kocha: {kocha}}}', 0) for kocha in range(max_kochas + 1)]
-            table = create_count_table(soup, kochas, 'コチャ')
+            table = create_count_table(soup, kochas)
             soup.append(table)
         elif stage_name == 'CH28':
             soup.append('タマゴ出現数')
@@ -259,7 +256,7 @@ def parse_data(data_str: str):
             soup.append('タマゴ出現数')
             max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
             eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
-            table = create_count_table(soup, eggs, 'タマゴ')
+            table = create_count_table(soup, eggs)
             soup.append(table)
 
             soup.append(soup.new_tag('p', style = 'margin:20px'))
