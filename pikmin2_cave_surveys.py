@@ -16,6 +16,7 @@ def create_table(
     '''
     `array`を元に表を作成
     '''
+    table_parent = soup.new_tag('div', style = 'overflow:auto')
     table = soup.new_tag(
         'table', 
         border = '1',
@@ -55,7 +56,9 @@ def create_table(
             table_data.string = str(array[i, j])
             table_row.append(table_data)
         table.append(table_row)
-    return table
+
+    table_parent.append(table)
+    return table_parent
 
 def create_count_table(
         soup: BeautifulSoup, 
