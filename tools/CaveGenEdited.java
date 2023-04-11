@@ -48,6 +48,18 @@ public CaveGen() {
             }
             key = "{mitites: " + mitites + "}";
         }
+        else if(
+            (specialCaveInfoName.equals("CH5") && sublevel == 2) ||
+            (specialCaveInfoName.equals("CH29") && sublevel == 1)
+            ){
+            int eggs = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("Egg")){
+                    eggs++;
+                }
+            }
+            key = "{eggs: " + eggs + "}";
+        }
         else if(specialCaveInfoName.equals("CH8") && sublevel == 1){
             int kocha = 0;
             for(Teki teki : placedTekis){
@@ -56,6 +68,21 @@ public CaveGen() {
                 }
             }
             key = "{kocha: " + kocha + "}";
+        }
+        else if(specialCaveInfoName.equals("CH18") && sublevel == 1){
+            int eggs = 0;
+            boolean yakicha = false;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("Egg")){
+                    eggs++;
+                }
+                else if(teki.tekiName.equals("FireChappy")){
+                    yakicha = true;
+                }
+            }
+            key = "{eggs: " + eggs + "}";
+            counter.put(key, counter.getOrDefault(key, 0) + 1);
+            key = "{yakicha: " + yakicha + "}";
         }
         else if(specialCaveInfoName.equals("CH28") && sublevel == 1){
             int eggs = 0;
@@ -69,15 +96,6 @@ public CaveGen() {
                 }
             }
             key = "{eggs: " + eggs + ", elec: " + elec + "}";
-        }
-        else if(specialCaveInfoName.equals("CH29") && sublevel == 1){
-            int eggs = 0;
-            for(Teki teki : placedTekis){
-                if(teki.tekiName.equals("Egg")){
-                    eggs++;
-                }
-            }
-            key = "{eggs: " + eggs + "}";
         }
         else{
             throw new UnsupportedOperationException(specialCaveInfoName + "-" + sublevel);
@@ -177,7 +195,7 @@ private void caveGenStep(int i){
     }
 }
 
-private void caveGenEnd(){
+private void caveGenEnd(){   
     if (showCaveInfo) {
         try {
             drawer.drawCaveInfo(this);
