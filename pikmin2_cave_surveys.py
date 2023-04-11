@@ -207,22 +207,21 @@ def parse_data(data_str: str):
                 sum(result[f'{{room: {room}, mitites: {mitites}}}'] 
                     for room in ['circle', 'circle_s', 'crescent']) / num_to_generate 
                     for mitites in [1, 2]]
-            mities_probs = [0] * (len(b1_mitites_probs) + len(b2_mitites_probs) - 1)
+            mitites_probs = [0] * (len(b1_mitites_probs) + len(b2_mitites_probs) - 1)
             for i in range(len(b1_mitites_probs)):
                 for j in range(len(b2_mitites_probs)):
-                    mities_probs[i + j] += b1_mitites_probs[i] * b2_mitites_probs[j] 
+                    mitites_probs[i + j] += b1_mitites_probs[i] * b2_mitites_probs[j] 
             array = np.full((3, 5), '', dtype = object)
             array[0, 0] = 'タマゴムシのセット数'
             array[1, 0] = '確率'
             array[2, 0] = '↓'
-            for mitites, mities_prob in enumerate(mities_probs):
+            for mitites, mities_prob in enumerate(mitites_probs):
                 array[0, mitites + 1] = mitites + 1
                 array[1 : 3, mitites + 1] = get_prob_tuple(mities_prob)
             background_color = np.full((3, 5), '', dtype = object)
             background_color[0, :] = '#d0d0d0'
             background_color[1, 0] = '#e0e0e0'
             table = create_table(soup, array, background_color = background_color)
-                    
             soup.append(table)
         elif stage_name == 'CH8':
             soup.append('コチャ出現数')
