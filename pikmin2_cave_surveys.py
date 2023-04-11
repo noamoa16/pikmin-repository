@@ -153,11 +153,26 @@ def parse_data(data_str: str):
     data: dict[str, str] = yaml.safe_load(data_str)
     stage_names = list(data.keys())
     soup = BeautifulSoup()
-    for stage_index, stage_name in enumerate(stage_names):
+
+    # 目次作成
+    table_of_contents = soup.new_tag('ul', **{'class': 'table-of-contents'})
+    for stage_name in stage_names:
+        jp_stage_name = data[stage_name]['name']
+        if '-' in stage_name:
+            sublevel: int = int(stage_name.split('-')[1])
+            jp_stage_name += f' (地下{sublevel}階)'
+        list_item = soup.new_tag('li')
+        anchor = soup.new_tag('a', href = f'#tables-{stage_name}')
+        anchor.string = jp_stage_name
+        list_item.append(anchor)
+        table_of_contents.append(list_item)
+    soup.append(table_of_contents)
+
+    for stage_index, stage_name in enumerate(stage_names):  
         if stage_index != 0:
-            soup.append(soup.new_tag('br'))
             soup.append(soup.new_tag('hr'))
-            soup.append(soup.new_tag('br'))
+        tables = soup.new_tag('div', id = f'tables-{stage_name}')
+        tables.append(soup.new_tag('br'))
 
         trial: dict[str, Any] = data[stage_name]['trial']
         seed: int = trial['seed']
@@ -169,26 +184,26 @@ def parse_data(data_str: str):
             sublevel: int = int(stage_name.split('-')[1])
             jp_stage_name += f' (地下{sublevel}階)'
         bold.append(f'{jp_stage_name} (seed = 0x{seed:08X}, ..., 0x{seed + num_to_generate - 1:08X})')
-        soup.append(bold)
-        soup.append(soup.new_tag('p', style = 'margin:20px'))
+        tables.append(bold)
+        tables.append(soup.new_tag('p', style = 'margin:20px'))
 
         if stage_name in ['FC-7', 'SC-4']:
-            soup.append('オオガネモチ出現率')
+            tables.append('オオガネモチ出現率')
             counts = [result['{oogane: true}'], result['{oogane: false}']]
             table = create_true_false_table(soup, counts)
-            soup.append(table)
+            tables.append(table)
         elif stage_name == 'GK-5':
-            soup.append('ムラサキポンガシ出現率')
+            tables.append('ムラサキポンガシ出現率')
             counts = [result['{murasakipom: true}'], result['{murasakipom: false}']]
             table = create_true_false_table(soup, counts)
-            soup.append(table)
+            tables.append(table)
         elif stage_name == 'SR-6':
-            soup.append('オナラシ出現率')
+            tables.append('オナラシ出現率')
             counts = [result['{onarashi: true}'], result['{onarashi: false}']]
             table = create_true_false_table(soup, counts)
-            soup.append(table)
+            tables.append(table)
         elif stage_name == 'CH2-2':
-            soup.append('地形とタマゴムシ')
+            tables.append('地形とタマゴムシ')
             array = np.full((13, 4), '', dtype = object)
             array[0, 0] = '地形＼タマゴムシ'
             array[[1, 4, 7, 10], 0] = ('丸部屋', '丸部屋 (S字)', '三日月', '合計')
@@ -208,11 +223,11 @@ def parse_data(data_str: str):
             background_color[0, :] = '#d0d0d0'
             background_color[[1, 4, 7, 10], :] = '#e0e0e0'
             table = create_table(soup, array, background_color = background_color)
-            soup.append(table)
+            tables.append(table)
 
-            soup.append(soup.new_tag('p', style = 'margin:20px'))
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
             
-            soup.append('タマゴムシの確率 (B1とB2の合計)')
+            tables.append('タマゴムシの確率 (B1とB2の合計)')
             b1_mitites_probs = [calc_mitites_prob(2, mitites) for mitites in range(3)]
             b2_mitites_probs = [
                 sum(result[f'{{room: {room}, mitites: {mitites}}}'] 
@@ -233,15 +248,15 @@ def parse_data(data_str: str):
             background_color[0, :] = '#d0d0d0'
             background_color[1, 0] = '#e0e0e0'
             table = create_table(soup, array, background_color = background_color)
-            soup.append(table)
+            tables.append(table)
         elif stage_name == 'CH8':
-            soup.append('コチャ出現数')
+            tables.append('コチャ出現数')
             max_kochas: int = max(yaml.safe_load(k)['kocha'] for k in result.keys())
             kochas = [result.get(f'{{kocha: {kocha}}}', 0) for kocha in range(max_kochas + 1)]
             table = create_count_table(soup, kochas)
-            soup.append(table)
+            tables.append(table)
         elif stage_name == 'CH28':
-            soup.append('タマゴ出現数')
+            tables.append('タマゴ出現数')
             array = np.full((7, 8), '', dtype = object)
             array[0, 0] = 'タマゴ'
             array[1, 0] = 'エレキショイグモあり'
@@ -262,28 +277,31 @@ def parse_data(data_str: str):
             background_color[0, :] = '#d0d0d0'
             background_color[[1, 4], :] = '#e0e0e0'
             table = create_table(soup, array, background_color = background_color)
-            soup.append(table)
+            tables.append(table)
 
-            soup.append(soup.new_tag('p', style = 'margin:20px'))
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
 
-            soup.append('タマゴムシの確率（キショイグモあり）')
+            tables.append('タマゴムシの確率（キショイグモあり）')
             egg_probs = [result.get(f'{{eggs: {eggs}, elec: true}}', 0) / num_to_generate for eggs in range(6)]
             table = create_mitites_table(soup, egg_probs)
-            soup.append(table)
+            tables.append(table)
         elif stage_name == 'CH29':
-            soup.append('タマゴ出現数')
+            tables.append('タマゴ出現数')
             max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
             eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
             table = create_count_table(soup, eggs)
-            soup.append(table)
+            tables.append(table)
 
-            soup.append(soup.new_tag('p', style = 'margin:20px'))
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
 
-            soup.append('タマゴムシの確率')
+            tables.append('タマゴムシの確率')
             egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
             table = create_mitites_table(soup, egg_probs)
-            soup.append(table)
+            tables.append(table)
         else:
             raise NotImplementedError
+    
+        tables.append(soup.new_tag('br'))
+        soup.append(tables)
 
     return flask.Markup(soup.prettify())
