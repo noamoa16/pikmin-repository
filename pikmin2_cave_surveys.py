@@ -77,6 +77,22 @@ def create_count_table(soup: BeautifulSoup, counts: list[int], title: str) -> bs
     table = create_table(soup, array, background_color = background_color)
     return table
 
+def create_true_false_table(soup: BeautifulSoup, counts: list[int]) -> bs4.Tag:
+    num_to_generate = sum(counts)
+    array = np.full((4, 4), '', dtype = object)
+    array[1, 0] = '件数／確率'
+    array[2 : 4, 0] = '↓'
+    array[0, 3] = '合計'
+    array[0, 1 : 3] = ['あり', 'なし']
+    array[1 : 4, 1] = get_count_prob_tuple(counts[0], num_to_generate)
+    array[1 : 4, 2] = get_count_prob_tuple(counts[1], num_to_generate)
+    array[1 : 4, 3] = get_count_prob_tuple(num_to_generate, num_to_generate)
+    background_color = np.full((4, 4), '', dtype = object)
+    background_color[0, :] = '#d0d0d0'
+    background_color[1, :] = '#e0e0e0'
+    table = create_table(soup, array, background_color = background_color)
+    return table
+
 def create_mitites_table(soup: BeautifulSoup, egg_probs: list[float]) -> bs4.Tag:
     array = np.full((3, len(egg_probs) + 1), '', dtype = object)
     array[0, 0] = 'タマゴムシのセット数'
@@ -148,33 +164,13 @@ def parse_data(data_str: str):
 
         if stage_name == 'FC-7':
             soup.append('オオガネモチ出現率')
-            array = np.full((4, 4), '', dtype = object)
-            array[1, 0] = '件数／確率'
-            array[2 : 4, 0] = '↓'
-            array[0, 3] = '合計'
-            array[0, 1 : 3] = ['あり', 'なし']
-            array[1 : 4, 1] = get_count_prob_tuple(result['{oogane: true}'], num_to_generate)
-            array[1 : 4, 2] = get_count_prob_tuple(result['{oogane: false}'], num_to_generate)
-            array[1 : 4, 3] = get_count_prob_tuple(num_to_generate, num_to_generate)
-            background_color = np.full((4, 4), '', dtype = object)
-            background_color[0, :] = '#d0d0d0'
-            background_color[1, :] = '#e0e0e0'
-            table = create_table(soup, array, background_color = background_color)
+            counts = [result['{oogane: true}'], result['{oogane: false}']]
+            table = create_true_false_table(soup, counts)
             soup.append(table)
         elif stage_name == 'SR-6':
             soup.append('オナラシ出現率')
-            array = np.full((4, 4), '', dtype = object)
-            array[1, 0] = '件数／確率'
-            array[2 : 4, 0] = '↓'
-            array[0, 3] = '合計'
-            array[0, 1 : 3] = ['あり', 'なし']
-            array[1 : 4, 1] = get_count_prob_tuple(result['{onarashi: true}'], num_to_generate)
-            array[1 : 4, 2] = get_count_prob_tuple(result['{onarashi: false}'], num_to_generate)
-            array[1 : 4, 3] = get_count_prob_tuple(num_to_generate, num_to_generate)
-            background_color = np.full((4, 4), '', dtype = object)
-            background_color[0, :] = '#d0d0d0'
-            background_color[1, :] = '#e0e0e0'
-            table = create_table(soup, array, background_color = background_color)
+            counts = [result['{onarashi: true}'], result['{onarashi: false}']]
+            table = create_true_false_table(soup, counts)
             soup.append(table)
         elif stage_name == 'CH2-2':
             soup.append('地形とタマゴムシ')
