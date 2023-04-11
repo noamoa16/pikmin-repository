@@ -9,3 +9,5 @@
 |docs|Flaskによって自動生成された文書|
 |templates|文書のテンプレート|
 |static|JavaScirpt / CSS / 画像|
+|data|洞窟調査などのデータ|
+|tools|便利ツールなど|
