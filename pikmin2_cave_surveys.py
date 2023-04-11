@@ -13,6 +13,9 @@ def create_table(
         *,
         background_color: np.ndarray | None = None
         ) -> bs4.Tag:
+    '''
+    `array`を元に表を作成
+    '''
     table = soup.new_tag(
         'table', 
         border = '1',
@@ -60,7 +63,10 @@ def create_count_table(
         *, 
         labels: list[str] | None = None,
         ) -> bs4.Tag:
-    
+    '''
+    `counts`を横に並べた表を作成
+    '''
+
     assert labels is None or len(counts) == len(labels)
     if labels is None:
         labels = [str(i) for i in range(len(counts))]
@@ -88,9 +94,15 @@ def create_count_table(
     return table
 
 def create_true_false_table(soup: BeautifulSoup, counts: list[int]) -> bs4.Tag:
+    '''
+    ありかなしかの2択を表す表を作成
+    '''
     return create_count_table(soup, counts, labels = ['あり', 'なし'])
 
 def create_mitites_table(soup: BeautifulSoup, egg_probs: list[float]) -> bs4.Tag:
+    '''
+    タマゴの確率分布`egg_probs`を元に表を作成
+    '''
     array = np.full((3, len(egg_probs) + 1), '', dtype = object)
     array[0, 0] = 'タマゴムシのセット数'
     array[1, 0] = '確率'
