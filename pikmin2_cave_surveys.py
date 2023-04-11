@@ -171,9 +171,14 @@ def parse_data(data_str: str):
         soup.append(bold)
         soup.append(soup.new_tag('p', style = 'margin:20px'))
 
-        if stage_name == 'FC-7':
+        if stage_name in ['FC-7', 'SC-4']:
             soup.append('オオガネモチ出現率')
             counts = [result['{oogane: true}'], result['{oogane: false}']]
+            table = create_true_false_table(soup, counts)
+            soup.append(table)
+        elif stage_name == 'GK-5':
+            soup.append('ムラサキポンガシ出現率')
+            counts = [result['{murasakipom: true}'], result['{murasakipom: false}']]
             table = create_true_false_table(soup, counts)
             soup.append(table)
         elif stage_name == 'SR-6':

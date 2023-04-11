@@ -1,9 +1,15 @@
 FC-7:
   name: 辺境の洞窟
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{oogane: true}": 75122690, "{oogane: false}": 59095038}}
+GK-5:
+  name: 食神の台所
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{murasakipom: true}": 134037987, "{murasakipom: false}": 179741}}
 SR-6:
   name: シャワールーム
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{onarashi: false}": 9138760, "{onarashi: true}": 125078968}}
+SC-4:
+  name: 水中の城
+  trial: {"seed": 0x00000000, "num": 0x10000000, "result": {"{oogane: true}": 261779688, "{oogane: false}": 6655768}}
 CH2-2:
   name: 新参者の試練場
   trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{room: circle, mitites: 1}": 1399437523, "{room: circle, mitites: 2}": 2484, "{room: circle_s, mitites: 1}": 455734545, "{room: circle_s, mitites: 2}": 656382, "{room: crescent, mitites: 1}": 280458906, "{room: crescent, mitites: 2}": 11193808}}
