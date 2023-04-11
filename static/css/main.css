@@ -1,74 +1,74 @@
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 *, *:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #main {
-	padding-left: 240px;
+    padding-left: 240px;
 }
 #main .inner {
-	padding: 60px;
+    padding: 60px;
 }
 
 #main-title {
-	background: -webkit-linear-gradient(60deg,	#00f, #93f);
-	background: -moz-linear-gradient(60deg,	#00f, #93f);
-	background: -ms-linear-gradient(60deg,	#00f, #93f);
-	background: linear-gradient(60deg,	#00f, #93f);
+    background: -webkit-linear-gradient(60deg, #00f, #93f);
+    background: -moz-linear-gradient(60deg, #00f, #93f);
+    background: -ms-linear-gradient(60deg, #00f, #93f);
+    background: linear-gradient(60deg, #00f, #93f);
 
-	height: 120px;
-	display: flex;
+    height: 120px;
+    display: flex;
 
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 
-	/* 縦に並べる */
-	-webkit-flex-direction: column;          /* Safari etc. */
-	-ms-flex-direction    : column;          /* IE10        */
-	flex-direction        : column;
+    /* 縦に並べる */
+    -webkit-flex-direction: column;          /* Safari etc. */
+    -ms-flex-direction    : column;          /* IE10        */
+    flex-direction        : column;
 }
 #main-title > h1 {
-	font-size: 220%;
-	font-weight: 300;
-	color: #fff;
+    font-size: 220%;
+    font-weight: 300;
+    color: #fff;
 }
 
 #main-title > h2 {
-	font-size: 130%;
-	font-weight: 200;
-	color: #000;
+    font-size: 130%;
+    font-weight: 200;
+    color: #000;
 }
 
 #sidebar {
-	font-size: 12px;
-	padding: 15px 0;
-	width: 240px;
-	height: 100%;
-	position: absolute; 
-	color: #036;
-	background: #ffffff;
-	text-align: center;
+    font-size: 12px;
+    padding: 15px 0;
+    width: 240px;
+    height: 100%;
+    position: absolute; 
+    color: #036;
+    background: #ffffff;
+    text-align: center;
 }
 
 #sidebar-upper {
-	font-size: 24px;
-	font-weight: 300;
+    font-size: 24px;
+    font-weight: 300;
 }
 
 #sidebar ul {
-	list-style: none;
+    list-style: none;
 }
 
 #sidebar li {
@@ -76,29 +76,29 @@
 }
 
 #sidebar a {
-	color: #033560;
-	text-decoration: none;
-	display: block;
-	padding: 10px 0;
-	-moz-transition: background-color .3s linear;
-	-webkit-transition: background-color .3s linear;
-	transition: background-color .3s linear;
+    color: #033560;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    -moz-transition: background-color .3s linear;
+    -webkit-transition: background-color .3s linear;
+    transition: background-color .3s linear;
 }
 
 /* サイドバー上のテキスト */
 #sidebar div {
-	color: #033560;
-	text-decoration: none;
-	display: block;
-	padding: 10px 0;
-	-moz-transition: background-color .3s linear;
-	-webkit-transition: background-color .3s linear;
-	transition: background-color .3s linear;
+    color: #033560;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    -moz-transition: background-color .3s linear;
+    -webkit-transition: background-color .3s linear;
+    transition: background-color .3s linear;
 }
 
 /* カーソルを合わせているときは太字に */
 #sidebar a:hover {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #sidebar .sub-menu {
@@ -106,57 +106,57 @@
 }
 
 #sidebar .sub-menu > a {
-	position: relative;
+    position: relative;
 }
 
 #sidebar .sub-menu > a:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 18px;
-	margin: auto;
-	width: 8px;
-	height: 8px;
-	border-top: 1px solid #033560;
-	border-right: 1px solid #033560;
-	-moz-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 18px;
+    margin: auto;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #033560;
+    border-right: 1px solid #033560;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 #sidebar .sub-menu-nav {
-	position: fixed;
-	background: #033560;
-	color: #ffffff;
+    position: fixed;
+    background: #033560;
+    color: #ffffff;
     top: 0px;
-	padding-top: 60px;
+    padding-top: 60px;
     left: 240px;
     width: 0;
-	height: 100%;
-	z-index: 1;
-	display: block; /* blockにすると最初は表示 noneにすると非表示 */
+    height: 100%;
+    z-index: 1;
+    display: block; /* blockにすると最初は表示 noneにすると非表示 */
 
-	overflow-x: hidden;
-	overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-	-moz-transition: width .2s ease-out;
-	-webkit-transition: width .2s ease-out;
-	transition: width .2s ease-out;
+    -moz-transition: width .2s ease-out;
+    -webkit-transition: width .2s ease-out;
+    transition: width .2s ease-out;
 }
 
 #sidebar .sub-menu-nav a,
 #sidebar .sub-menu:hover .sub-menu-nav {
-	color: #ffffff;
-	width: 240px;
+    color: #ffffff;
+    width: 240px;
 }
 
 #sidebar .sub-menu-title {
-	font-size: 20;
-	padding: 5px;
+    font-size: 20;
+    padding: 5px;
 }
 
 .hidden-content {
-	display: none;
-	clear: both;
+    display: none;
+    clear: both;
 }
