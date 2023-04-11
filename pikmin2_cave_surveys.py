@@ -155,8 +155,9 @@ def parse_data(data_str: str):
     soup = BeautifulSoup()
     for stage_index, stage_name in enumerate(stage_names):
         if stage_index != 0:
-            for _ in range(2):
-                soup.append(soup.new_tag('br'))
+            soup.append(soup.new_tag('br'))
+            soup.append(soup.new_tag('hr'))
+            soup.append(soup.new_tag('br'))
 
         trial: dict[str, Any] = data[stage_name]['trial']
         seed: int = trial['seed']
