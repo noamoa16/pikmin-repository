@@ -102,22 +102,40 @@ def create_true_false_table(soup: BeautifulSoup, counts: list[int]) -> bs4.Tag:
     '''
     return create_count_table(soup, counts, labels = ['あり', 'なし'])
 
-def create_mitites_table(soup: BeautifulSoup, egg_probs: list[float]) -> bs4.Tag:
+def create_mitites_table(
+        soup: BeautifulSoup, 
+        *, 
+        egg_probs: list[float] | None = None,
+        mitites_probs: list[float] | None = None,
+        ) -> bs4.Tag:
     '''
-    タマゴの確率分布`egg_probs`を元に表を作成
+    タマゴの確率分布`egg_probs`またはタマゴムシの確率`mitites_probs`を元に表を作成
     '''
-    array = np.full((3, len(egg_probs) + 1), '', dtype = object)
+    assert (egg_probs is not None and mitites_probs is None) or \
+        (egg_probs is None and mitites_probs is not None)
+    if egg_probs is not None:
+        mitites_probs = []
+        for mitites in range(len(egg_probs)):
+            mitites_probs.append(sum(
+                egg_probs[eggs] * calc_mitites_prob(eggs, mitites) 
+                for eggs in range(mitites, len(egg_probs))
+            ))
+
+    left_skip = 0
+    for i in range(len(mitites_probs)):
+        if mitites_probs[i] == 0:
+            left_skip += 1
+        else:
+            break
+
+    array = np.full((3, len(mitites_probs[left_skip:]) + 1), '', dtype = object)
     array[0, 0] = 'タマゴムシのセット数'
     array[1, 0] = '確率'
     array[2, 0] = '↓'
-    for mitites in range(len(egg_probs)):
-        array[0, 1 + mitites] = mitites
-        prob = sum(
-            egg_probs[eggs] * calc_mitites_prob(eggs, mitites) 
-            for eggs in range(mitites, len(egg_probs))
-        )
-        array[1 : 3, 1 + mitites] = get_prob_tuple(prob)
-    background_color = np.full((3, len(egg_probs) + 1), '', dtype = object)
+    for mitites, mitites_prob in enumerate(mitites_probs[left_skip:]):
+        array[0, 1 + mitites] = mitites + left_skip
+        array[1 : 3, 1 + mitites] = get_prob_tuple(mitites_prob)
+    background_color = np.full((3, len(mitites_probs) + 1), '', dtype = object)
     background_color[0, :] = '#d0d0d0'
     background_color[1, 0] = '#e0e0e0'
     table = create_table(soup, array, background_color = background_color)
@@ -232,7 +250,7 @@ def parse_data(data_str: str):
             
             tables.append('タマゴムシの確率 (B1とB2の合計)')
             b1_mitites_probs = [calc_mitites_prob(2, mitites) for mitites in range(3)]
-            b2_mitites_probs = [
+            b2_mitites_probs = [0] + [
                 sum(result[f'{{room: {room}, mitites: {mitites}}}'] 
                     for room in ['circle', 'circle_s', 'crescent']) / num_to_generate 
                     for mitites in [1, 2]]
@@ -240,17 +258,7 @@ def parse_data(data_str: str):
             for i in range(len(b1_mitites_probs)):
                 for j in range(len(b2_mitites_probs)):
                     mitites_probs[i + j] += b1_mitites_probs[i] * b2_mitites_probs[j] 
-            array = np.full((3, 5), '', dtype = object)
-            array[0, 0] = 'タマゴムシのセット数'
-            array[1, 0] = '確率'
-            array[2, 0] = '↓'
-            for mitites, mities_prob in enumerate(mitites_probs):
-                array[0, mitites + 1] = mitites + 1
-                array[1 : 3, mitites + 1] = get_prob_tuple(mities_prob)
-            background_color = np.full((3, 5), '', dtype = object)
-            background_color[0, :] = '#d0d0d0'
-            background_color[1, 0] = '#e0e0e0'
-            table = create_table(soup, array, background_color = background_color)
+            table = create_mitites_table(soup, mitites_probs = mitites_probs)
             tables.append(table)
         elif stage_name == 'CH8':
             tables.append('コチャ出現数')
@@ -286,7 +294,7 @@ def parse_data(data_str: str):
 
             tables.append('タマゴムシの確率（キショイグモあり）')
             egg_probs = [result.get(f'{{eggs: {eggs}, elec: true}}', 0) / num_to_generate for eggs in range(6)]
-            table = create_mitites_table(soup, egg_probs)
+            table = create_mitites_table(soup, egg_probs = egg_probs)
             tables.append(table)
         elif stage_name == 'CH29':
             tables.append('タマゴ出現数')
@@ -299,7 +307,7 @@ def parse_data(data_str: str):
 
             tables.append('タマゴムシの確率')
             egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
-            table = create_mitites_table(soup, egg_probs)
+            table = create_mitites_table(soup, egg_probs = egg_probs)
             tables.append(table)
         else:
             raise NotImplementedError
@@ -308,3 +316,33 @@ def parse_data(data_str: str):
         soup.append(tables)
 
     return flask.Markup(soup.prettify())
+
+parse_data(
+
+'''
+FC-7:
+  name: 辺境の洞窟
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{oogane: true}": 75122690, "{oogane: false}": 59095038}}
+GK-5:
+  name: 食神の台所
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{murasakipom: true}": 134037987, "{murasakipom: false}": 179741}}
+SR-6:
+  name: シャワールーム
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{onarashi: false}": 9138760, "{onarashi: true}": 125078968}}
+SC-4:
+  name: 水中の城
+  trial: {"seed": 0x00000000, "num": 0x10000000, "result": {"{oogane: true}": 261779688, "{oogane: false}": 6655768}}
+CH2-2:
+  name: 新参者の試練場
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{room: circle, mitites: 1}": 1399437523, "{room: circle, mitites: 2}": 2484, "{room: circle_s, mitites: 1}": 455734545, "{room: circle_s, mitites: 2}": 656382, "{room: crescent, mitites: 1}": 280458906, "{room: crescent, mitites: 2}": 11193808}}
+CH8:
+  name: 赤の洞窟
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{kocha: 8}": 1288473, "{kocha: 7}": 98744, "{kocha: 6}": 13312, "{kocha: 5}": 2051, "{kocha: 14}": 8493297, "{kocha: 4}": 527, "{kocha: 15}": 103414735, "{kocha: 3}": 1, "{kocha: 10}": 2157434, "{kocha: 11}": 3805974, "{kocha: 12}": 10286344, "{kocha: 13}": 3625426, "{kocha: 9}": 1031410}}
+CH28:
+  name: どっすん迷路
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{eggs: 5, elec: true}": 22958633, "{eggs: 3, elec: true}": 35881570, "{eggs: 4, elec: false}": 1348931, "{eggs: 4, elec: true}": 28291325, "{eggs: 2, elec: false}": 2106043, "{eggs: 5, elec: false}": 1289117, "{eggs: 0, elec: true}": 394703, "{eggs: 2, elec: true}": 37878577, "{eggs: 3, elec: false}": 1749229, "{eggs: 1, elec: true}": 2319600}}
+CH29:
+  name: スナイパールーム
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{eggs: 0}": 90491162, "{eggs: 4}": 607, "{eggs: 3}": 47541, "{eggs: 2}": 1800438, "{eggs: 1}": 41877963, "{eggs: 6}": 1, "{eggs: 5}": 16}}
+'''
+)
