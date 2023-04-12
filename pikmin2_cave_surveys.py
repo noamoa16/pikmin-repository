@@ -204,8 +204,16 @@ def parse_data(data_str: str):
         if '-' in stage_name:
             sublevel: int = int(stage_name.split('-')[1])
             jp_stage_name += f' (地下{sublevel}階)'
-        bold.append(f'{jp_stage_name} (seed = 0x{seed:08X}, ..., 0x{seed + num_to_generate - 1:08X})')
+        bold.string = jp_stage_name
         tables.append(bold)
+        tables.append(soup.new_tag('br'))
+        tables.append(soup.new_tag('span', style = 'margin-right: 1em'))
+        seed_text = f'seed = 0x{seed:08X}, ..., 0x{seed + num_to_generate - 1:08X}'
+        if num_to_generate == 0x80000000:
+            seed_text += ' (全探索)'
+        elif 0x80000000 % num_to_generate == 0 and 0x80000000 // num_to_generate <= 16:
+            seed_text += f' (1/{0x80000000 // num_to_generate}探索)'
+        tables.append(seed_text)
         tables.append(soup.new_tag('p', style = 'margin:20px'))
 
         if stage_name in ['FC-7', 'SC-4']:
