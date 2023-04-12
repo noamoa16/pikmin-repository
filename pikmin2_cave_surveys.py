@@ -20,7 +20,7 @@ def create_table(
     table = soup.new_tag(
         'table', 
         border = '1',
-        style = 'border-collapse:collapse;text-align:center;background-color:#f0f0f0;font-size:16',
+        style = 'border-collapse:collapse;text-align:center;background-color:#f0f0f0;font-size:16;white-space:nowrap',
     )
 
     rowspans = np.ones(array.shape)
