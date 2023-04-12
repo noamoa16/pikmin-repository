@@ -142,7 +142,7 @@ def create_mitites_table(
     return table
 
 def get_percentage_str(probability: float) -> str:
-    assert 0 <= probability <= 1
+    assert 0 <= probability <= 1, probability
     if probability * 100 <= 1e-6 or 1 <= probability * 100:
         return f'{probability * 100:.4g}%'
     else:
@@ -150,7 +150,7 @@ def get_percentage_str(probability: float) -> str:
         return f'{probability * 100:.{digits + 3}f}%'
  
 def get_fraction_str(probability: float) -> str:
-    assert 0 <= probability <= 1
+    assert 0 <= probability <= 1, probability
     if probability == 0:
         return '1/∞'
     elif 1 <= 1 / probability <= 1e4 or 1e6 <= 1 / probability:
@@ -159,7 +159,7 @@ def get_fraction_str(probability: float) -> str:
         return f'1/{int(1 / probability)}'
 
 def get_prob_tuple(probability: float):
-    assert 0 <= probability <= 1
+    assert 0 <= probability <= 1, probability
     return (get_percentage_str(probability), get_fraction_str(probability))
         
 def get_count_prob_tuple(count: int, num_to_generate: int):
@@ -167,8 +167,11 @@ def get_count_prob_tuple(count: int, num_to_generate: int):
     return (count, get_percentage_str(count / num_to_generate), get_fraction_str(count / num_to_generate))
     
 def calc_mitites_prob(num_eggs: int, mitites: int) -> float:
-    mprob = 1 / 20
-    return math.comb(num_eggs, mitites) * (mprob ** mitites) * ((1 - mprob) ** (num_eggs - mitites))
+    if num_eggs < mitites:
+        return 0.
+    else:
+        mprob = 1 / 20
+        return math.comb(num_eggs, mitites) * (mprob ** mitites) * ((1 - mprob) ** (num_eggs - mitites))
 
 def parse_data(data_str: str):
     data: dict[str, str] = yaml.safe_load(data_str)
@@ -266,6 +269,27 @@ def parse_data(data_str: str):
             for i in range(len(b1_mitites_probs)):
                 for j in range(len(b2_mitites_probs)):
                     mitites_probs[i + j] += b1_mitites_probs[i] * b2_mitites_probs[j] 
+            table = create_mitites_table(soup, mitites_probs = mitites_probs)
+            tables.append(table)
+        elif stage_name == 'CH5-2':
+            tables.append('タマゴ出現数')
+            max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
+            eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
+            table = create_count_table(soup, eggs)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            tables.append('タマゴムシの確率 (B1とB2の合計)')
+            b1_mitites_probs = [calc_mitites_prob(8, mitites) for mitites in range(9)]
+            b2_mitites_probs = [
+                sum(result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate * calc_mitites_prob(eggs, mitites) 
+                for eggs in range(2)) for mitites in range(2)
+            ]
+            mitites_probs = [0] * (len(b1_mitites_probs) + len(b2_mitites_probs) - 1)
+            for i in range(len(b1_mitites_probs)):
+                for j in range(len(b2_mitites_probs)):
+                    mitites_probs[i + j] += b1_mitites_probs[i] * b2_mitites_probs[j]
             table = create_mitites_table(soup, mitites_probs = mitites_probs)
             tables.append(table)
         elif stage_name == 'CH8':
