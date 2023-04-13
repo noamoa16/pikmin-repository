@@ -19,6 +19,9 @@ CH5-2:
 CH8:
   name: 赤の洞窟
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{kocha: 8}": 1288473, "{kocha: 7}": 98744, "{kocha: 6}": 13312, "{kocha: 5}": 2051, "{kocha: 14}": 8493297, "{kocha: 4}": 527, "{kocha: 15}": 103414735, "{kocha: 3}": 1, "{kocha: 10}": 2157434, "{kocha: 11}": 3805974, "{kocha: 12}": 10286344, "{kocha: 13}": 3625426, "{kocha: 9}": 1031410}}
+CH18-1:
+  name: 炎と水の試練場
+  trial: {"seed": 0x00000000, "num": 0x10000000, "result": {"{eggs: 0}": 258328423, "{eggs: 1}": 9130240, "{eggs: 2}": 893217, "{eggs: 3}": 77549, "{eggs: 4}": 5582, "{eggs: 5}": 418, "{eggs: 6}": 25, "{eggs: 7}": 2, "{yakicha: false}": 1018868, "{yakicha: true}": 267416588}}
 CH28:
   name: どっすん迷路
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{eggs: 5, elec: true}": 22958633, "{eggs: 3, elec: true}": 35881570, "{eggs: 4, elec: false}": 1348931, "{eggs: 4, elec: true}": 28291325, "{eggs: 2, elec: false}": 2106043, "{eggs: 5, elec: false}": 1289117, "{eggs: 0, elec: true}": 394703, "{eggs: 2, elec: true}": 37878577, "{eggs: 3, elec: false}": 1749229, "{eggs: 1, elec: true}": 2319600}}

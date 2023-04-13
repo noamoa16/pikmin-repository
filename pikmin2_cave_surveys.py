@@ -298,6 +298,26 @@ def parse_data(data_str: str):
             kochas = [result.get(f'{{kocha: {kocha}}}', 0) for kocha in range(max_kochas + 1)]
             table = create_count_table(soup, kochas)
             tables.append(table)
+        elif stage_name == 'CH18-1':
+            tables.append('ヤキチャッピー出現率')
+            counts = [result['{yakicha: true}'], result['{yakicha: false}']]
+            table = create_true_false_table(soup, counts)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            tables.append('タマゴ出現数')
+            max_eggs: int = max(yaml.safe_load(k).get('eggs', -1) for k in result.keys())
+            eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
+            table = create_count_table(soup, eggs)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            tables.append('タマゴムシの確率')
+            egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
+            table = create_mitites_table(soup, egg_probs = egg_probs)
+            tables.append(table)
         elif stage_name == 'CH28':
             tables.append('タマゴ出現数')
             array = np.full((7, 8), '', dtype = object)
