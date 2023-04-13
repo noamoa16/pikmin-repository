@@ -1,6 +1,9 @@
 FC-7:
   name: 辺境の洞窟
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{oogane: true}": 75122690, "{oogane: false}": 59095038}}
+SCx-7:
+  name: 地下の秘密基地
+  trial: {"seed": 0x00000000, "num": 0x10000000, "result": {"{fixedTamakokin: false}": 3491589, "{fixedTamakokin: true}": 264943867}}
 GK-5:
   name: 食神の台所
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{murasakipom: true}": 134037987, "{murasakipom: false}": 179741}}
