@@ -13,6 +13,10 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    -webkit-text-size-adjust: 100%;
+}
+
 #main {
     padding-left: 240px;
 }
