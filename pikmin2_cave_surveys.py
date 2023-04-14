@@ -323,6 +323,19 @@ def parse_data(data_str: str):
             egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
             table = create_mitites_table(soup, egg_probs = egg_probs)
             tables.append(table)
+        elif stage_name in ['CH20-1', 'CH29']:
+            tables.append('タマゴ出現数')
+            max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
+            eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
+            table = create_count_table(soup, eggs)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            tables.append('タマゴムシの確率')
+            egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
+            table = create_mitites_table(soup, egg_probs = egg_probs)
+            tables.append(table)
         elif stage_name == 'CH28':
             tables.append('タマゴ出現数')
             array = np.full((7, 8), '', dtype = object)
@@ -351,19 +364,6 @@ def parse_data(data_str: str):
 
             tables.append('タマゴムシの確率（キショイグモあり）')
             egg_probs = [result.get(f'{{eggs: {eggs}, elec: true}}', 0) / num_to_generate for eggs in range(6)]
-            table = create_mitites_table(soup, egg_probs = egg_probs)
-            tables.append(table)
-        elif stage_name == 'CH29':
-            tables.append('タマゴ出現数')
-            max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
-            eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
-            table = create_count_table(soup, eggs)
-            tables.append(table)
-
-            tables.append(soup.new_tag('p', style = 'margin:20px'))
-
-            tables.append('タマゴムシの確率')
-            egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
             table = create_mitites_table(soup, egg_probs = egg_probs)
             tables.append(table)
         else:
