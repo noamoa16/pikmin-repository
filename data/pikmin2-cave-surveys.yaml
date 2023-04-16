@@ -10,6 +10,11 @@ GK-5:
 SR-6:
   name: シャワールーム
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{onarashi: false}": 9138760, "{onarashi: true}": 125078968}}
+SR-7:
+  name: シャワールーム
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{kemekuji: false}": 1, "{kemekuji: true}": 2147483647}}
+  seeds:
+    no_kemekuji: 0x31D70855
 SC-4:
   name: 水中の城
   trial: {"seed": 0x00000000, "num": 0x10000000, "result": {"{oogane: true}": 261779688, "{oogane: false}": 6655768}}

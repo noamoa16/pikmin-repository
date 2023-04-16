@@ -239,6 +239,20 @@ def parse_data(data_str: str):
             counts = [result['{onarashi: true}'], result['{onarashi: false}']]
             table = create_true_false_table(soup, counts)
             tables.append(table)
+        elif stage_name == 'SR-7':
+            tables.append('ケメクジ出現率')
+            counts = [result['{kemekuji: true}'], result['{kemekuji: false}']]
+            table = create_true_false_table(soup, counts)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            no_kemekuji_seed = data[stage_name]['seeds']['no_kemekuji']
+            tables.append(f'ケメクジのいない地形 (シード値 = 0x{no_kemekuji_seed:08X})')
+            tables.append(soup.new_tag('br'))
+            img = soup.new_tag('img', src = flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{no_kemekuji_seed:08X}.png'), width = 480)
+            tables.append(img)
+            tables.append(soup.new_tag('br'))
         elif stage_name == 'CH2-2':
             tables.append('地形とタマゴムシ')
             array = np.full((13, 4), '', dtype = object)
