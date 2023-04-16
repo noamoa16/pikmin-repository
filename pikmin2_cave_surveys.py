@@ -250,7 +250,8 @@ def parse_data(data_str: str):
             no_kemekuji_seed = data[stage_name]['seeds']['no_kemekuji']
             tables.append(f'ケメクジのいない地形 (シード値 = 0x{no_kemekuji_seed:08X})')
             tables.append(soup.new_tag('br'))
-            img = soup.new_tag('img', src = flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{no_kemekuji_seed:08X}.png'), width = 480)
+            img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{no_kemekuji_seed:08X}.png')
+            img = soup.new_tag('img', src = img_src, width = 480)
             tables.append(img)
             tables.append(soup.new_tag('br'))
         elif stage_name == 'CH2-2':
