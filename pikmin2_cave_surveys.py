@@ -352,6 +352,13 @@ def parse_data(data_str: str):
             table = create_mitites_table(soup, egg_probs = egg_probs)
             tables.append(table)
         elif stage_name == 'CH28':
+            tables.append('間欠泉出現率')
+            counts = [result['{geyser: true}'], result['{geyser: false}']]
+            table = create_true_false_table(soup, counts)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
             tables.append('タマゴ出現数')
             array = np.full((7, 8), '', dtype = object)
             array[0, 0] = 'タマゴ'
@@ -365,8 +372,8 @@ def parse_data(data_str: str):
                 array[0, 1 + eggs] = eggs
                 array[1 : 4, 1 + eggs] = get_count_prob_tuple(elec_true, num_to_generate)
                 array[4 : 7, 1 + eggs] = get_count_prob_tuple(elec_false, num_to_generate)
-            elec_true_sum = sum(v for k, v in result.items() if yaml.safe_load(k)['elec'])
-            elec_false_sum = sum(v for k, v in result.items() if not yaml.safe_load(k)['elec'])
+            elec_true_sum = sum(v for k, v in result.items() if yaml.safe_load(k).get('elec', False))
+            elec_false_sum = sum(v for k, v in result.items() if not yaml.safe_load(k).get('elec', True))
             array[1 : 4, 7] = get_count_prob_tuple(elec_true_sum, num_to_generate)
             array[4 : 7, 7] = get_count_prob_tuple(elec_false_sum, num_to_generate)
             background_color = np.full((7, 8), '', dtype = object)

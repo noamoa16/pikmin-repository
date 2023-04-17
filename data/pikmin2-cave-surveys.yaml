@@ -35,7 +35,7 @@ CH20-1:
   trial: {"seed": 0x00000000, "num": 0x20000000, "result": {"{eggs: 0}": 503848174, "{eggs: 1}": 29733966, "{eggs: 2}": 3129114, "{eggs: 3}": 159388, "{eggs: 4}": 267, "{eggs: 5}": 3}}
 CH28:
   name: どっすん迷路
-  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{eggs: 5, elec: true}": 22958633, "{eggs: 3, elec: true}": 35881570, "{eggs: 4, elec: false}": 1348931, "{eggs: 4, elec: true}": 28291325, "{eggs: 2, elec: false}": 2106043, "{eggs: 5, elec: false}": 1289117, "{eggs: 0, elec: true}": 394703, "{eggs: 2, elec: true}": 37878577, "{eggs: 3, elec: false}": 1749229, "{eggs: 1, elec: true}": 2319600}}
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{eggs: 0, elec: true}": 6318281, "{eggs: 1, elec: true}": 37080747, "{eggs: 2, elec: false}": 33721146, "{eggs: 2, elec: true}": 606072725, "{eggs: 3, elec: false}": 27992900, "{eggs: 3, elec: true}": 574117728, "{eggs: 4, elec: false}": 21603950, "{eggs: 4, elec: true}": 452626286, "{eggs: 5, elec: false}": 20615312, "{eggs: 5, elec: true}": 367334573, "{geyser: false}": 372061, "{geyser: true}": 2147111587}}
 CH29:
   name: スナイパールーム
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{eggs: 0}": 90491162, "{eggs: 4}": 607, "{eggs: 3}": 47541, "{eggs: 2}": 1800438, "{eggs: 1}": 41877963, "{eggs: 6}": 1, "{eggs: 5}": 16}}
