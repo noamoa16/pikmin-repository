@@ -96,11 +96,15 @@ def create_count_table(
     table = create_table(soup, array, background_color = background_color)
     return table
 
-def create_true_false_table(soup: BeautifulSoup, counts: list[int]) -> bs4.Tag:
+def create_true_false_table_from_counts(soup: BeautifulSoup, counts: list[int]) -> bs4.Tag:
     '''
     ありかなしかの2択を表す表を作成
     '''
     return create_count_table(soup, counts, labels = ['あり', 'なし'])
+
+def create_true_false_table_from_result(soup: BeautifulSoup, result: dict[str, Any], name: str) -> bs4.Tag:
+    counts = [result[f'{{{name}: true}}'], result[f'{{{name}: false}}']]
+    return create_true_false_table_from_counts(soup, counts)
 
 def create_mitites_table(
         soup: BeautifulSoup, 
@@ -221,38 +225,31 @@ def parse_data(data_str: str):
 
         if stage_name in ['FC-7', 'SC-4']:
             tables.append('オオガネモチ出現率')
-            counts = [result['{oogane: true}'], result['{oogane: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'oogane')
             tables.append(table)
         elif stage_name == 'SCx-7':
             tables.append('固定タマコキン出現率')
-            counts = [result['{fixedTamakokin: true}'], result['{fixedTamakokin: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'fixedTamakokin')
             tables.append(table)
         elif stage_name == 'CoS-3':
             tables.append('ポポガシグサ出現率')
-            counts = [result['{popogashi: true}'], result['{popogashi: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'popogashi')
             tables.append(table)
         elif stage_name == 'CoS-4':
             tables.append('お宝持ちシャコモドキ出現率')
-            counts = [result['{chocolate: true}'], result['{chocolate: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'chocolate')
             tables.append(table)
         elif stage_name == 'GK-5':
             tables.append('ムラサキポンガシ出現率')
-            counts = [result['{murasakipom: true}'], result['{murasakipom: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'murasakipom')
             tables.append(table)
         elif stage_name == 'SR-6':
             tables.append('オナラシ出現率')
-            counts = [result['{onarashi: true}'], result['{onarashi: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'onarashi')
             tables.append(table)
         elif stage_name == 'SR-7':
             tables.append('ケメクジ出現率')
-            counts = [result['{kemekuji: true}'], result['{kemekuji: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'kemekuji')
             tables.append(table)
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
@@ -330,8 +327,7 @@ def parse_data(data_str: str):
             tables.append(table)
         elif stage_name == 'CH18-1':
             tables.append('ヤキチャッピー出現率')
-            counts = [result['{yakicha: true}'], result['{yakicha: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'yakicha')
             tables.append(table)
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
@@ -363,8 +359,7 @@ def parse_data(data_str: str):
             tables.append(table)
         elif stage_name == 'CH28':
             tables.append('間欠泉出現率')
-            counts = [result['{geyser: true}'], result['{geyser: false}']]
-            table = create_true_false_table(soup, counts)
+            table = create_true_false_table_from_result(soup, result, 'geyser')
             tables.append(table)
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
