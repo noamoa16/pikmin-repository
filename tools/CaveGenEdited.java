@@ -21,6 +21,37 @@ public CaveGen() {
             }
             key = "{oogane: " + oogane + "}";
         }
+        else if(specialCaveInfoName.equals("SCx") && sublevel == 7){
+            boolean fixedTamakokin = false;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("FminiHoudai")){
+                    fixedTamakokin = true;
+                }
+            }
+            key = "{fixedTamakokin: " + fixedTamakokin + "}";
+        }
+        else if(specialCaveInfoName.equals("CoS") && sublevel == 3){
+            boolean popogashi = false;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("RandPom")){
+                    popogashi = true;
+                }
+            }
+            key = "{popogashi: " + popogashi + "}";
+        }
+        else if(specialCaveInfoName.equals("CoS") && sublevel == 4){
+            boolean chocolate = false;
+            for(Teki teki : placedTekis){
+                if(
+                    teki.tekiName.equals("Jigumo") && 
+                    teki.itemInside != null &&
+                    teki.itemInside.equals("chocolate")
+                    ){
+                    chocolate = true;
+                }
+            }
+            key = "{chocolate: " + chocolate + "}";
+        }
         else if(specialCaveInfoName.equals("GK") && sublevel == 5){
             boolean murasakipom = false;
             for(Teki teki : placedTekis){
@@ -39,6 +70,18 @@ public CaveGen() {
             }
             key = "{onarashi: " + onarashi + "}";
         }
+        else if(specialCaveInfoName.equals("SR") && sublevel == 7){
+            boolean kemekuji = false;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("UmiMushi")){
+                    kemekuji = true;
+                }
+            }
+            key = "{kemekuji: " + kemekuji + "}";
+            if(!kemekuji){
+                System.out.println(String.format("0x%08X", firstGenSeed + i));
+            }
+        }
         else if(specialCaveInfoName.equals("CH2") && sublevel == 2){
             int mitites = 0;
             for(Teki teki : placedTekis){
@@ -50,7 +93,9 @@ public CaveGen() {
         }
         else if(
             (specialCaveInfoName.equals("CH5") && sublevel == 2) ||
-            (specialCaveInfoName.equals("CH29") && sublevel == 1)
+            (specialCaveInfoName.equals("CH20") && sublevel == 1) ||
+            (specialCaveInfoName.equals("CH29") && sublevel == 1) ||
+            (specialCaveInfoName.equals("CH26") && sublevel == 3)
             ){
             int eggs = 0;
             for(Teki teki : placedTekis){
@@ -96,6 +141,9 @@ public CaveGen() {
                 }
             }
             key = "{eggs: " + eggs + ", elec: " + elec + "}";
+            counter.put(key, counter.getOrDefault(key, 0) + 1);
+            boolean geyser = placedGeyser != null;
+            key = "{geyser: " + geyser + "}";
         }
         else{
             throw new UnsupportedOperationException(specialCaveInfoName + "-" + sublevel);
@@ -103,7 +151,7 @@ public CaveGen() {
         counter.put(key, counter.getOrDefault(key, 0) + 1);
     }
 
-    String result = String.format("{\"seed\": 0x%08x, \"num\": 0x%08x, \"result\": {", firstGenSeed, numToGenerate);
+    String result = String.format("{\"seed\": 0x%08X, \"num\": 0x%08X, \"result\": {", firstGenSeed, numToGenerate);
     int i = 0;
     for(Map.Entry<String, Integer> entry : counter.entrySet()){
         if(i != 0){
@@ -195,7 +243,7 @@ private void caveGenStep(int i){
     }
 }
 
-private void caveGenEnd(){   
+private void caveGenEnd(){
     if (showCaveInfo) {
         try {
             drawer.drawCaveInfo(this);

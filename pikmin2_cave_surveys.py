@@ -234,6 +234,11 @@ def parse_data(data_str: str):
             counts = [result['{popogashi: true}'], result['{popogashi: false}']]
             table = create_true_false_table(soup, counts)
             tables.append(table)
+        elif stage_name == 'CoS-4':
+            tables.append('お宝持ちシャコモドキ出現率')
+            counts = [result['{chocolate: true}'], result['{chocolate: false}']]
+            table = create_true_false_table(soup, counts)
+            tables.append(table)
         elif stage_name == 'GK-5':
             tables.append('ムラサキポンガシ出現率')
             counts = [result['{murasakipom: true}'], result['{murasakipom: false}']]
