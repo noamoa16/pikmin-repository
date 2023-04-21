@@ -344,7 +344,7 @@ def parse_data(data_str: str):
             egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
             table = create_mitites_table(soup, egg_probs = egg_probs)
             tables.append(table)
-        elif stage_name in ['CH20-1', 'CH29']:
+        elif stage_name in ['CH20-1', 'CH26-3', 'CH29']:
             tables.append('タマゴ出現数')
             max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
             eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]

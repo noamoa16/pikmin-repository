@@ -94,8 +94,7 @@ public CaveGen() {
         else if(
             (specialCaveInfoName.equals("CH5") && sublevel == 2) ||
             (specialCaveInfoName.equals("CH20") && sublevel == 1) ||
-            (specialCaveInfoName.equals("CH29") && sublevel == 1) ||
-            (specialCaveInfoName.equals("CH26") && sublevel == 3)
+            (specialCaveInfoName.equals("CH29") && sublevel == 1)
             ){
             int eggs = 0;
             for(Teki teki : placedTekis){
@@ -104,6 +103,18 @@ public CaveGen() {
                 }
             }
             key = "{eggs: " + eggs + "}";
+        }
+        else if(specialCaveInfoName.equals("CH26") && sublevel == 3){
+            int eggs = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("Egg")){
+                    eggs++;
+                }
+            }
+            key = "{eggs: " + eggs + "}";
+            if(eggs >= 9){
+                System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
+            }
         }
         else if(specialCaveInfoName.equals("CH8") && sublevel == 1){
             int kocha = 0;
