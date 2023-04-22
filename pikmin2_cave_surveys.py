@@ -178,7 +178,7 @@ def calc_mitites_prob(num_eggs: int, mitites: int) -> float:
         return math.comb(num_eggs, mitites) * (mprob ** mitites) * ((1 - mprob) ** (num_eggs - mitites))
 
 def parse_data(data_str: str):
-    data: dict[str, str] = yaml.safe_load(data_str)
+    data: dict[str, Any] = yaml.safe_load(data_str)
     stage_names = list(data.keys())
     soup = BeautifulSoup()
 
@@ -254,7 +254,7 @@ def parse_data(data_str: str):
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
 
-            no_kemekuji_seed = data[stage_name]['seeds']['no_kemekuji']
+            no_kemekuji_seed: int = data[stage_name]['seeds']['no_kemekuji']
             tables.append(f'ケメクジのいない地形 (シード値 = 0x{no_kemekuji_seed:08X})')
             tables.append(soup.new_tag('br'))
             img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{no_kemekuji_seed:08X}.png')
@@ -347,7 +347,7 @@ def parse_data(data_str: str):
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
 
-            _8eggs_seed = data[stage_name]['seeds']['8eggs']
+            _8eggs_seed: int = data[stage_name]['seeds']['8eggs']
             tables.append(f'タマゴ8個の地形 (シード値 = 0x{_8eggs_seed:08X})')
             tables.append(soup.new_tag('br'))
             img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{_8eggs_seed:08X}.png')
