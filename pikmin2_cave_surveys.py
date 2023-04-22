@@ -344,6 +344,16 @@ def parse_data(data_str: str):
             egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
             table = create_mitites_table(soup, egg_probs = egg_probs)
             tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            _8eggs_seed = data[stage_name]['seeds']['8eggs']
+            tables.append(f'タマゴ8個の地形 (シード値 = 0x{_8eggs_seed:08X})')
+            tables.append(soup.new_tag('br'))
+            img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{_8eggs_seed:08X}.png')
+            img = soup.new_tag('img', src = img_src, width = 480)
+            tables.append(img)
+            tables.append(soup.new_tag('br'))
         elif stage_name in ['CH20-1', 'CH26-3', 'CH29']:
             tables.append('タマゴ出現数')
             max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
