@@ -354,7 +354,30 @@ def parse_data(data_str: str):
             img = soup.new_tag('img', src = img_src, width = 480)
             tables.append(img)
             tables.append(soup.new_tag('br'))
-        elif stage_name in ['CH20-1', 'CH26-3']:
+        elif stage_name == 'CH20-1':
+            tables.append('タマゴ出現数')
+            max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
+            eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
+            table = create_count_table(soup, eggs)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            tables.append('タマゴムシの確率')
+            egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
+            table = create_mitites_table(soup, egg_probs = egg_probs)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            best_seed: int = data[stage_name]['seeds']['best']
+            tables.append(f'タマゴ5個の地形(一例) (シード値 = 0x{best_seed:08X})')
+            tables.append(soup.new_tag('br'))
+            img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{best_seed:08X}.png')
+            img = soup.new_tag('img', src = img_src, width = 480)
+            tables.append(img)
+            tables.append(soup.new_tag('br'))
+        elif stage_name == 'CH26-3':
             tables.append('タマゴ出現数')
             max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
             eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
