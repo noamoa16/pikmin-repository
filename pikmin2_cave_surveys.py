@@ -240,6 +240,11 @@ def parse_data(data_str: str):
             tables.append('固定タマコキン出現率')
             table = create_true_false_table_from_result(soup, result, 'fixedTamakokin')
             tables.append(table)
+        elif stage_name == 'BK-4':
+            tables.append('ムラサキポンガシ出現数')
+            counts = [result.get(f'{{murasakipom: {i}}}', 0) for i in range(3)]
+            table = create_count_table(soup, counts)
+            tables.append(table)
         elif stage_name == 'CoS-3':
             tables.append('ポポガシグサ出現率')
             table = create_true_false_table_from_result(soup, result, 'popogashi')

@@ -10,6 +10,9 @@ SCx-4:
 SCx-7:
   name: 地下の秘密基地
   trial: {"seed": 0x00000000, "num": 0x10000000, "result": {"{fixedTamakokin: false}": 3491589, "{fixedTamakokin: true}": 264943867}}
+BK-4:
+  name: デメマダラの王国
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{murasakipom: 0}": 17724635, "{murasakipom: 1}": 501369099, "{murasakipom: 2}": 1628389914}}
 CoS-3:
   name: クモの根城
   trial: {"seed": 0x00000000, "num": 0x20000000, "result": {"{popogashi: false}": 64643688, "{popogashi: true}": 472227224}}
