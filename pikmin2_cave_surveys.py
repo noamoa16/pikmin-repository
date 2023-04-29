@@ -231,6 +231,11 @@ def parse_data(data_str: str):
             tables.append('オオガネモチ出現率')
             table = create_true_false_table_from_result(soup, result, 'oogane')
             tables.append(table)
+        elif stage_name == 'SCx-4':
+            tables.append('シロポンガシ出現数')
+            counts = [result.get(f'{{whitepom: {i}}}', 0) for i in range(4)]
+            table = create_count_table(soup, counts)
+            tables.append(table)
         elif stage_name == 'SCx-7':
             tables.append('固定タマコキン出現率')
             table = create_true_false_table_from_result(soup, result, 'fixedTamakokin')
