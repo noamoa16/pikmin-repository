@@ -1,3 +1,6 @@
+FC-4:
+  name: 辺境の洞窟
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{murasakipom: true}": 88820974, "{murasakipom: false}": 45396754}}
 FC-7:
   name: 辺境の洞窟
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{oogane: true}": 75122690, "{oogane: false}": 59095038}}

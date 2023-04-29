@@ -223,7 +223,11 @@ def parse_data(data_str: str):
         tables.append(seed_text)
         tables.append(soup.new_tag('p', style = 'margin:20px'))
 
-        if stage_name in ['FC-7', 'SC-4']:
+        if stage_name in ['FC-4', 'GK-5']:
+            tables.append('ムラサキポンガシ出現率')
+            table = create_true_false_table_from_result(soup, result, 'murasakipom')
+            tables.append(table)
+        elif stage_name in ['FC-7', 'SC-4']:
             tables.append('オオガネモチ出現率')
             table = create_true_false_table_from_result(soup, result, 'oogane')
             tables.append(table)
@@ -238,10 +242,6 @@ def parse_data(data_str: str):
         elif stage_name == 'CoS-4':
             tables.append('お宝持ちシャコモドキ出現率')
             table = create_true_false_table_from_result(soup, result, 'chocolate')
-            tables.append(table)
-        elif stage_name == 'GK-5':
-            tables.append('ムラサキポンガシ出現率')
-            table = create_true_false_table_from_result(soup, result, 'murasakipom')
             tables.append(table)
         elif stage_name == 'SR-6':
             tables.append('オナラシ出現率')
