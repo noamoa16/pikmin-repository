@@ -10,6 +10,18 @@ public CaveGen() {
         
         String key;
         if(
+            (specialCaveInfoName.equals("FC") && sublevel == 4) ||
+            (specialCaveInfoName.equals("GK") && sublevel == 5)
+            ){
+            boolean murasakipom = false;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("BlackPom")){
+                    murasakipom = true;
+                }
+            }
+            key = "{murasakipom: " + murasakipom + "}";
+        }
+        else if(
             (specialCaveInfoName.equals("FC") && sublevel == 7) ||
             (specialCaveInfoName.equals("SC") && sublevel == 4)
             ){
@@ -21,6 +33,15 @@ public CaveGen() {
             }
             key = "{oogane: " + oogane + "}";
         }
+        else if(specialCaveInfoName.equals("SCx") && sublevel == 4){
+            int whitepom = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("WhitePom")){
+                    whitepom++;;
+                }
+            }
+            key = "{whitepom: " + whitepom + "}";
+        }
         else if(specialCaveInfoName.equals("SCx") && sublevel == 7){
             boolean fixedTamakokin = false;
             for(Teki teki : placedTekis){
@@ -29,6 +50,15 @@ public CaveGen() {
                 }
             }
             key = "{fixedTamakokin: " + fixedTamakokin + "}";
+        }
+        else if(specialCaveInfoName.equals("BK") && sublevel == 4){
+            int murasakipom = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("BlackPom")){
+                    murasakipom++;
+                }
+            }
+            key = "{murasakipom: " + murasakipom + "}";
         }
         else if(specialCaveInfoName.equals("CoS") && sublevel == 3){
             boolean popogashi = false;
@@ -51,15 +81,6 @@ public CaveGen() {
                 }
             }
             key = "{chocolate: " + chocolate + "}";
-        }
-        else if(specialCaveInfoName.equals("GK") && sublevel == 5){
-            boolean murasakipom = false;
-            for(Teki teki : placedTekis){
-                if(teki.tekiName.equals("BlackPom")){
-                    murasakipom = true;
-                }
-            }
-            key = "{murasakipom: " + murasakipom + "}";
         }
         else if(specialCaveInfoName.equals("SR") && sublevel == 6){
             boolean onarashi = false;
@@ -91,11 +112,7 @@ public CaveGen() {
             }
             key = "{mitites: " + mitites + "}";
         }
-        else if(
-            (specialCaveInfoName.equals("CH5") && sublevel == 2) ||
-            (specialCaveInfoName.equals("CH20") && sublevel == 1) ||
-            (specialCaveInfoName.equals("CH29") && sublevel == 1)
-            ){
+        else if(specialCaveInfoName.equals("CH5") && sublevel == 2){
             int eggs = 0;
             for(Teki teki : placedTekis){
                 if(teki.tekiName.equals("Egg")){
@@ -103,18 +120,6 @@ public CaveGen() {
                 }
             }
             key = "{eggs: " + eggs + "}";
-        }
-        else if(specialCaveInfoName.equals("CH26") && sublevel == 3){
-            int eggs = 0;
-            for(Teki teki : placedTekis){
-                if(teki.tekiName.equals("Egg")){
-                    eggs++;
-                }
-            }
-            key = "{eggs: " + eggs + "}";
-            if(eggs >= 9){
-                System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
-            }
         }
         else if(specialCaveInfoName.equals("CH8") && sublevel == 1){
             int kocha = 0;
@@ -124,6 +129,9 @@ public CaveGen() {
                 }
             }
             key = "{kocha: " + kocha + "}";
+            if(kocha <= 3){
+                System.out.println(String.format("kocha = %d, seed = 0x%08X", kocha, firstGenSeed + i));
+            }
         }
         else if(specialCaveInfoName.equals("CH18") && sublevel == 1){
             int eggs = 0;
@@ -139,6 +147,33 @@ public CaveGen() {
             key = "{eggs: " + eggs + "}";
             counter.put(key, counter.getOrDefault(key, 0) + 1);
             key = "{yakicha: " + yakicha + "}";
+            if(eggs >= 7){
+                System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
+            }
+        }
+        else if(specialCaveInfoName.equals("CH20") && sublevel == 1){
+            int eggs = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("Egg")){
+                    eggs++;
+                }
+            }
+            key = "{eggs: " + eggs + "}";
+            if(eggs >= 5){
+                System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
+            }
+        }
+        else if(specialCaveInfoName.equals("CH26") && sublevel == 3){
+            int eggs = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("Egg")){
+                    eggs++;
+                }
+            }
+            key = "{eggs: " + eggs + "}";
+            if(eggs >= 9){
+                System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
+            }
         }
         else if(specialCaveInfoName.equals("CH28") && sublevel == 1){
             int eggs = 0;
@@ -155,6 +190,18 @@ public CaveGen() {
             counter.put(key, counter.getOrDefault(key, 0) + 1);
             boolean geyser = placedGeyser != null;
             key = "{geyser: " + geyser + "}";
+        }
+        else if(specialCaveInfoName.equals("CH29") && sublevel == 1){
+            int eggs = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("Egg")){
+                    eggs++;
+                }
+            }
+            key = "{eggs: " + eggs + "}";
+            if(eggs >= 7){
+                System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
+            }
         }
         else{
             throw new UnsupportedOperationException(specialCaveInfoName + "-" + sublevel);
