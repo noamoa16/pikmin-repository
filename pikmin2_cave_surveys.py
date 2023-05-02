@@ -268,7 +268,7 @@ def parse_data(data_str: str):
             tables.append(f'ケメクジのいない地形 (シード値 = 0x{no_kemekuji_seed:08X})')
             tables.append(soup.new_tag('br'))
             img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{no_kemekuji_seed:08X}.png')
-            img = soup.new_tag('img', src = img_src, width = 480)
+            img = soup.new_tag('img', src = img_src, width = 480, decoding = "async", alt = f'{stage_name} - 0x{no_kemekuji_seed:08X}')
             tables.append(img)
             tables.append(soup.new_tag('br'))
         elif stage_name == 'CH2-2':
@@ -361,7 +361,7 @@ def parse_data(data_str: str):
             tables.append(f'タマゴ8個の地形 (シード値 = 0x{_8eggs_seed:08X})')
             tables.append(soup.new_tag('br'))
             img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{_8eggs_seed:08X}.png')
-            img = soup.new_tag('img', src = img_src, width = 480)
+            img = soup.new_tag('img', src = img_src, width = 480, decoding = "async", alt = f'{stage_name} - 0x{_8eggs_seed:08X}')
             tables.append(img)
             tables.append(soup.new_tag('br'))
         elif stage_name == 'CH20-1':
@@ -384,7 +384,7 @@ def parse_data(data_str: str):
             tables.append(f'タマゴ5個の地形(一例) (シード値 = 0x{best_seed:08X})')
             tables.append(soup.new_tag('br'))
             img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{best_seed:08X}.png')
-            img = soup.new_tag('img', src = img_src, width = 480)
+            img = soup.new_tag('img', src = img_src, width = 480, decoding = "async", alt = f'{stage_name} - 0x{best_seed:08X}')
             tables.append(img)
             tables.append(soup.new_tag('br'))
         elif stage_name == 'CH26-3':
@@ -407,7 +407,7 @@ def parse_data(data_str: str):
             tables.append(f'タマゴ10個の地形 (シード値 = 0x{_10eggs_seed:08X})')
             tables.append(soup.new_tag('br'))
             img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}/{_10eggs_seed:08X}.png')
-            img = soup.new_tag('img', src = img_src, width = 480)
+            img = soup.new_tag('img', src = img_src, width = 480, decoding = "async", alt = f'{stage_name} - 0x{_10eggs_seed:08X}')
             tables.append(img)
             tables.append(soup.new_tag('br'))
         elif stage_name == 'CH28':
@@ -466,7 +466,7 @@ def parse_data(data_str: str):
             tables.append(f'タマゴ7個の地形 (シード値 = 0x{_7eggs_seed:08X})')
             tables.append(soup.new_tag('br'))
             img_src = '..' + flask.url_for('static', filename = f'images/CaveGen/{stage_name}-1/{_7eggs_seed:08X}.png')
-            img = soup.new_tag('img', src = img_src, width = 480)
+            img = soup.new_tag('img', src = img_src, width = 480, decoding = "async", alt = f'{stage_name}-1 - 0x{_7eggs_seed:08X}')
             tables.append(img)
             tables.append(soup.new_tag('br'))
         else:
