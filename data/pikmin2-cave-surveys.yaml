@@ -13,6 +13,9 @@ SCx-7:
 BK-4:
   name: デメマダラの王国
   trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{murasakipom: 0}": 17724635, "{murasakipom: 1}": 501369099, "{murasakipom: 2}": 1628389914}}
+BK-6:
+  name: デメマダラの王国
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{murasakipom: false}": 133945915, "{murasakipom: true}": 2013537733}}
 CoS-3:
   name: クモの根城
   trial: {"seed": 0x00000000, "num": 0x20000000, "result": {"{popogashi: false}": 64643688, "{popogashi: true}": 472227224}}

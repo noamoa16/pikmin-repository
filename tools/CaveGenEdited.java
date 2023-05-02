@@ -11,7 +11,9 @@ public CaveGen() {
         String key;
         if(
             (specialCaveInfoName.equals("FC") && sublevel == 4) ||
-            (specialCaveInfoName.equals("GK") && sublevel == 5)
+            (specialCaveInfoName.equals("BK") && sublevel == 6) ||
+            (specialCaveInfoName.equals("GK") && sublevel == 5) ||
+            (specialCaveInfoName.equals("SR") && sublevel == 5)
             ){
             boolean murasakipom = false;
             for(Teki teki : placedTekis){
@@ -171,7 +173,7 @@ public CaveGen() {
                 }
             }
             key = "{eggs: " + eggs + "}";
-            if(eggs >= 9){
+            if(eggs >= 10){
                 System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
             }
         }
