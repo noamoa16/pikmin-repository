@@ -223,7 +223,7 @@ def parse_data(data_str: str):
         tables.append(seed_text)
         tables.append(soup.new_tag('p', style = 'margin:20px'))
 
-        if stage_name in ['FC-4', 'BK-6', 'GK-5']:
+        if stage_name in ['FC-4', 'BK-6', 'GK-5', 'SR-5']:
             tables.append('ムラサキポンガシ出現率')
             table = create_true_false_table_from_result(soup, result, 'murasakipom')
             tables.append(table)

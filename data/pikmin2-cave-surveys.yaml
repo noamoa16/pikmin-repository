@@ -25,6 +25,9 @@ CoS-4:
 GK-5:
   name: 食神の台所
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{murasakipom: true}": 134037987, "{murasakipom: false}": 179741}}
+SR-5:
+  name: シャワールーム
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{murasakipom: false}": 1492691061, "{murasakipom: true}": 654792587}}
 SR-6:
   name: シャワールーム
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{onarashi: false}": 9138760, "{onarashi: true}": 125078968}}
