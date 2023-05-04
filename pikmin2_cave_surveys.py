@@ -96,6 +96,40 @@ def create_count_table(
     table = create_table(soup, array, background_color = background_color)
     return table
 
+def create_count_table2d(
+        soup: BeautifulSoup, 
+        counts: list[list[int]] | np.ndarray, 
+        xlabels: list[Any],
+        ylabels: list[Any],
+        *,
+        title: str | None = None,
+        ):
+    '''
+    `counts`を縦横に並べた表を作成
+    '''
+    counts = np.array(counts)
+    num_to_generate = int(counts.astype(np.int64).sum())
+    xlabels = [str(l) for l in xlabels]
+    ylabels = [str(l) for l in ylabels]
+    array = np.full((3 * (counts.shape[0] + 1) + 1, counts.shape[1] + 2), '', dtype = object)
+    if title is not None:
+        array[0, 0] = title
+    array[1:, 0] = '↓'
+    array[3 * np.arange(counts.shape[0] + 1) + 1, 0] = ylabels + ['合計']
+    array[0, 1:] = xlabels + ['合計']
+    for i in range(counts.shape[0]):
+        for j in range(counts.shape[1]):
+            array[3 * i + 1: 3 * i + 4, j + 1] = get_count_prob_tuple(counts[i, j], num_to_generate)
+        array[3 * i + 1: 3 * i + 4, counts.shape[1] + 1] = get_count_prob_tuple(counts[i, :].sum(), num_to_generate)
+    for j in range(counts.shape[1]):
+        array[3 * counts.shape[0] + 1: 3 * counts.shape[0] + 4, j + 1] = get_count_prob_tuple(counts[:, j].sum(), num_to_generate)
+    array[3 * counts.shape[0] + 1: 3 * counts.shape[0] + 4, counts.shape[1] + 1] = get_count_prob_tuple(num_to_generate, num_to_generate)
+    background_color = np.full(array.shape, '', dtype = object)
+    background_color[0, :] = '#d0d0d0'
+    background_color[3 * np.arange(counts.shape[0] + 1) + 1, :] = '#e0e0e0'
+    table = create_table(soup, array, background_color = background_color)
+    return table
+
 def create_true_false_table_from_counts(soup: BeautifulSoup, counts: list[int]) -> bs4.Tag:
     '''
     ありかなしかの2択を表す表を作成
@@ -278,25 +312,11 @@ def parse_data(data_str: str):
             tables.append(soup.new_tag('br'))
         elif stage_name == 'CH2-2':
             tables.append('地形とタマゴムシ')
-            array = np.full((13, 4), '', dtype = object)
-            array[0, 0] = '地形＼タマゴムシ'
-            array[[1, 4, 7, 10], 0] = ('丸部屋', '丸部屋 (S字)', '三日月', '合計')
-            array[[2, 3, 5, 6, 8, 9, 11, 12], 0] = '↓'
-            for mitites in [1, 2]:
-                array[0, mitites] = mitites
-                array[1 : 4, mitites] = get_count_prob_tuple(result[f'{{room: circle, mitites: {mitites}}}'], num_to_generate)
-                array[4 : 7, mitites] = get_count_prob_tuple(result[f'{{room: circle_s, mitites: {mitites}}}'], num_to_generate)
-                array[7 : 10, mitites] = get_count_prob_tuple(result[f'{{room: crescent, mitites: {mitites}}}'], num_to_generate)
-                array[10 : 13, mitites] = get_count_prob_tuple(sum(result[f'{{room: {room}, mitites: {mitites}}}'] for room in ['circle', 'circle_s', 'crescent']), num_to_generate)
-            array[0, 3] = '合計'
-            array[1 : 4, 3] = get_count_prob_tuple(sum(result[f'{{room: circle, mitites: {mitites}}}'] for mitites in [1, 2]), num_to_generate)
-            array[4 : 7, 3] = get_count_prob_tuple(sum(result[f'{{room: circle_s, mitites: {mitites}}}'] for mitites in [1, 2]), num_to_generate)
-            array[7 : 10, 3] = get_count_prob_tuple(sum(result[f'{{room: crescent, mitites: {mitites}}}'] for mitites in [1, 2]), num_to_generate)
-            array[10 : 13, 3] = get_count_prob_tuple(num_to_generate, num_to_generate)
-            background_color = np.full((13, 4), '', dtype = object)
-            background_color[0, :] = '#d0d0d0'
-            background_color[[1, 4, 7, 10], :] = '#e0e0e0'
-            table = create_table(soup, array, background_color = background_color)
+            counts = np.zeros((3, 2), dtype = int)
+            for i, room in enumerate(['circle', 'circle_s', 'crescent']):
+                for j, mitites in enumerate([1, 2]):
+                    counts[i, j] = result[f'{{room: {room}, mitites: {mitites}}}']
+            table = create_count_table2d(soup, counts, [1, 2], ['丸部屋', '丸部屋 (S字)', '三日月'], title = '地形＼タマゴムシ')
             tables.append(table)
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
