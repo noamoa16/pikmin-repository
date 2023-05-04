@@ -108,7 +108,7 @@ def create_count_table2d(
     `counts`を縦横に並べた表を作成
     '''
     counts = np.array(counts)
-    num_to_generate = int(counts.astype(np.int64).sum())
+    num_to_generate = int(counts.sum())
     xlabels = [str(l) for l in xlabels]
     ylabels = [str(l) for l in ylabels]
     array = np.full((3 * (counts.shape[0] + 1) + 1, counts.shape[1] + 2), '', dtype = object)
@@ -312,7 +312,7 @@ def parse_data(data_str: str):
             tables.append(soup.new_tag('br'))
         elif stage_name == 'CH2-2':
             tables.append('地形とタマゴムシ')
-            counts = np.zeros((3, 2), dtype = int)
+            counts = np.zeros((3, 2), dtype = np.int64)
             for i, room in enumerate(['circle', 'circle_s', 'crescent']):
                 for j, mitites in enumerate([1, 2]):
                     counts[i, j] = result[f'{{room: {room}, mitites: {mitites}}}']
