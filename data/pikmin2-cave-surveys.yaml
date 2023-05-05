@@ -22,6 +22,9 @@ CoS-3:
 CoS-4:
   name: クモの根城
   trial: {"seed": 0x00000000, "num": 0x40000000, "result": {"{chocolate: false}": 137390, "{chocolate: true}": 1073604434}}
+GK-3:
+  name: 食神の台所
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{castanets: false}": 6489382, "{castanets: true}": 2140994266, "{yellowpom: false}": 55586481, "{yellowpom: true}": 2091897167}}
 GK-5:
   name: 食神の台所
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{murasakipom: true}": 134037987, "{murasakipom: false}": 179741}}

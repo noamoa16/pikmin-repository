@@ -84,6 +84,23 @@ public CaveGen() {
             }
             key = "{chocolate: " + chocolate + "}";
         }
+        else if(specialCaveInfoName.equals("GK") && sublevel == 3){
+            boolean yellowpom = false;
+            boolean castanets = false;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("YellowPom")){
+                    yellowpom = true;
+                }
+            }
+            for(Item item : placedItems){
+                if(item.itemName.equals("castanets")){
+                    castanets = true;
+                }
+            }
+            key = "{yellowpom: " + yellowpom + "}";
+            counter.put(key, counter.getOrDefault(key, 0) + 1);
+            key = "{castanets: " + castanets + "}";
+        }
         else if(specialCaveInfoName.equals("SR") && sublevel == 6){
             boolean onarashi = false;
             for(Teki teki : placedTekis){
@@ -164,6 +181,36 @@ public CaveGen() {
             if(eggs >= 5){
                 System.out.println(String.format("eggs = %d, seed = 0x%08X", eggs, firstGenSeed + i));
             }
+        }
+        else if(specialCaveInfoName.equals("CH21") && sublevel == 1){
+            int bikkuri = 0, haori = 0, oogane = 0, ujimesu = 0, ujiosu = 0, tobinko = 0;
+            for(Teki teki : placedTekis){
+                if(teki.tekiName.equals("Hana")){
+                    bikkuri++;
+                }
+                else if(teki.tekiName.equals("Armor")){
+                    haori++;
+                }
+                else if(teki.tekiName.equals("Wealthy")){
+                    oogane++;
+                }
+                else if(teki.tekiName.equals("UjiA")){
+                    ujimesu++;
+                }
+                else if(teki.tekiName.equals("UjiB")){
+                    ujiosu++;
+                }
+                else if(teki.tekiName.equals("Tobi")){
+                    tobinko++;
+                }
+            }
+            if(bikkuri != 2 || haori != 3 || oogane != 1){
+                System.out.println(String.format(
+                    "bikkuri = %d, haori = %d, oogane = %d, ujimesu = %d, ujiosu = %d, tobinko = %d",
+                    bikkuri, haori, oogane, ujimesu, ujiosu, tobinko
+                ));
+            }
+            key = "{ujimesu: " + ujimesu + ", ujiosu: " + ujiosu + ", tobinko: " + tobinko + "}";
         }
         else if(specialCaveInfoName.equals("CH26") && sublevel == 3){
             int eggs = 0;

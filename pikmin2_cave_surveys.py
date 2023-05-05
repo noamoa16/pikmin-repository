@@ -303,6 +303,16 @@ def parse_data(data_str: str):
             tables.append('お宝持ちシャコモドキ出現率')
             table = create_true_false_table_from_result(soup, result, 'chocolate')
             tables.append(table)
+        elif stage_name == 'GK-3':
+            tables.append('カスタネット出現率')
+            table = create_true_false_table_from_result(soup, result, 'castanets')
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            tables.append('キイロポンガシ出現率')
+            table = create_true_false_table_from_result(soup, result, 'yellowpom')
+            tables.append(table)
         elif stage_name == 'SR-6':
             tables.append('オナラシ出現率')
             table = create_true_false_table_from_result(soup, result, 'onarashi')
