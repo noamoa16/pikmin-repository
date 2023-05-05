@@ -111,8 +111,8 @@ def create_count_table2d(
     '''
     counts = np.array(counts)
     num_to_generate = int(counts.sum())
-    xlabels = [str(l) for l in xlabels]
-    ylabels = [str(l) for l in ylabels]
+    xlabels = list(map(str, xlabels))
+    ylabels = list(map(str, ylabels))
     rows = 3 * counts.shape[0] + 1
     cols = counts.shape[1] + 1
     if ysum: rows += 3
