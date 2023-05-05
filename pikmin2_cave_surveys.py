@@ -380,6 +380,19 @@ def parse_data(data_str: str):
                     mitites_probs[i + j] += b1_mitites_probs[i] * b2_mitites_probs[j]
             table = create_mitites_table(soup, mitites_probs = mitites_probs)
             tables.append(table)
+        elif stage_name == 'CH7-2':
+            tables.append('タマゴ出現数')
+            max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())
+            eggs = [result.get(f'{{eggs: {egg}}}', 0) for egg in range(max_eggs + 1)]
+            table = create_count_table(soup, eggs)
+            tables.append(table)
+
+            tables.append(soup.new_tag('p', style = 'margin:20px'))
+
+            tables.append('タマゴムシの確率')
+            egg_probs = [result.get(f'{{eggs: {eggs}}}', 0) / num_to_generate for eggs in range(max_eggs + 1)]
+            table = create_mitites_table(soup, egg_probs = egg_probs)
+            tables.append(table)
         elif stage_name == 'CH8':
             tables.append('コチャ出現数')
             max_kochas: int = max(yaml.safe_load(k)['kocha'] for k in result.keys())
