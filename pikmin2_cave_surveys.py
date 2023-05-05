@@ -426,6 +426,22 @@ def parse_data(data_str: str):
             img = load_cavegen_image(soup, stage_name_full, best_seed)
             tables.append(img)
             tables.append(soup.new_tag('br'))
+        elif stage_name == 'CH21-1':
+            tables.append('敵の数 (ウジンコ♂, ウジンコ♀, トビンコ)')
+            counts = []
+            labels = []
+            for key, count in result.items():
+                enemy_dict: dict[str, int] = yaml.safe_load(key)
+                label = (enemy_dict['ujiosu'], enemy_dict['ujimesu'], enemy_dict['tobinko'])
+                labels.append(label)
+                counts.append(count)
+            labels, counts = zip(*sorted(
+                zip(labels, counts), 
+                key = lambda t: t[0][0] * 87 + t[0][1] * 86 + t[0][2] * 62
+            ))
+            labels = list(map(str, labels))
+            table = create_count_table(soup, counts, labels = labels)
+            tables.append(table)
         elif stage_name == 'CH26-3':
             tables.append('タマゴ出現数')
             max_eggs: int = max(yaml.safe_load(k)['eggs'] for k in result.keys())

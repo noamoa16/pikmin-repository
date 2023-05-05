@@ -61,6 +61,9 @@ CH20-1:
   seeds:
     5eggs: [0x01A3514F, 0x10806972, 0x1B9DB384, 0x2445DA63, 0x48AFFC04, 0x51D85AE2, 0x736F8ED8, 0x7BF1A698]
     best: 0x2445DA63
+CH21-1:
+  name: 土とんの洞窟
+  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{ujimesu: 3, ujiosu: 3, tobinko: 6}": 21504298, "{ujimesu: 3, ujiosu: 4, tobinko: 5}": 11135690, "{ujimesu: 3, ujiosu: 5, tobinko: 4}": 11137297, "{ujimesu: 3, ujiosu: 6, tobinko: 3}": 21512960, "{ujimesu: 4, ujiosu: 3, tobinko: 5}": 11133246, "{ujimesu: 4, ujiosu: 4, tobinko: 4}": 2864772, "{ujimesu: 4, ujiosu: 5, tobinko: 3}": 11138871, "{ujimesu: 5, ujiosu: 3, tobinko: 4}": 11137916, "{ujimesu: 5, ujiosu: 4, tobinko: 3}": 11139656, "{ujimesu: 6, ujiosu: 3, tobinko: 3}": 21513022}}
 CH26-3:
   name: 倍々ゲームの穴
   trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{eggs: 0}": 1801039082, "{eggs: 10}": 1, "{eggs: 1}": 274912913, "{eggs: 2}": 57990146, "{eggs: 3}": 11218801, "{eggs: 4}": 1961495, "{eggs: 5}": 314118, "{eggs: 6}": 41995, "{eggs: 7}": 4687, "{eggs: 8}": 392, "{eggs: 9}": 18}}
