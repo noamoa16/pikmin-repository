@@ -103,6 +103,8 @@ def create_count_table2d(
         ylabels: list[Any],
         *,
         title: str | None = None,
+        xsum: bool = True,
+        ysum: bool = True,
         ):
     '''
     `counts`を縦横に並べた表を作成
@@ -111,22 +113,30 @@ def create_count_table2d(
     num_to_generate = int(counts.sum())
     xlabels = [str(l) for l in xlabels]
     ylabels = [str(l) for l in ylabels]
-    array = np.full((3 * (counts.shape[0] + 1) + 1, counts.shape[1] + 2), '', dtype = object)
-    if title is not None:
-        array[0, 0] = title
+    rows = 3 * counts.shape[0] + 1
+    cols = counts.shape[1] + 1
+    if ysum: rows += 3
+    if xsum: cols += 1
+    array = np.full((rows, cols), '', dtype = object)
+    if title is not None: array[0, 0] = title
     array[1:, 0] = '↓'
-    array[3 * np.arange(counts.shape[0] + 1) + 1, 0] = ylabels + ['合計']
-    array[0, 1:] = xlabels + ['合計']
+    array[3 * np.arange(counts.shape[0]) + 1, 0] = ylabels
+    if xsum: array[0, -1] = '合計'
+    if ysum: array[-3, 0] = '合計'
+    array[0, 1: 1 + counts.shape[1]] = xlabels
     for i in range(counts.shape[0]):
         for j in range(counts.shape[1]):
             array[3 * i + 1: 3 * i + 4, j + 1] = get_count_prob_tuple(counts[i, j], num_to_generate)
-        array[3 * i + 1: 3 * i + 4, counts.shape[1] + 1] = get_count_prob_tuple(counts[i, :].sum(), num_to_generate)
-    for j in range(counts.shape[1]):
-        array[3 * counts.shape[0] + 1: 3 * counts.shape[0] + 4, j + 1] = get_count_prob_tuple(counts[:, j].sum(), num_to_generate)
-    array[3 * counts.shape[0] + 1: 3 * counts.shape[0] + 4, counts.shape[1] + 1] = get_count_prob_tuple(num_to_generate, num_to_generate)
+        if xsum:
+            array[3 * i + 1: 3 * i + 4, -1] = get_count_prob_tuple(counts[i, :].sum(), num_to_generate)
+    if ysum:
+        for j in range(counts.shape[1]):
+            array[-3:, j + 1] = get_count_prob_tuple(counts[:, j].sum(), num_to_generate)
+    if xsum and ysum:
+        array[3 * counts.shape[0] + 1: 3 * counts.shape[0] + 4, counts.shape[1] + 1] = get_count_prob_tuple(num_to_generate, num_to_generate)
     background_color = np.full(array.shape, '', dtype = object)
     background_color[0, :] = '#d0d0d0'
-    background_color[3 * np.arange(counts.shape[0] + 1) + 1, :] = '#e0e0e0'
+    background_color[3 * np.arange(rows // 3) + 1, :] = '#e0e0e0'
     table = create_table(soup, array, background_color = background_color)
     return table
 
@@ -316,7 +326,13 @@ def parse_data(data_str: str):
             for i, room in enumerate(['circle', 'circle_s', 'crescent']):
                 for j, mitites in enumerate([1, 2]):
                     counts[i, j] = result[f'{{room: {room}, mitites: {mitites}}}']
-            table = create_count_table2d(soup, counts, [1, 2], ['丸部屋', '丸部屋 (S字)', '三日月'], title = '地形＼タマゴムシ')
+            table = create_count_table2d(
+                soup, 
+                counts, 
+                [1, 2], 
+                ['丸部屋', '丸部屋 (S字)', '三日月'], 
+                title = '地形＼タマゴムシ',
+            )
             tables.append(table)
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
@@ -440,26 +456,18 @@ def parse_data(data_str: str):
             tables.append(soup.new_tag('p', style = 'margin:20px'))
 
             tables.append('タマゴ出現数')
-            array = np.full((7, 8), '', dtype = object)
-            array[0, 0] = 'タマゴ'
-            array[1, 0] = 'エレキショイグモあり'
-            array[[2, 3, 5, 6], 0] = '↓'
-            array[4, 0] = 'エレキショイグモなし'
-            array[0, 7] = '合計'
-            for eggs in range(6):
-                elec_true = result.get(f'{{eggs: {eggs}, elec: true}}', 0)
-                elec_false = result.get(f'{{eggs: {eggs}, elec: false}}', 0)
-                array[0, 1 + eggs] = eggs
-                array[1 : 4, 1 + eggs] = get_count_prob_tuple(elec_true, num_to_generate)
-                array[4 : 7, 1 + eggs] = get_count_prob_tuple(elec_false, num_to_generate)
-            elec_true_sum = sum(v for k, v in result.items() if yaml.safe_load(k).get('elec', False))
-            elec_false_sum = sum(v for k, v in result.items() if not yaml.safe_load(k).get('elec', True))
-            array[1 : 4, 7] = get_count_prob_tuple(elec_true_sum, num_to_generate)
-            array[4 : 7, 7] = get_count_prob_tuple(elec_false_sum, num_to_generate)
-            background_color = np.full((7, 8), '', dtype = object)
-            background_color[0, :] = '#d0d0d0'
-            background_color[[1, 4], :] = '#e0e0e0'
-            table = create_table(soup, array, background_color = background_color)
+            counts = np.zeros((2, 6), dtype = np.int64)
+            for i, elec in enumerate(['true', 'false']):
+                for j, eggs in enumerate(range(6)):
+                    counts[i, j] = result.get(f'{{eggs: {eggs}, elec: {elec}}}', 0)
+            table = create_count_table2d(
+                soup, 
+                counts, 
+                list(range(6)), 
+                ['エレキショイグモあり', 'エレキショイグモなし'], 
+                title = 'タマゴ',
+                ysum = False,
+            )
             tables.append(table)
 
             tables.append(soup.new_tag('p', style = 'margin:20px'))
