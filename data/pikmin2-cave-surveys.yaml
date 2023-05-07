@@ -6,7 +6,7 @@ FC-7:
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{oogane: true}": 75122690, "{oogane: false}": 59095038}}
 SCx-4:
   name: 地下の秘密基地
-  trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{whitepom: 2}": 296460, "{whitepom: 3}": 133921268}}
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{whitepom: 2}": 4745536, "{whitepom: 3}": 2142738112}}
 SCx-7:
   name: 地下の秘密基地
   trial: {"seed": 0x00000000, "num": 0x10000000, "result": {"{fixedTamakokin: false}": 3491589, "{fixedTamakokin: true}": 264943867}}
