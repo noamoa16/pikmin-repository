@@ -399,6 +399,11 @@ def parse_data(data_str: str):
             kochas = [result.get(f'{{kocha: {kocha}}}', 0) for kocha in range(max_kochas + 1)]
             table = create_count_table(soup, kochas)
             tables.append(table)
+        elif stage_name == 'CH15':
+            tables.append('間欠泉の位置')
+            geysers = [result.get(f'{{geyser: {pos}}}', 0) for pos in ['front', 'back']]
+            table = create_count_table(soup, geysers, labels = ['手前', '奥'])
+            tables.append(table)
         elif stage_name == 'CH18-1':
             tables.append('ヤキチャッピー出現率')
             table = create_true_false_table_from_result(soup, result, 'yakicha')
@@ -464,6 +469,11 @@ def parse_data(data_str: str):
             ))
             labels = list(map(str, labels))
             table = create_count_table(soup, counts, labels = labels)
+            tables.append(table)
+        elif stage_name == 'CH21-2':
+            tables.append('間欠泉の位置')
+            geysers = [result.get(f'{{geyser: {pos}}}', 0) for pos in ['front', 'back']]
+            table = create_count_table(soup, geysers, labels = ['手前', '奥'])
             tables.append(table)
         elif stage_name == 'CH26-3':
             tables.append('タマゴ出現数')

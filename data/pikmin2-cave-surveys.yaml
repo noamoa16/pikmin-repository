@@ -56,6 +56,9 @@ CH8:
   trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{kocha: 10}": 34526550, "{kocha: 11}": 60822502, "{kocha: 12}": 164603696, "{kocha: 13}": 58044065, "{kocha: 14}": 135883137, "{kocha: 15}": 1654643721, "{kocha: 3}": 21, "{kocha: 4}": 9663, "{kocha: 5}": 32783, "{kocha: 6}": 211545, "{kocha: 7}": 1587759, "{kocha: 8}": 20611409, "{kocha: 9}": 16506797}}
   seeds:
     3kocha: [0x0383644F, 0x0B389459, 0x1C1E8B30, 0x1DCE30EC, 0x1E16106F, 0x2BD44F43, 0x2D1BCFD9, 0x2E037788, 0x38F86A4F, 0x3AF8206D, 0x4B23C922, 0x4C771979, 0x4CE4FD07, 0x4D638D28, 0x54330A33, 0x57C7E0C9, 0x5CD390F0, 0x68481C9E, 0x7480F66C, 0x7C7AB665, 0x7E79FFFA]
+CH15:
+  name: 大足の穴
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{geyser: back}": 1406910847, "{geyser: front}": 740572801}}
 CH18-1:
   name: 炎と水の試練場
   trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{eggs: 0}": 2066608906, "{eggs: 1}": 73064686, "{eggs: 2}": 7142103, "{eggs: 3}": 619219, "{eggs: 4}": 45111, "{eggs: 5}": 3369, "{eggs: 6}": 240, "{eggs: 7}": 13, "{eggs: 8}": 1, "{yakicha: false}": 8161489, "{yakicha: true}": 2139322159}}
@@ -70,6 +73,9 @@ CH20-1:
 CH21-1:
   name: 土とんの洞窟
   trial: {"seed": 0x00000000, "num": 0x08000000, "result": {"{ujimesu: 3, ujiosu: 3, tobinko: 6}": 21504298, "{ujimesu: 3, ujiosu: 4, tobinko: 5}": 11135690, "{ujimesu: 3, ujiosu: 5, tobinko: 4}": 11137297, "{ujimesu: 3, ujiosu: 6, tobinko: 3}": 21512960, "{ujimesu: 4, ujiosu: 3, tobinko: 5}": 11133246, "{ujimesu: 4, ujiosu: 4, tobinko: 4}": 2864772, "{ujimesu: 4, ujiosu: 5, tobinko: 3}": 11138871, "{ujimesu: 5, ujiosu: 3, tobinko: 4}": 11137916, "{ujimesu: 5, ujiosu: 4, tobinko: 3}": 11139656, "{ujimesu: 6, ujiosu: 3, tobinko: 3}": 21513022}}
+CH21-2:
+  name: 土とんの洞窟
+  trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{geyser: back}": 1073751922, "{geyser: front}": 1073731726}}
 CH26-3:
   name: 倍々ゲームの穴
   trial: {"seed": 0x00000000, "num": 0x80000000, "result": {"{eggs: 0}": 1801039082, "{eggs: 10}": 1, "{eggs: 1}": 274912913, "{eggs: 2}": 57990146, "{eggs: 3}": 11218801, "{eggs: 4}": 1961495, "{eggs: 5}": 314118, "{eggs: 6}": 41995, "{eggs: 7}": 4687, "{eggs: 8}": 392, "{eggs: 9}": 18}}
