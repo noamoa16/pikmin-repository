@@ -41,3 +41,11 @@ document_info:
         title: 30パーツパズル
         icon: fas fa-puzzle-piece fa-fw faa-horizontal animated color-green
         favicon: images/ship-parts/Gluon_Drive.jpg
+  others:
+    title: その他
+    icon: fa-solid fa-file
+    structure:
+      pixel-arts:
+        title: ドット絵集
+        icon: fa-solid fa-image
+        favicon: images/pixel-arts/Wollywog_32x32.png

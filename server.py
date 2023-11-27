@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 import pikmin2_cave_surveys
+import pixel_arts
 
 app = flask.Flask(__name__)
 
@@ -34,7 +35,7 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
     try:
         data_files = document_info[category]['structure'][page_name]['data']
     except:
-        return {}
+        data_files = []
     data: dict[str, str | Markup] = {}
     for data_file in data_files:
         path = Path(__file__).parent / f'data/{data_file}'
@@ -42,6 +43,10 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
     if (category, page_name) == ('pikmin2', 'cave-surveys'):
         data['pikmin2-cave-surveys.yaml'] = \
             pikmin2_cave_surveys.parse_data(data['pikmin2-cave-surveys.yaml'])
+    elif (category, page_name) == ('others', 'pixel-arts'):
+        data['pixel-arts'] = pixel_arts.generate(
+            Path(__file__).parent / 'static/images/pixel-arts'
+        )
     return data
 
 @app.route('/')
