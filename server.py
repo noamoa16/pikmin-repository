@@ -35,7 +35,7 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
         data_files = document_info[category]['structure'][page_name]['data']
     except:
         return {}
-    data: dict[str, str] = {}
+    data: dict[str, str | Markup] = {}
     for data_file in data_files:
         path = Path(__file__).parent / f'data/{data_file}'
         data[data_file] = load_data_file(path)
