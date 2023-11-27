@@ -6,7 +6,7 @@ document_info:
   pikmin1:
     title: ピクミン1
     icon: fas fa-star fa-fw color-red fa-pulse
-    structure:
+    pages:
       carrying-speed:
         title: 運搬速度
         icon: fas fa-people-carry fa-fw faa-passing animated color-orangered
@@ -18,7 +18,7 @@ document_info:
   pikmin2:
     title: ピクミン2
     icon: fas fa-star fa-fw color-gold fa-pulse
-    structure:
+    pages:
       cave-surveys:
         title: 洞窟調査
         icon: fas fa-sharp fa-solid fa-archway color-brown
@@ -32,7 +32,7 @@ document_info:
   minigames:
     title: ミニゲーム
     icon: fas fa-dice fa-fw color-green
-    structure:
+    pages:
       egg-lottery:
         title: タマゴくじ
         icon: fas fa-egg fa-fw color-gold faa-horizontal animated
@@ -44,7 +44,7 @@ document_info:
   others:
     title: その他
     icon: fa-solid fa-file
-    structure:
+    pages:
       pixel-arts:
         title: ドット絵集
         icon: fa-solid fa-image

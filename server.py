@@ -17,13 +17,13 @@ document_info = config['document_info']
 
 def get_title(category: str, page_name: str) -> str:
     try:
-        return document_info[category]['structure'][page_name]['title']
+        return document_info[category]['pages'][page_name]['title']
     except:
         return 'Unknown Title'
 
 def get_favicon(category: str, page_name: str) -> str:
     try:
-        return document_info[category]['structure'][page_name]['favicon']
+        return document_info[category]['pages'][page_name]['favicon']
     except:
         return ''
     
@@ -33,7 +33,7 @@ def load_data_file(data_file: Path) -> str:
 
 def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
     try:
-        data_files = document_info[category]['structure'][page_name]['data']
+        data_files = document_info[category]['pages'][page_name]['data']
     except:
         data_files = []
     data: dict[str, str | Markup] = {}
