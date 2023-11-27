@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import bs4
 import flask
+from markupsafe import Markup
 import numpy as np
 import json
 import yaml
@@ -553,4 +554,4 @@ def parse_data(data_str: str):
         tables.append(soup.new_tag('br'))
         soup.append(tables)
 
-    return flask.Markup(soup.prettify())
+    return Markup(soup.prettify())

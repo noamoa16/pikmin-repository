@@ -2,6 +2,7 @@
 import json
 import yaml
 import flask
+from markupsafe import Markup
 from pathlib import Path
 from typing import Any
 
@@ -29,7 +30,7 @@ def load_data_file(data_file: Path) -> str:
     assert data_file.exists()
     return open(data_file, encoding = 'utf-8').read()
 
-def get_data(category: str, page_name: str) -> dict[str, str | flask.Markup]:
+def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
     try:
         data_files = document_info[category]['structure'][page_name]['data']
     except:
