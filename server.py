@@ -6,8 +6,7 @@ from markupsafe import Markup
 from pathlib import Path
 from typing import Any
 
-import pikmin2_cave_surveys
-import pixel_arts
+from scripts import pikmin2_cave_surveys, pixel_arts
 
 app = flask.Flask(__name__)
 
