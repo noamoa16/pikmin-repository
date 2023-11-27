@@ -41,7 +41,7 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
         path = Path(__file__).parent / f'data/{data_file}'
         data[data_file] = load_data_file(path)
     if (category, page_name) == ('pikmin2', 'cave-surveys'):
-        data['pikmin2-cave-surveys.yaml'] = \
+        data['pikmin2-cave-surveys'] = \
             pikmin2_cave_surveys.parse_data(data['pikmin2-cave-surveys.yaml'])
     elif (category, page_name) == ('others', 'pixel-arts'):
         data['pixel-arts'] = pixel_arts.generate(
