@@ -1,0 +1,5 @@
+flask
+frozen-flask
+bs4
+pyyaml
+numpy
