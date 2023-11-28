@@ -380,7 +380,7 @@ function getTime(){
     return {"min": tmin, "sec": tsec, "dec": tdec};
 }
 
-$(function(){
+function init(){
     const fps = 30;
     setInterval(update, 1000 / fps);
 
@@ -469,7 +469,7 @@ $(function(){
         a.download += ".png"
         a.click();
     })
-});
+}
 
 function update(){
     // ゲームクリア
@@ -533,6 +533,8 @@ function update(){
     context.closePath();
     context.stroke();
 }
+
+$(init);
 
 </script>
 
