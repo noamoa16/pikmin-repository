@@ -6,7 +6,7 @@ let image = {};
 let breakingStarted = false;
 let broken;
 
-let cell = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
+let board = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
 
 function spawnFromEgg(){
     let r = Math.random();
@@ -38,7 +38,7 @@ function start(canvas, imageDirPath){
 
     $('#reset').on('click', function (e) {
         breakingStarted = false;
-        cell = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
+        board = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
         $('#break').prop("disabled", false); // breakを有効に
     })
 
@@ -46,7 +46,7 @@ function start(canvas, imageDirPath){
         let filename = "egg-lottery-" 
             + OBJECT_NAMES
             .filter(name => name != "egg")
-            .map(name => cell.count(name))
+            .map(name => board.count(name))
             .join("-") + ".png";
 
         let a = document.createElement('a');
@@ -68,7 +68,7 @@ function start(canvas, imageDirPath){
         if(broken < WIDTH * HEIGHT){
             let x = broken % WIDTH;
             let y = Math.floor(broken / WIDTH);
-            cell.set(x, y, spawnFromEgg());
+            board.set(x, y, spawnFromEgg());
             broken++;
         }
     }
@@ -76,7 +76,7 @@ function start(canvas, imageDirPath){
     for(let y = 0; y < HEIGHT; y++){
         for(let x = 0; x < WIDTH; x++){
             context.drawImage(
-                image[cell.get(x, y)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
+                image[board.get(x, y)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
                 IMAGE_SIZE, IMAGE_SIZE
             );
         }
@@ -85,13 +85,13 @@ function start(canvas, imageDirPath){
     context.font = "16px Arial";
     context.fillStyle = 'black';
     context.fillText(
-        "エキス : " + cell.count("nectar"), 480, 30);
+        "エキス : " + board.count("nectar"), 480, 30);
     context.fillText(
-        "2エキス : " + cell.count("wnectar"), 480, 60);
+        "2エキス : " + board.count("wnectar"), 480, 60);
     context.fillText(
-        "ゲキカラ : " + cell.count("spicy"), 480, 90);
+        "ゲキカラ : " + board.count("spicy"), 480, 90);
     context.fillText(
-        "ゲキニガ : " + cell.count("bitter"), 480, 120);
+        "ゲキニガ : " + board.count("bitter"), 480, 120);
     context.fillText(
-        "タマゴムシ : " + cell.count("mitites"), 480, 150);
+        "タマゴムシ : " + board.count("mitites"), 480, 150);
 }
