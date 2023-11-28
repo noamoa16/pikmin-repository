@@ -78,7 +78,7 @@ function checkArrowEnable(){
     $('#arrow-down').prop("disabled", !isInner(p.x, p.y + 1));
 }
 
-function cellInit(){
+function initBoard(){
     board = nj.arange(WIDTH * HEIGHT).reshape(HEIGHT, WIDTH);
 }
 
@@ -155,7 +155,7 @@ function start(canvas, imageDirPath){
         image[i].src = imageDirPath + "/" + PARTS_NAMES[i] + ".jpg";
     }
 
-    cellInit();
+    initBoard();
 
     $('#reset').prop("disabled", true);
     $('#save').prop("disabled", true);
@@ -191,7 +191,7 @@ function start(canvas, imageDirPath){
         $('#save').prop("disabled", true);
         gameStarted = false;
         gameEnded = false;
-        cellInit();
+        initBoard();
         $('#start').prop("disabled", false);
         setArrowDisabled(true);
     })

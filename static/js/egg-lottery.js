@@ -6,7 +6,11 @@ let image = {};
 let breakingStarted = false;
 let broken;
 
-let board = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
+let board = undefined;
+function initBoard(){
+    board = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
+}
+initBoard();
 
 function spawnFromEgg(){
     let r = Math.random();
