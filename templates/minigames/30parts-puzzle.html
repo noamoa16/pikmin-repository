@@ -40,10 +40,10 @@ value="↓">
 
 <script>
 
-const canvas = document.getElementById("canvas");
-/** @type {CanvasRenderingContext2D} */
-const context = canvas.getContext("2d");
-const partsNames = [
+const IMAGE_SIZE = 48;
+const WIDTH = 5;
+const HEIGHT = 6;
+const PARTS_NAMES = [
     "Main_Engine",
     "Positron_Generator",
     "Eternal_Fuel_Dynamo",
@@ -74,16 +74,15 @@ const partsNames = [
     "Massage_Machine",
     "UV_Lamp",
     "Secret_Safe"
-]
+];
+
+const canvas = document.getElementById("canvas");
+/** @type {CanvasRenderingContext2D} */
+const context = canvas.getContext("2d");
 const stopwatch = new Stopwatch();
 let gameStarted = false;
 let gameEnded = false;
-
-let imageSize = 48;
-let width = 5;
-let height = 6;
 let image = {};
-
 let cell;
 
 /**
@@ -106,16 +105,16 @@ function checkArrowEnable(){
 }
 
 function cellInit(){
-    cell = Matrix.makeFilled(width, height, "");
-    for(let y = 0; y < height; y++){
-        for(let x = 0; x < width; x++){
-            cell.set(x, y, x + y * width);
+    cell = Matrix.makeFilled(WIDTH, HEIGHT, "");
+    for(let y = 0; y < HEIGHT; y++){
+        for(let x = 0; x < WIDTH; x++){
+            cell.set(x, y, x + y * WIDTH);
         }
     }
 }
 
 function isInner(x, y){
-    return 0 <= x && x < width && 0 <= y && y < height;
+    return 0 <= x && x < WIDTH && 0 <= y && y < HEIGHT;
 }
 
 function swapCell(x1, y1, x2, y2){
@@ -173,9 +172,9 @@ function init(){
     const fps = 30;
     setInterval(update, 1000 / fps);
 
-    for(let i in partsNames){
+    for(let i in PARTS_NAMES){
         image[i] = new Image();
-        image[i].src = "{{url_for('static', filename = 'images/ship-parts')}}/" + partsNames[i] + ".jpg";
+        image[i].src = "{{url_for('static', filename = 'images/ship-parts')}}/" + PARTS_NAMES[i] + ".jpg";
     }
 
     cellInit();
@@ -187,12 +186,12 @@ function init(){
 	$('#start').on('click', function (e) {
         $('#start').prop("disabled", true);
         // シャッフル
-        let numList = [...Array(width * height).keys()];
-        for(let i = 0; i < width * height; i++){
+        let numList = [...Array(WIDTH * HEIGHT).keys()];
+        for(let i = 0; i < WIDTH * HEIGHT; i++){
             while(true){
-                let index = Math.floor(Math.random() * (width * height - i));
+                let index = Math.floor(Math.random() * (WIDTH * HEIGHT - i));
                 if(numList[index] != i){
-                    cell.set(i % width, Math.floor(i / width), numList[index]);
+                    cell.set(i % WIDTH, Math.floor(i / WIDTH), numList[index]);
                     numList.splice(index, 1);
                     break;
                 }
@@ -264,9 +263,9 @@ function update(){
     // ゲームクリア
     if(gameStarted){
         let ok = true;
-        for(let y = 0; y < height; y++){
-            for(let x = 0; x < width; x++){
-                let correct = x + y * width;
+        for(let y = 0; y < HEIGHT; y++){
+            for(let x = 0; x < WIDTH; x++){
+                let correct = x + y * WIDTH;
                 let current = cell.get(x, y);
                 if(correct != current){
                     ok = false;
@@ -287,19 +286,19 @@ function update(){
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    for(let y = 0; y < height; y++){
-        for(let x = 0; x < width; x++){
+    for(let y = 0; y < HEIGHT; y++){
+        for(let x = 0; x < WIDTH; x++){
             if(cell.get(x, y) !== ""){
                 context.drawImage(
-                    image[cell.get(x, y)], x * imageSize, y * imageSize, 
-                    imageSize, imageSize
+                    image[cell.get(x, y)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
+                    IMAGE_SIZE, IMAGE_SIZE
                 );
                 context.font = "24px Arial";
                 context.fillStyle = 'black';
                 context.fillText(
                     cell.get(x, y) + 1,
-                    cell.get(x, y) + 1 < 10 ? (x + 3 / 8) * imageSize : (x + 1 / 4) * imageSize,
-                    (y + 5 / 8) * imageSize
+                    cell.get(x, y) + 1 < 10 ? (x + 3 / 8) * IMAGE_SIZE : (x + 1 / 4) * IMAGE_SIZE,
+                    (y + 5 / 8) * IMAGE_SIZE
                 );
             }
         }
@@ -309,16 +308,16 @@ function update(){
     context.fillStyle = 'black';
     let time = getTime();
     context.fillText("Time: " + time.min + ":" + time.sec + "." + time.dec,
-        imageSize * width + 16, 30);
+        IMAGE_SIZE * WIDTH + 16, 30);
     
     let p = cell.indexOf(0);
     context.lineWidth = 3;
     context.strokeStyle = "red";
     context.beginPath();
-    context.moveTo(p.x * imageSize, p.y * imageSize);
-    context.lineTo((p.x + 1) * imageSize, p.y * imageSize);
-    context.lineTo((p.x + 1) * imageSize, (p.y + 1) * imageSize);
-    context.lineTo(p.x * imageSize, (p.y + 1) * imageSize);
+    context.moveTo(p.x * IMAGE_SIZE, p.y * IMAGE_SIZE);
+    context.lineTo((p.x + 1) * IMAGE_SIZE, p.y * IMAGE_SIZE);
+    context.lineTo((p.x + 1) * IMAGE_SIZE, (p.y + 1) * IMAGE_SIZE);
+    context.lineTo(p.x * IMAGE_SIZE, (p.y + 1) * IMAGE_SIZE);
     context.closePath();
     context.stroke();
 }
