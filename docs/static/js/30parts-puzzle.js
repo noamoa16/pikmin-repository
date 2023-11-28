@@ -93,8 +93,8 @@ function isInner(x, y){
 
 function swapCell(x1, y1, x2, y2){
     let tmp = board.get(y1, x1);
-    board.set(x1, y1, board.get(y2, x2));
-    board.set(x2, y2, tmp);
+    board.set(y1, x1, board.get(y2, x2));
+    board.set(y2, x2, tmp);
 }
 
 function moveUp(){
@@ -169,7 +169,11 @@ function start(canvas, imageDirPath){
             while(true){
                 let index = Math.floor(Math.random() * (WIDTH * HEIGHT - i));
                 if(numList[index] != i){
-                    board.set(i % WIDTH, Math.floor(i / WIDTH), numList[index]);
+                    board.set(
+                        Math.floor(i / WIDTH), 
+                        i % WIDTH, 
+                        numList[index],
+                    );
                     numList.splice(index, 1);
                     break;
                 }
