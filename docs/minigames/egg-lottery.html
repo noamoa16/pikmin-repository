@@ -229,11 +229,10 @@ const IMAGE_SIZE = 48;
 const WIDTH = 10;
 const HEIGHT = 10;
 let image = {};
-
-let cell = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
-
 let breakingStarted = false;
 let broken;
+
+let cell = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
 
 function spawnFromEgg(){
     let r = Math.random();
