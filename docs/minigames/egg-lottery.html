@@ -224,16 +224,13 @@
 
 <script>
 
-const canvas = document.getElementById("canvas");
-/** @type {CanvasRenderingContext2D} */
-const context = canvas.getContext("2d");
-const objectNames = ["egg", "nectar", "wnectar", "spicy", "bitter", "mitites"];
-const imageSize = 48;
-const width = 10;
-const height = 10;
+const OBJECT_NAMES = ["egg", "nectar", "wnectar", "spicy", "bitter", "mitites"];
+const IMAGE_SIZE = 48;
+const WIDTH = 10;
+const HEIGHT = 10;
 let image = {};
 
-let cell = Matrix.makeFilled(width, height, "egg");
+let cell = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
 
 let breakingStarted = false;
 let broken;
@@ -247,13 +244,17 @@ function spawnFromEgg(){
     else return "mitites";
 }
 
-$(function(){
+/**
+ * @param {HTMLElement} canvas
+ * @param {string} imageDirPath
+ */
+function start(canvas, imageDirPath){
     const fps = 30;
-    setInterval(update, 1000 / fps);
+    setInterval(() => update(canvas), 1000 / fps);
 
-    for(let objectName of objectNames){
+    for(let objectName of OBJECT_NAMES){
         image[objectName] = new Image();
-        image[objectName].src = "../static/images/" + objectName + ".png";
+        image[objectName].src = imageDirPath + "/" + objectName + ".png";
     }
 
 	$('#break').on('click', function (e) {
@@ -264,13 +265,13 @@ $(function(){
 
     $('#reset').on('click', function (e) {
         breakingStarted = false;
-        cell = Matrix.makeFilled(width, height, "egg");
+        cell = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
         $('#break').prop("disabled", false); // breakを有効に
     })
 
     $('#save').on('click', function (e) {
         let filename = "egg-lottery-" 
-            + objectNames
+            + OBJECT_NAMES
             .filter(name => name != "egg")
             .map(name => cell.count(name))
             .join("-") + ".png";
@@ -280,25 +281,30 @@ $(function(){
         a.download = filename;
         a.click();
     })
-});
+}
 
-function update(){
+/**
+ * @param {HTMLElement} canvas
+ */
+ function update(canvas){
+    /** @type {CanvasRenderingContext2D} */
+    const context = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     if(breakingStarted){
-        if(broken < width * height){
-            let x = broken % width;
-            let y = Math.floor(broken / width);
+        if(broken < WIDTH * HEIGHT){
+            let x = broken % WIDTH;
+            let y = Math.floor(broken / WIDTH);
             cell.set(x, y, spawnFromEgg());
             broken++;
         }
     }
     
-    for(let y = 0; y < height; y++){
-        for(let x = 0; x < width; x++){
+    for(let y = 0; y < HEIGHT; y++){
+        for(let x = 0; x < WIDTH; x++){
             context.drawImage(
-                image[cell.get(x, y)], x * imageSize, y * imageSize, 
-                imageSize, imageSize
+                image[cell.get(x, y)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
+                IMAGE_SIZE, IMAGE_SIZE
             );
         }
     }
@@ -316,6 +322,9 @@ function update(){
     context.fillText(
         "タマゴムシ : " + cell.count("mitites"), 480, 150);
 }
+
+const canvas = document.getElementById("canvas")
+$(() => start(canvas, "../static/images/"));
 
 </script>
 
