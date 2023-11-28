@@ -6,11 +6,33 @@ let image = {};
 let breakingStarted = false;
 let broken;
 
+/** @type {nj.NdArray<any> | undefined} */
 let board = undefined;
 function initBoard(){
-    board = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
+    board = nj.empty([HEIGHT, WIDTH]);
+    for(let i = 0; i < HEIGHT; i++){
+        for(let j = 0; j < WIDTH; j++){
+            board.set(i, j, "egg");
+        }
+    }
 }
 initBoard();
+
+/**
+ * @param {nj.NdArray} board 
+ * @param {any} value 
+ */
+function count(board, value){
+    let ret = 0;
+    for(let i = 0; i < HEIGHT; i++){
+        for(let j = 0; j < WIDTH; j++){
+            if(board.get(i, j) === value){
+                ret++;
+            }
+        }
+    }
+    return ret;
+}
 
 function spawnFromEgg(){
     let r = Math.random();
@@ -42,7 +64,7 @@ function start(canvas, imageDirPath){
 
     $('#reset').on('click', function (e) {
         breakingStarted = false;
-        board = Matrix.makeFilled(WIDTH, HEIGHT, "egg");
+        initBoard();
         $('#break').prop("disabled", false); // breakを有効に
     })
 
@@ -50,7 +72,7 @@ function start(canvas, imageDirPath){
         let filename = "egg-lottery-" 
             + OBJECT_NAMES
             .filter(name => name != "egg")
-            .map(name => board.count(name))
+            .map(name => count(board, name))
             .join("-") + ".png";
 
         let a = document.createElement('a');
@@ -72,7 +94,7 @@ function start(canvas, imageDirPath){
         if(broken < WIDTH * HEIGHT){
             let x = broken % WIDTH;
             let y = Math.floor(broken / WIDTH);
-            board.set(x, y, spawnFromEgg());
+            board.set(y, x, spawnFromEgg());
             broken++;
         }
     }
@@ -80,7 +102,7 @@ function start(canvas, imageDirPath){
     for(let y = 0; y < HEIGHT; y++){
         for(let x = 0; x < WIDTH; x++){
             context.drawImage(
-                image[board.get(x, y)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
+                image[board.get(y, x)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
                 IMAGE_SIZE, IMAGE_SIZE
             );
         }
@@ -89,13 +111,13 @@ function start(canvas, imageDirPath){
     context.font = "16px Arial";
     context.fillStyle = 'black';
     context.fillText(
-        "エキス : " + board.count("nectar"), 480, 30);
+        "エキス : " + count(board, "nectar"), 480, 30);
     context.fillText(
-        "2エキス : " + board.count("wnectar"), 480, 60);
+        "2エキス : " + count(board, "wnectar"), 480, 60);
     context.fillText(
-        "ゲキカラ : " + board.count("spicy"), 480, 90);
+        "ゲキカラ : " + count(board, "spicy"), 480, 90);
     context.fillText(
-        "ゲキニガ : " + board.count("bitter"), 480, 120);
+        "ゲキニガ : " + count(board, "bitter"), 480, 120);
     context.fillText(
-        "タマゴムシ : " + board.count("mitites"), 480, 150);
+        "タマゴムシ : " + count(board, "mitites"), 480, 150);
 }
