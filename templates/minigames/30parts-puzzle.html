@@ -40,6 +40,7 @@ value="↓">
 
 <script src="{{url_for('static', filename = 'js/30parts-puzzle.js')}}"></script>
 <script>
+const canvas = document.getElementById("canvas");
 $(() => {
     start(canvas, "{{url_for('static', filename = 'images/ship-parts')}}");
 });
