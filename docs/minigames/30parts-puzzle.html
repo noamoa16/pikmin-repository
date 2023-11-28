@@ -439,23 +439,18 @@ function init(){
     })
 
     $(window).keypress(function (e) {
-		switch(e.key){
-            case "w":
-            case "W":
-                moveUp();
-                break;
-            case "a":
-            case "A":
-                moveLeft();
-                break;
-            case "d":
-            case "D":
-                moveRight();
-                break;
-            case "s":
-            case "S":
-                moveDown();
-                break;
+        const func = {
+            'w': moveUp,
+            'W': moveUp,
+            'a': moveLeft,
+            'A': moveLeft,
+            'd': moveRight,
+            'D': moveRight,
+            's': moveDown,
+            'S': moveDown,
+        }[e.key];
+        if(func != undefined){
+            func();
         }
 	});
 
