@@ -38,7 +38,26 @@ const stopwatch = new Stopwatch();
 let gameStarted = false;
 let gameEnded = false;
 let image = {};
-let cell;
+
+/** @type {nj.NdArray<number> | undefined} */
+let board = undefined;
+
+/**
+ * @param {nj.NdArray<number>} board 
+ * @param {number} value 
+ * @returns {{x: number, y: number} | undefined}
+ */
+function indexOf(board, value){
+    const [height, width] = board.shape;
+    for (let y = 0; y < height; y++){
+        for (let x = 0; x < width; x++) {
+            if (board.get(y, x) == value) {
+                return { 'x': x, 'y': y };
+            }
+        }
+    }
+    return undefined;
+}
 
 /**
  * @param {boolean} value
@@ -52,7 +71,7 @@ function setArrowDisabled(value){
 
 // 矢印キーが使用可能かどうかチェックし、セットする
 function checkArrowEnable(){
-    let p = cell.indexOf(0);
+    let p = indexOf(board, 0);
     $('#arrow-up').prop("disabled", !isInner(p.x, p.y - 1));
     $('#arrow-left').prop("disabled", !isInner(p.x - 1, p.y));
     $('#arrow-right').prop("disabled", !isInner(p.x + 1, p.y));
@@ -60,27 +79,27 @@ function checkArrowEnable(){
 }
 
 function cellInit(){
-    cell = Matrix.makeFilled(WIDTH, HEIGHT, "");
-    for(let y = 0; y < HEIGHT; y++){
-        for(let x = 0; x < WIDTH; x++){
-            cell.set(x, y, x + y * WIDTH);
-        }
-    }
+    board = nj.arange(WIDTH * HEIGHT).reshape(HEIGHT, WIDTH);
 }
 
+/**
+ * @param {number} x 
+ * @param {number} y 
+ * @returns {boolean}
+ */
 function isInner(x, y){
     return 0 <= x && x < WIDTH && 0 <= y && y < HEIGHT;
 }
 
 function swapCell(x1, y1, x2, y2){
-    let tmp = cell.get(x1, y1);
-    cell.set(x1, y1, cell.get(x2, y2));
-    cell.set(x2, y2, tmp);
+    let tmp = board.get(y1, x1);
+    board.set(y1, x1, board.get(y2, x2));
+    board.set(y2, x2, tmp);
 }
 
 function moveUp(){
     if(!gameStarted) return;
-    let p = cell.indexOf(0);
+    let p = indexOf(board, 0);
     if(isInner(p.x, p.y - 1)){
         swapCell(p.x, p.y, p.x, p.y - 1);
     }
@@ -88,7 +107,7 @@ function moveUp(){
 }
 function moveLeft(){
     if(!gameStarted) return;
-    let p = cell.indexOf(0);
+    let p = indexOf(board, 0);
     if(isInner(p.x - 1, p.y)){
         swapCell(p.x, p.y, p.x - 1, p.y);
     }
@@ -96,7 +115,7 @@ function moveLeft(){
 }
 function moveRight(){
     if(!gameStarted) return;
-    let p = cell.indexOf(0);
+    let p = indexOf(board, 0);
     if(isInner(p.x + 1, p.y)){
         swapCell(p.x, p.y, p.x + 1, p.y);
     }
@@ -104,7 +123,7 @@ function moveRight(){
 }
 function moveDown(){
     if(!gameStarted) return;
-    let p = cell.indexOf(0);
+    let p = indexOf(board, 0);
     if(isInner(p.x, p.y + 1)){
         swapCell(p.x, p.y, p.x, p.y + 1);
     }
@@ -150,7 +169,11 @@ function start(canvas, imageDirPath){
             while(true){
                 let index = Math.floor(Math.random() * (WIDTH * HEIGHT - i));
                 if(numList[index] != i){
-                    cell.set(i % WIDTH, Math.floor(i / WIDTH), numList[index]);
+                    board.set(
+                        Math.floor(i / WIDTH), 
+                        i % WIDTH, 
+                        numList[index],
+                    );
                     numList.splice(index, 1);
                     break;
                 }
@@ -226,7 +249,7 @@ function update(canvas){
         for(let y = 0; y < HEIGHT; y++){
             for(let x = 0; x < WIDTH; x++){
                 let correct = x + y * WIDTH;
-                let current = cell.get(x, y);
+                let current = board.get(y, x);
                 if(correct != current){
                     ok = false;
                     break;
@@ -248,19 +271,17 @@ function update(canvas){
 
     for(let y = 0; y < HEIGHT; y++){
         for(let x = 0; x < WIDTH; x++){
-            if(cell.get(x, y) !== ""){
-                context.drawImage(
-                    image[cell.get(x, y)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
-                    IMAGE_SIZE, IMAGE_SIZE
-                );
-                context.font = "24px Arial";
-                context.fillStyle = 'black';
-                context.fillText(
-                    cell.get(x, y) + 1,
-                    cell.get(x, y) + 1 < 10 ? (x + 3 / 8) * IMAGE_SIZE : (x + 1 / 4) * IMAGE_SIZE,
-                    (y + 5 / 8) * IMAGE_SIZE
-                );
-            }
+            context.drawImage(
+                image[board.get(y, x)], x * IMAGE_SIZE, y * IMAGE_SIZE, 
+                IMAGE_SIZE, IMAGE_SIZE
+            );
+            context.font = "24px Arial";
+            context.fillStyle = 'black';
+            context.fillText(
+                board.get(y, x) + 1,
+                board.get(y, x) + 1 < 10 ? (x + 3 / 8) * IMAGE_SIZE : (x + 1 / 4) * IMAGE_SIZE,
+                (y + 5 / 8) * IMAGE_SIZE
+            );
         }
     }
 
@@ -270,7 +291,7 @@ function update(canvas){
     context.fillText("Time: " + time.min + ":" + time.sec + "." + time.dec,
         IMAGE_SIZE * WIDTH + 16, 30);
     
-    let p = cell.indexOf(0);
+    let p = indexOf(board, 0);
     context.lineWidth = 3;
     context.strokeStyle = "red";
     context.beginPath();
