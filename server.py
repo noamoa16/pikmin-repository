@@ -6,7 +6,7 @@ from markupsafe import Markup
 from pathlib import Path
 from typing import Any
 
-from scripts import pikmin2_cave_surveys, pixel_arts
+from scripts import pikmin2_treasures, pikmin2_cave_surveys, pixel_arts
 
 app = flask.Flask(__name__)
 
@@ -43,7 +43,10 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
         data[data_file] = load_data_file(path)
     
     # データの解析
-    if (category, page_name) == ('pikmin2', 'cave-surveys'):
+    if (category, page_name) == ('pikmin2', 'treasures'):
+        data['pikmin2-treasures'] = \
+            pikmin2_treasures.generate(data['pikmin2-treasures.yaml'])
+    elif (category, page_name) == ('pikmin2', 'cave-surveys'):
         data['pikmin2-cave-surveys'] = \
             pikmin2_cave_surveys.generate(data['pikmin2-cave-surveys.yaml'])
     elif (category, page_name) == ('others', 'pixel-arts'):

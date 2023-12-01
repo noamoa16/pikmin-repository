@@ -1,0 +1,3448 @@
+- usId: 1
+  euId: 1
+  jpId: 1
+  enName: Cupid's Grenade
+  jpName: ヤブレカブレ
+  weight: 3
+  maxCarriers: 6
+  value: 20
+  location: Snagret Hole
+  sublevel: 4
+  enSeries: Succulent Series
+  jpSeries: 未開の味シリーズ
+  enRealLifeItem: Cherry
+  jpRealLifeItem: さくらんぼ
+  imagePath: Cupid's_Grenade_TH_icon.png
+  weight2PBattle: 1
+  maxCarriers2PBattle: 1
+- usId: 2
+  euId: 2
+  jpId: 2
+  enName: Sunseed Berry
+  jpName: ヒダマリノミ
+  weight: 5
+  maxCarriers: 10
+  value: 170
+  location: Awakening Wood
+  enSeries: Succulent Series
+  jpSeries: 未開の味シリーズ
+  enRealLifeItem: Small strawberry
+  jpRealLifeItem: イチゴ
+  imagePath: Sunseed_Berry_TH_icon.png
+- usId: 3
+  euId: 3
+  jpId: 3
+  enName: Combustion Berry
+  jpName: バクレツノミ
+  weight: 12
+  maxCarriers: 24
+  value: 190
+  location: Snagret Hole
+  sublevel: 2
+  enSeries: Succulent Series
+  jpSeries: 未開の味シリーズ
+  enRealLifeItem: Large strawberry
+  jpRealLifeItem: 大粒のイチゴ
+  imagePath: Combustion_Berry_icon.png
+- usId: 4
+  euId: 4
+  jpId: 4
+  enName: Seed of Greed
+  jpName: ヨクノミ
+  weight: 10
+  maxCarriers: 15
+  value: 70
+  location: Wistful Wild
+  enSeries: Succulent Series
+  jpSeries: 未開の味シリーズ
+  enRealLifeItem: Chestnut
+  jpRealLifeItem: 栗
+  imagePath: Seed_of_Greed_icon.png
+- usId: 5
+  euId: 5
+  jpId: 5
+  enName: Disguised Delicacy
+  jpName: ミカケダマシ
+  weight: 15
+  maxCarriers: 25
+  value: 40
+  location: Dream Den
+  sublevel: 1
+  enSeries: Succulent Series
+  jpSeries: 未開の味シリーズ
+  enRealLifeItem: Half of a kiwi
+  jpRealLifeItem: キウイ
+  imagePath: Disguised_Delicacy_TH_icon.png
+- usId: 6
+  euId: 6
+  jpId: 6
+  enName: Insect Condo
+  jpName: バグズ・キングダム
+  weight: 15
+  maxCarriers: 25
+  value: 40
+  location: Dream Den
+  sublevel: 5
+  enSeries: Succulent Series
+  jpSeries: 未開の味シリーズ
+  enRealLifeItem: Apple
+  jpRealLifeItem: リンゴ
+  imagePath: Insect_Condo_TH_icon.png
+- usId: 7
+  euId: 7
+  jpId: 7
+  enName: Citrus Lump
+  jpName: ツラノカワ
+  weight: 15
+  maxCarriers: 25
+  value: 180
+  location: Emergence Cave
+  sublevel: 1
+  enSeries: Succulent Series
+  jpSeries: 未開の味シリーズ
+  enRealLifeItem: Orange
+  jpRealLifeItem: みかん
+  imagePath: Citrus_Lump_TH_icon.png
+- usId: 8
+  euId: 8
+  jpId: 8
+  enName: Spiny Alien Treat
+  jpName: 山菜王
+  weight: 4
+  maxCarriers: 8
+  value: 50
+  location: Valley of Repose
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Artichoke
+  jpRealLifeItem: ふきのとう
+  imagePath: Spiny_Alien_Treat_icon.png
+- usId: 9
+  euId: 9
+  jpId: 9
+  enName: Anxious Sprout
+  jpName: ソダチノコ
+  weight: 15
+  maxCarriers: 25
+  value: 50
+  location: Bulblax Kingdom
+  sublevel: 5
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Bamboo shoot
+  jpRealLifeItem: タケノコ
+  imagePath: Anxious_Sprout_icon.png
+- usId: 10
+  euId: 10
+  jpId: 10
+  enName: Child of the Earth
+  jpName: 大地の息子
+  weight: 15
+  maxCarriers: 25
+  value: 40
+  location: Cavern of Chaos
+  sublevel: 3
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Potato
+  jpRealLifeItem: じゃがいも
+  imagePath: Child_of_the_Earth_icon.png
+- usId: 11
+  euId: 11
+  jpId: 11
+  enName: Love Nugget
+  jpName: ヒトメボレ
+  weight: 20
+  maxCarriers: 30
+  value: 40
+  location: Citadel of Spiders
+  sublevel: 1
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Tomato
+  jpRealLifeItem: トマト
+  imagePath: Love_Nugget_icon.png
+- usId: 12
+  euId: 12
+  jpId: 12
+  enName: Infernal Vegetable
+  jpName: ニガモドキ
+  weight: 12
+  maxCarriers: 20
+  value: 30
+  location: Cavern of Chaos
+  sublevel: 3
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Green bell pepper
+  jpRealLifeItem: ピーマン
+  imagePath: Infernal_Vegetable_icon.png
+- usId: 13
+  euId: 13
+  jpId: 13
+  enName: Anti-hiccup Fungus
+  jpName: ドッキリタケ
+  weight: 5
+  maxCarriers: 10
+  value: 30
+  location: Wistful Wild
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Mushroom
+  jpRealLifeItem: キノコ
+  imagePath: Anti-hiccup_Fungus_icon.png
+- usId: 14
+  euId: 14
+  jpId: 14
+  enName: Toxic Toadstool
+  jpName: メニドクキノコ
+  weight: 5
+  maxCarriers: 10
+  value: 30
+  location: White Flower Garden
+  sublevel: 4
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Poisonous mushroom
+  jpRealLifeItem: キノコ
+  imagePath: Toxic_Toadstool_icon.png
+- usId: 15
+  euId: 15
+  jpId: 15
+  enName: Growshroom
+  jpName: ソダチノタケ
+  weight: 5
+  maxCarriers: 10
+  value: 50
+  location: Cavern of Chaos
+  sublevel: 6
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Large mushroom
+  jpRealLifeItem: キノコ
+  imagePath: Growshroom_icon.png
+- usId: 16
+  euId: 16
+  jpId: 16
+  enName: Onion Replica
+  jpName: オニヨンモドキ
+  weight: 20
+  maxCarriers: 30
+  value: 30
+  location: Perplexing Pool
+  enSeries: Nature's Candy Series
+  jpSeries: 大地の子供シリーズ
+  enRealLifeItem: Onion
+  jpRealLifeItem: たまねぎ
+  imagePath: Onion_Replica_icon.png
+- usId: 17
+  euId: 17
+  jpId: 17
+  enName: Science Project
+  jpName: 宿題クローバー
+  weight: 1
+  maxCarriers: 1
+  value: 20
+  location: Snagret Hole
+  sublevel: 6
+  enSeries: Xenoflora Series
+  jpSeries: 植物マニアクス
+  enRealLifeItem: Four-leaved clover
+  jpRealLifeItem: 四葉のクローバー
+  imagePath: Science_Project_icon.png
+- usId: 18
+  euId: 18
+  jpId: 18
+  enName: Pilgrim Bulb
+  jpName: ラッパユリの球根
+  weight: 10
+  maxCarriers: 20
+  value: 55
+  location: Awakening Wood
+  enSeries: Xenoflora Series
+  jpSeries: 植物マニアクス
+  enRealLifeItem: Turnip bulb
+  jpRealLifeItem: 球根
+  imagePath: Pilgrim_Bulb_icon.png
+- usId: 19
+  jpId: 19
+  enName: Arboreal Frippery
+  jpName: イチコロダオレ
+  weight: 1
+  maxCarriers: 1
+  value: 10
+  location: Shower Room
+  sublevel: 4
+  enSeries: Xenoflora Series
+  jpSeries: 植物マニアクス
+  enRealLifeItem: Japanese maple leaf
+  jpRealLifeItem: もみじ
+  imagePath: Arboreal_Frippery_US_icon.png
+- euId: 19
+  enName: Arboreal Frippery
+  weight: 1
+  maxCarriers: 1
+  value: 10
+  location: Shower Room
+  sublevel: 4
+  enSeries: Xenoflora Series
+  enRealLifeItem: Red maple leaf
+  imagePath: Arboreal_Frippery_EU_icon.png
+- usId: 20
+  euId: 20
+  jpId: 20
+  enName: Conifer Spire
+  jpName: キノポックリ
+  weight: 7
+  maxCarriers: 15
+  value: 15
+  location: Wistful Wild
+  enSeries: Xenoflora Series
+  jpSeries: 植物マニアクス
+  enRealLifeItem: Pine cone
+  jpRealLifeItem: 松ぼっくり
+  imagePath: Conifer_Spire_icon.png
+- usId: 21
+  euId: 21
+  jpId: 21
+  enName: Armored Nut
+  jpName: ヒラノミ
+  weight: 4
+  maxCarriers: 8
+  value: 60
+  location: Wistful Wild
+  enSeries: Xenoflora Series
+  jpSeries: 植物マニアクス
+  enRealLifeItem: Small acorn
+  jpRealLifeItem: どんぐり
+  imagePath: Armored_Nut_icon.png
+- usId: 22
+  euId: 22
+  jpId: 22
+  enName: Corpulent Nut
+  jpName: ボスノミ
+  weight: 8
+  maxCarriers: 16
+  value: 80
+  location: Hole of Heroes
+  sublevel: 1
+  enSeries: Xenoflora Series
+  jpSeries: 植物マニアクス
+  enRealLifeItem: Large acorn
+  jpRealLifeItem: 大きいドングリ
+  imagePath: Corpulent_Nut_icon.png
+- usId: 23
+  euId: 23
+  jpId: 23
+  enName: Meat of Champions
+  jpName: キング肉
+  weight: 10
+  maxCarriers: 20
+  value: 35
+  location: Glutton's Kitchen
+  sublevel: 6
+  enSeries: Gourmet Series
+  jpSeries: 味皇帝シリーズ
+  enRealLifeItem: Slice of ham
+  jpRealLifeItem: ハム
+  imagePath: Meat_of_Champions_icon.png
+- usId: 24
+  euId: 24
+  jpId: 24
+  enName: Hideous Victual
+  jpName: ハラワタモドキ
+  weight: 10
+  maxCarriers: 15
+  value: 100
+  location: Glutton's Kitchen
+  sublevel: 6
+  enSeries: Gourmet Series
+  jpSeries: 味皇帝シリーズ
+  enRealLifeItem: Fried egg
+  jpRealLifeItem: 目玉焼き
+  imagePath: Hideous_Victual_icon.png
+- usId: 25
+  euId: 25
+  jpId: 25
+  enName: Meat Satchel
+  jpName: 欲棒
+  weight: 5
+  maxCarriers: 10
+  value: 40
+  location: Snagret Hole
+  sublevel: 3
+  enSeries: Gourmet Series
+  jpSeries: 味皇帝シリーズ
+  enRealLifeItem: Hot dog
+  jpRealLifeItem: ウインナー
+  imagePath: Meat_Satchel_icon.png
+- usId: 26
+  euId: 26
+  jpId: 26
+  enName: Taste Sensation
+  jpName: ふるさとの味
+  weight: 15
+  maxCarriers: 25
+  value: 40
+  location: Snagret Hole
+  sublevel: 2
+  enSeries: Gourmet Series
+  jpSeries: 味皇帝シリーズ
+  enRealLifeItem: Rice ball
+  jpRealLifeItem: 梅干おにぎり
+  imagePath: Taste_Sensation_icon.png
+- usId: 27
+  euId: 27
+  jpId: 27
+  enName: Triple Sugar Threat
+  jpName: 甘党1・2・3
+  weight: 6
+  maxCarriers: 12
+  value: 60
+  location: Snagret Hole
+  sublevel: 6
+  enSeries: Gourmet Series
+  jpSeries: 味皇帝シリーズ
+  enRealLifeItem: Dango dumpling
+  jpRealLifeItem: 三色だんご
+  imagePath: Triple_Sugar_Threat_icon.png
+- usId: 28
+  euId: 28
+  jpId: 28
+  enName: Compelling Cookie
+  jpName: たつまきクッキー
+  weight: 3
+  maxCarriers: 8
+  value: 10
+  location: Submerged Castle
+  sublevel: 3
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Coconut macaroon
+  jpRealLifeItem: うずまきクッキー
+  imagePath: Compelling_Cookie_icon.png
+- usId: 29
+  euId: 29
+  jpId: 29
+  enName: Impenetrable Cookie
+  jpName: 大がんこ
+  weight: 8
+  maxCarriers: 16
+  value: 25
+  location: Cavern of Chaos
+  sublevel: 7
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Chocolate swirl cookie
+  jpRealLifeItem: ココアクッキー
+  imagePath: Impenetrable_Cookie_icon.png
+- usId: 30
+  euId: 30
+  jpId: 30
+  enName: Bug Bait
+  jpName: 虫寄せせんべい
+  weight: 5
+  maxCarriers: 10
+  value: 15
+  location: Submerged Castle
+  sublevel: 1
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Wafer
+  jpRealLifeItem: ゴマクッキー
+  imagePath: Bug_Bait_icon.png
+- usId: 31
+  euId: 31
+  jpId: 31
+  enName: Imperative Cookie
+  jpName: さいみんクッキー
+  weight: 5
+  maxCarriers: 10
+  value: 25
+  location: Glutton's Kitchen
+  sublevel: 2
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Large swirl cookie
+  jpRealLifeItem: マーブルクッキー
+  imagePath: Imperative_Cookie_icon.png
+- usId: 32
+  euId: 32
+  jpId: 32
+  enName: Comfort Cookie
+  jpName: ざぶとんクッキー
+  weight: 4
+  maxCarriers: 8
+  value: 10
+  location: Submerged Castle
+  sublevel: 2
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Small checkerboard cookie
+  jpRealLifeItem: チェックのクッキー
+  imagePath: Comfort_Cookie_icon.png
+- usId: 33
+  euId: 33
+  jpId: 33
+  enName: Succulent Mattress
+  jpName: スイート・クッション
+  weight: 8
+  maxCarriers: 16
+  value: 50
+  location: Submerged Castle
+  sublevel: 3
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Large checkerboard cookie
+  jpRealLifeItem: チェックのクッキー
+  imagePath: Succulent_Mattress_icon.png
+- usId: 34
+  euId: 34
+  jpId: 34
+  enName: King of Sweets
+  jpName: キング・オブ・スイート
+  weight: 5
+  maxCarriers: 10
+  value: 15
+  location: Citadel of Spiders
+  sublevel: 4
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Chocolate truffle
+  jpRealLifeItem: チョコレート
+  imagePath: King_of_Sweets_icon.png
+- usId: 35
+  euId: 35
+  jpId: 35
+  enName: Enamel Buster
+  jpName: むしばのもと
+  weight: 8
+  maxCarriers: 16
+  value: 60
+  location: Cavern of Chaos
+  sublevel: 1
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Chocolate cupcake with nut
+  jpRealLifeItem: アーモンドチョコレート
+  imagePath: Enamel_Buster_icon.png
+- usId: 36
+  euId: 36
+  jpId: 36
+  enName: Diet Doomer
+  jpName: エネミー・オブ・ダイエット
+  weight: 5
+  maxCarriers: 10
+  value: 25
+  location: Submerged Castle
+  sublevel: 1
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Strawberry truffle
+  jpRealLifeItem: イチゴチョコ
+  imagePath: Diet_Doomer_icon.png
+- usId: 37
+  euId: 37
+  jpId: 37
+  enName: Pale Passion
+  jpName: ラブ・ホワイト
+  weight: 5
+  maxCarriers: 10
+  value: 25
+  location: Submerged Castle
+  sublevel: 4
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Pistachio truffle
+  jpRealLifeItem: ホワイトチョコ
+  imagePath: Pale_Passion_icon.png
+- usId: 38
+  euId: 38
+  jpId: 38
+  enName: White Goodness
+  jpName: らぶらぶホワイト
+  weight: 8
+  maxCarriers: 16
+  value: 60
+  location: Glutton's Kitchen
+  sublevel: 4
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: White chocolate with chocolate syrup
+  imagePath: White_Goodness_icon.png
+- usId: 39
+  euId: 39
+  jpId: 39
+  enName: Chocolate Cushion
+  jpName: チョコベッド
+  weight: 10
+  maxCarriers: 20
+  value: 40
+  location: Submerged Castle
+  sublevel: 2
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Chocolate frosted donut
+  jpRealLifeItem: チョコドーナッツ
+  imagePath: Chocolate_Cushion_icon.png
+- usId: 40
+  euId: 40
+  jpId: 40
+  enName: Sweet Dreamer
+  jpName: 娘のおやつ
+  weight: 10
+  maxCarriers: 20
+  value: 40
+  location: Glutton's Kitchen
+  sublevel: 6
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Strawberry frosted donut
+  jpRealLifeItem: シュガーバーム
+  imagePath: Sweet_Dreamer_icon.png
+- usId: 41
+  euId: 41
+  jpId: 41
+  enName: Confection Hoop
+  jpName: おかしの大車輪
+  weight: 20
+  maxCarriers: 30
+  value: 60
+  location: Submerged Castle
+  sublevel: 2
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Unfrosted baumkuchen
+  jpRealLifeItem: バウムクーヘン
+  imagePath: Confection_Hoop_icon.png
+- usId: 42
+  euId: 42
+  jpId: 42
+  enName: Pastry Wheel
+  jpName: おかしの小車輪
+  weight: 10
+  maxCarriers: 20
+  value: 35
+  location: Submerged Castle
+  sublevel: 1
+  enSeries: Sweet Tooth Series
+  jpSeries: 甘党地獄シリーズ
+  enRealLifeItem: Frosted baumkuchen
+  imagePath: Pastry_Wheel_icon.png
+- usId: 43
+  euId: 43
+  jpId: 43
+  enName: Possessed Squash
+  jpName: オオモノノケカボチャ
+  weight: 30
+  maxCarriers: 50
+  value: 180
+  location: Dream Den
+  sublevel: 8
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Jack-o-lantern
+  jpRealLifeItem: ハロウィンのカボチャ
+  imagePath: Possessed_Squash_icon.png
+- usId: 44
+  euId: 44
+  jpId: 44
+  enName: Fossilized Ursidae
+  jpName: 木造巨生物クマキボリ
+  weight: 25
+  maxCarriers: 35
+  value: 160
+  location: Valley of Repose
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Wooden bear statue
+  jpRealLifeItem: 木彫りクマ
+  imagePath: Fossilized_Ursidae_icon.png
+- usId: 45
+  euId: 45
+  jpId: 45
+  enName: Colossal Fossil
+  jpName: 古代生物の化石
+  weight: 20
+  maxCarriers: 30
+  value: 140
+  location: Bulblax Kingdom
+  sublevel: 6
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Primate skull
+  jpRealLifeItem: ガイコツ
+  imagePath: Colossal_Fossil_icon.png
+- usId: 46
+  euId: 46
+  jpId: 46
+  enName: Leviathan Feather
+  jpName: 夢の羽
+  weight: 1
+  maxCarriers: 1
+  value: 10
+  location: Snagret Hole
+  sublevel: 1
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Feather
+  jpRealLifeItem: 白い羽
+  imagePath: Leviathan_Feather_icon.png
+- usId: 47
+  euId: 47
+  jpId: 47
+  enName: Olimarnite Shell
+  jpName: 貝物オリマナイト
+  weight: 15
+  maxCarriers: 25
+  value: 40
+  location: Bulblax Kingdom
+  sublevel: 3
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Ammonite fossil
+  jpRealLifeItem: アンモナイト
+  imagePath: Olimarnite_Shell_icon.png
+- usId: 48
+  euId: 48
+  jpId: 48
+  enName: Fortified Delicacy
+  jpName: 海怪珍味マキマキ
+  weight: 20
+  maxCarriers: 30
+  value: 60
+  location: Perplexing Pool
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Conch shell
+  jpRealLifeItem: サザエ
+  imagePath: Fortified_Delicacy_icon.png
+- usId: 49
+  euId: 49
+  jpId: 49
+  enName: Scrumptious Shell
+  jpName: ウマイガイ
+  weight: 10
+  maxCarriers: 20
+  value: 60
+  location: Shower Room
+  sublevel: 3
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Scallop shell top half
+  jpRealLifeItem: ホタテ
+  imagePath: Scrumptious_Shell_icon.png
+- usId: 50
+  euId: 50
+  jpId: 50
+  enName: Memorial Shell
+  jpName: 一生の証
+  weight: 10
+  maxCarriers: 20
+  value: 100
+  location: Citadel of Spiders
+  sublevel: 3
+  enSeries: Paleontology Series
+  jpSeries: 新種発見!?シリーズ
+  enRealLifeItem: Scallop shell bottom half
+  jpRealLifeItem: 真珠貝
+  imagePath: Memorial_Shell_icon.png
+- usId: 51
+  enName: Mysterious Remains
+  weight: 8
+  maxCarriers: 15
+  value: 150
+  location: Cavern of Chaos
+  sublevel: 4
+  enSeries: Paleontology Series
+  enRealLifeItem: Lobster claw
+  imagePath: Mysterious_Remains_icon.png
+- euId: 51
+  enName: Mysterious Remains
+  weight: 8
+  maxCarriers: 15
+  value: 150
+  location: Snagret Hole
+  sublevel: 6
+  enSeries: Paleontology Series
+  enRealLifeItem: Lobster claw
+  imagePath: Mysterious_Remains_icon.png
+- usId: 52
+  euId: 52
+  jpId: 51
+  enName: Crystal King
+  jpName: 鉱石生命体 ( ♂ )
+  weight: 10
+  maxCarriers: 15
+  value: 110
+  location: Bulblax Kingdom
+  sublevel: 4
+  enSeries: Ancient Secrets Series
+  jpSeries: 古代の神秘シリーズ
+  enRealLifeItem: Large crystal
+  jpRealLifeItem: クリスタル
+  imagePath: Crystal_King_icon.png
+- usId: 53
+  euId: 53
+  jpId: 52
+  enName: Future Orb
+  jpName: ノー・フューチャー
+  weight: 25
+  maxCarriers: 35
+  value: 200
+  location: Dream Den
+  sublevel: 6
+  enSeries: Ancient Secrets Series
+  jpSeries: 古代の神秘シリーズ
+  enRealLifeItem: Crystal ball
+  jpRealLifeItem: 占い水晶
+  imagePath: Future_Orb_icon.png
+- usId: 54
+  euId: 54
+  jpId: 53
+  enName: Gyroid Bust
+  jpName: Mr.ハニー
+  weight: 10
+  maxCarriers: 15
+  value: 250
+  location: Bulblax Kingdom
+  sublevel: 7
+  enSeries: Ancient Secrets Series
+  jpSeries: 古代の神秘シリーズ
+  enRealLifeItem: Wooden haniwa doll
+  jpRealLifeItem: ハニワ
+  imagePath: Gyroid_Bust_icon.png
+- usId: 55
+  euId: 55
+  jpId: 54
+  enName: Unknown Merit
+  jpName: 知られざる功
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Bulblax Kingdom
+  sublevel: 4
+  enSeries: Ancient Secrets Series
+  jpSeries: 古代の神秘シリーズ
+  enRealLifeItem: Yen
+  jpRealLifeItem: 昔のお金
+  imagePath: Unknown_Merit_icon.png
+- usId: 56
+  euId: 56
+  jpId: 55
+  enName: Lustrous Element
+  jpName: レアメタルG
+  weight: 10
+  maxCarriers: 15
+  value: 1000
+  location: Hole of Heroes
+  sublevel: 4
+  enSeries: Ancient Secrets Series
+  jpSeries: 古代の神秘シリーズ
+  enRealLifeItem: Golden coin
+  jpRealLifeItem: 金のコイン
+  imagePath: Lustrous_Element_icon.png
+- usId: 57
+  euId: 57
+  jpId: 56
+  enName: Mirrored Element
+  jpName: レアメタルS
+  weight: 10
+  maxCarriers: 15
+  value: 300
+  location: Dream Den
+  sublevel: 4
+  enSeries: Ancient Secrets Series
+  jpSeries: 古代の神秘シリーズ
+  enRealLifeItem: Silver coin
+  jpRealLifeItem: 銀のコイン
+  imagePath: Mirrored_Element_icon.png
+- usId: 58
+  euId: 58
+  jpId: 57
+  enName: Vorpal Platter
+  jpName: ゴールデン・ソーサー
+  weight: 12
+  maxCarriers: 20
+  value: 60
+  location: Shower Room
+  sublevel: 3
+  enSeries: Cook's Arsenal Series
+  jpSeries: 鉄筋?大金物シリーズ
+  enRealLifeItem: Pudding can lid
+  jpRealLifeItem: 缶詰のフタ
+  imagePath: Vorpal_Platter_icon.png
+- usId: 59
+  euId: 59
+  jpId: 58
+  enName: Invigorator
+  jpName: 完全不眠土器カフェオレ
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Glutton's Kitchen
+  sublevel: 4
+  enSeries: Cook's Arsenal Series
+  jpSeries: 鉄筋?大金物シリーズ
+  enRealLifeItem: Upside down mug
+  jpRealLifeItem: マグカップ
+  imagePath: Invigorator_icon.png
+- usId: 60
+  euId: 60
+  jpId: 59
+  enName: Milk Tub
+  jpName: ミルクぶろ
+  weight: 5
+  maxCarriers: 10
+  value: 60
+  location: Cavern of Chaos
+  sublevel: 4
+  enSeries: Cook's Arsenal Series
+  jpSeries: 鉄筋?大金物シリーズ
+  enRealLifeItem: Cream cup
+  jpRealLifeItem: スジャータ
+  imagePath: Milk_Tub_icon.png
+- jpId: 60
+  enName: Broken Cooking God
+  jpName: 折れた食神
+  weight: 8
+  maxCarriers: 16
+  value: 80
+  location: Shower Room
+  sublevel: 5
+  enSeries: Cook's Arsenal Series
+  jpSeries: 鉄筋?大金物シリーズ
+  enRealLifeItem: Broken metal spoon
+  jpRealLifeItem: 壊れたスプーン
+  imagePath: Toy_lady_J_icon.png
+- usId: 61
+  enName: Merciless Extractor
+  weight: 20
+  maxCarriers: 30
+  value: 90
+  location: Shower Room
+  sublevel: 1
+  enSeries: Cook's Arsenal Series
+  enRealLifeItem: Juicer
+  imagePath: Merciless_Extractor_icon.png
+- euId: 61
+  enName: Merciless Extractor
+  weight: 20
+  maxCarriers: 30
+  value: 90
+  location: Shower Room
+  sublevel: 5
+  enSeries: Cook's Arsenal Series
+  enRealLifeItem: Juicer
+  imagePath: Merciless_Extractor_icon.png
+- usId: 62
+  enName: Broken Food Master
+  weight: 20
+  maxCarriers: 30
+  value: 90
+  location: Shower Room
+  sublevel: 5
+  enSeries: Cook's Arsenal Series
+  enRealLifeItem: Ladle
+  imagePath: Broken_Food_Master_icon.png
+- euId: 62
+  jpId: 61
+  enName: Divine Cooking Tool
+  jpName: 自炊の神器
+  weight: 20
+  maxCarriers: 30
+  value: 90
+  location: Shower Room
+  sublevel: 1
+  enSeries: Cook's Arsenal Series
+  jpSeries: 鉄筋?大金物シリーズ
+  enRealLifeItem: Ladle
+  jpRealLifeItem: 壊れたお玉
+  imagePath: Broken_Food_Master_icon.png
+- usId: 63
+  euId: 63
+  jpId: 62
+  enName: Utter Scrap
+  jpName: とことんスクラップ
+  weight: 35
+  maxCarriers: 45
+  value: 170
+  location: Valley of Repose
+  enSeries: Cook's Arsenal Series
+  jpSeries: 鉄筋?大金物シリーズ
+  enRealLifeItem: Crushed soda can
+  jpRealLifeItem: 空き缶
+  imagePath: Utter_Scrap_icon.png
+- usId: 64
+  euId: 64
+  jpId: 63
+  enName: Decorative Goo
+  jpName: オレの色
+  weight: 10
+  maxCarriers: 20
+  value: 80
+  location: Awakening Wood
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Blue Mario paint tube
+  jpRealLifeItem: えのぐ
+  imagePath: Decorative_Goo_icon.png
+- usId: 65
+  euId: 65
+  jpId: 64
+  enName: Master's Instrument
+  jpName: アートだましい
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Glutton's Kitchen
+  sublevel: 1
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Pink pastel crayon
+  jpRealLifeItem: ピンクのクレヨン
+  imagePath: Master's_Instrument_icon.png
+- usId: 66
+  euId: 66
+  jpId: 65
+  enName: Manual Honer
+  jpName: 手動工作マシン
+  weight: 10
+  maxCarriers: 20
+  value: 130
+  location: Dream Den
+  sublevel: 2
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Pencil sharpener
+  jpRealLifeItem: えんぴつ削り
+  imagePath: Manual_Honer_icon.png
+- usId: 67
+  euId: 67
+  jpId: 66
+  enName: Implement of Toil
+  jpName: ビンボー神のお守り
+  weight: 2
+  maxCarriers: 4
+  value: 55
+  location: Dream Den
+  sublevel: 2
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Small double-ended pencil
+  jpRealLifeItem: NINTENDO64のえんぴつ
+  imagePath: Implement_of_Toil_icon.png
+- usId: 68
+  euId: 68
+  jpId: 67
+  enName: Heavy-duty Magnetizer
+  jpName: 超磁性体マグナイザー
+  weight: 10
+  maxCarriers: 15
+  value: 150
+  location: Snagret Hole
+  sublevel: 4
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Horseshoe magnet
+  jpRealLifeItem: 磁石
+  imagePath: Heavy-duty_Magnetizer_icon.png
+- usId: 69
+  euId: 69
+  jpId: 68
+  enName: Harmonic Synthesizer
+  jpName: ハーモニック・シンセサイザ
+  weight: 10
+  maxCarriers: 20
+  value: 120
+  location: Glutton's Kitchen
+  sublevel: 3
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Castanet
+  jpRealLifeItem: カスタネット
+  imagePath: Harmonic_Synthesizer_icon.png
+- usId: 70
+  euId: 70
+  jpId: 69
+  enName: Emperor Whistle
+  jpName: ホイスル岩
+  weight: 15
+  maxCarriers: 25
+  value: 75
+  location: Snagret Hole
+  sublevel: 5
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Whistle
+  jpRealLifeItem: ホイッスル
+  imagePath: Emperor_Whistle_icon.png
+- usId: 71
+  euId: 71
+  jpId: 70
+  enName: Director of Destiny
+  jpName: 運命ディレクター
+  weight: 20
+  maxCarriers: 30
+  value: 100
+  location: Glutton's Kitchen
+  sublevel: 3
+  enSeries: Tortured Artist Series
+  jpSeries: 芸術だましいシリーズ
+  enRealLifeItem: Broken compass
+  jpRealLifeItem: 方位磁石
+  imagePath: Director_of_Destiny_icon.png
+- usId: 72
+  euId: 72
+  jpId: 71
+  enName: Sud Generator
+  jpName: バブル・ジェネレータ
+  weight: 20
+  maxCarriers: 35
+  value: 60
+  location: Shower Room
+  sublevel: 2
+  enSeries: Modern Amenities Series
+  jpSeries: 文明の利器シリーズ
+  enRealLifeItem: Bar of mild soap
+  jpRealLifeItem: せっけん
+  imagePath: Sud_Generator_icon.png
+- usId: 73
+  euId: 73
+  jpId: 72
+  enName: Flame of Tomorrow
+  jpName: 希望の光
+  weight: 10
+  maxCarriers: 25
+  value: 10
+  location: Citadel of Spiders
+  sublevel: 4
+  enSeries: Modern Amenities Series
+  jpSeries: 文明の利器シリーズ
+  enRealLifeItem: Box of Bowser brand matches
+  jpRealLifeItem: 白木屋のマッチ
+  imagePath: Flame_of_Tomorrow_icon.png
+- jpId: 73
+  enName: Lightning Bolt
+  jpName: ライトニングボルト
+  weight: 3
+  maxCarriers: 5
+  value: 50
+  location: Perplexing Pool
+  enSeries: Modern Amenities Series
+  jpSeries: 文明の利器シリーズ
+  enRealLifeItem: Milk bottle opener
+  jpRealLifeItem: 牛乳のフタ開け
+  imagePath: Yoyo_blue_J_icon.png
+- usId: 74
+  euId: 74
+  enName: Impediment Scourge
+  weight: 10
+  maxCarriers: 15
+  value: 50
+  location: Perplexing Pool
+  enSeries: Modern Amenities Series
+  enRealLifeItem: Bottle opener
+  imagePath: Impediment_Scourge_icon.png
+- jpId: 74
+  enName: Family Raft
+  jpName: ファミリーいかだ
+  weight: 2
+  maxCarriers: 3
+  value: 50
+  location: Citadel of Spiders
+  sublevel: 2
+  enSeries: Modern Amenities Series
+  jpSeries: 文明の利器シリーズ
+  enRealLifeItem: Popsicle stick
+  jpRealLifeItem: アイスの当たり棒
+  imagePath: Kan_b_gold_J_icon.png
+- usId: 75
+  enName: Dimensional Slicer
+  weight: 8
+  maxCarriers: 15
+  value: 100
+  location: Hole of Heroes
+  sublevel: 9
+  enSeries: Modern Amenities Series
+  enRealLifeItem: Can opener
+  imagePath: Dimensional_Slicer_icon.png
+- usId: 76
+  euId: 75
+  jpId: 75
+  enName: Time Capsule
+  jpName: メモリアルカプセル
+  weight: 7
+  maxCarriers: 15
+  value: 70
+  location: Citadel of Spiders
+  sublevel: 4
+  enSeries: Modern Amenities Series
+  jpSeries: 文明の利器シリーズ
+  enRealLifeItem: Locket with a corgi dog picture
+  jpRealLifeItem: ネコのペンダント
+  imagePath: Time_Capsule_icon.png
+- usId: 77
+  euId: 76
+  enName: Lip Service
+  weight: 4
+  maxCarriers: 8
+  value: 50
+  location: Citadel of Spiders
+  sublevel: 2
+  enSeries: Modern Amenities Series
+  enRealLifeItem: Lipstick
+  imagePath: Lip_Service_icon.png
+- usId: 78
+  euId: 77
+  jpId: 76
+  enName: Mirrored Stage
+  jpName: ミラーステージ
+  weight: 15
+  maxCarriers: 25
+  value: 140
+  location: Shower Room
+  sublevel: 3
+  enSeries: Modern Amenities Series
+  jpSeries: 文明の利器シリーズ
+  enRealLifeItem: Compact
+  jpRealLifeItem: ファンデのコンパクト
+  imagePath: Mirrored_Stage_icon.png
+- usId: 79
+  euId: 78
+  jpId: 77
+  enName: Behemoth Jaw
+  jpName: 大怪獣の歯
+  weight: 20
+  maxCarriers: 25
+  value: 100
+  location: Shower Room
+  sublevel: 6
+  enSeries: Modern Amenities Series
+  jpSeries: 文明の利器シリーズ
+  enRealLifeItem: Maxillary (upper jaw) denture
+  jpRealLifeItem: 入れ歯
+  imagePath: Behemoth_Jaw_icon.png
+- usId: 80
+  euId: 79
+  jpId: 78
+  enName: Joy Receptacle
+  jpName: しあわせの箱
+  weight: 15
+  maxCarriers: 25
+  value: 60
+  location: Frontier Cavern
+  sublevel: 2
+  enSeries: Frigid Series
+  jpSeries: 冬ごもりシリーズ
+  enRealLifeItem: Christmas present
+  jpRealLifeItem: クリスマスプレゼント
+  imagePath: Joy_Receptacle_icon.png
+- usId: 81
+  euId: 80
+  jpId: 79
+  enName: Fleeting Art Form
+  jpName: もえるゲイジュツ
+  weight: 2
+  maxCarriers: 4
+  value: 75
+  location: Frontier Cavern
+  sublevel: 3
+  enSeries: Frigid Series
+  jpSeries: 冬ごもりシリーズ
+  enRealLifeItem: Small candle
+  jpRealLifeItem: 緑のろうそく
+  imagePath: Fleeting_Art_Form_icon.png
+- usId: 82
+  euId: 81
+  jpId: 80
+  enName: Danger Chime
+  jpName: 空騒ぎアラーム
+  weight: 10
+  maxCarriers: 20
+  value: 120
+  location: Frontier Cavern
+  sublevel: 3
+  enSeries: Frigid Series
+  jpSeries: 冬ごもりシリーズ
+  enRealLifeItem: Golden bell
+  jpRealLifeItem: 金のベル
+  imagePath: Danger_Chime_icon.png
+- usId: 83
+  euId: 82
+  jpId: 81
+  enName: Spouse Alert
+  jpName: 夫婦のきずな
+  weight: 10
+  maxCarriers: 20
+  value: 120
+  location: Frontier Cavern
+  sublevel: 7
+  enSeries: Frigid Series
+  jpSeries: 冬ごもりシリーズ
+  enRealLifeItem: Sleigh bell
+  jpRealLifeItem: 銀のすず
+  imagePath: Spouse_Alert_icon.png
+- usId: 84
+  euId: 83
+  jpId: 82
+  enName: Innocence Lost
+  jpName: トップ・スター
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Frontier Cavern
+  sublevel: 4
+  enSeries: Frigid Series
+  jpSeries: 冬ごもりシリーズ
+  enRealLifeItem: Christmas tree star
+  jpRealLifeItem: ツリーの一番上の星
+  imagePath: Innocence_Lost_icon.png
+- usId: 85
+  euId: 84
+  jpId: 83
+  enName: Essential Furnishing
+  jpName: メタリック・インテリア
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Frontier Cavern
+  sublevel: 1
+  enSeries: Frigid Series
+  jpSeries: 冬ごもりシリーズ
+  enRealLifeItem: White Christmas ornament
+  jpRealLifeItem: クスリマスツリーの飾り
+  imagePath: Essential_Furnishing_icon.png
+- usId: 86
+  euId: 85
+  jpId: 84
+  enName: Icon of Progress
+  jpName: 進歩のあかし
+  weight: 15
+  maxCarriers: 25
+  value: 85
+  location: Frontier Cavern
+  sublevel: 2
+  enSeries: Frigid Series
+  jpSeries: 冬ごもりシリーズ
+  enRealLifeItem: Christmas stocking
+  jpRealLifeItem: おかしのブーツ
+  imagePath: Icon_of_Progress_icon.png
+- usId: 87
+  euId: 86
+  jpId: 85
+  enName: Temporal Mechanism
+  jpName: こわれたタイムマシン
+  weight: 30
+  maxCarriers: 40
+  value: 110
+  location: Valley of Repose
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: Pocket watch
+  jpRealLifeItem: 懐中時計
+  imagePath: Temporal_Mechanism_icon.png
+- usId: 88
+  euId: 87
+  jpId: 86
+  enName: Mystical Disc
+  jpName: ときめきマジカルサークル
+  weight: 6
+  maxCarriers: 15
+  value: 75
+  location: Subterranean Complex
+  sublevel: 5
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: Clock face
+  jpRealLifeItem: 時計の文字盤
+  imagePath: Mystical_Disc_icon.png
+- usId: 89
+  euId: 88
+  jpId: 87
+  enName: Vacuum Processor
+  jpName: バキューム・プロセッサー
+  weight: 10
+  maxCarriers: 18
+  value: 100
+  location: Subterranean Complex
+  sublevel: 6
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: FEE processor
+  jpRealLifeItem: 真空管
+  imagePath: Vacuum_Processor_icon.png
+- usId: 90
+  euId: 89
+  jpId: 88
+  enName: Indomitable CPU
+  jpName: 根性コンピュータ
+  weight: 10
+  maxCarriers: 18
+  value: 100
+  location: Subterranean Complex
+  sublevel: 7
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: Preceding Person System processor
+  jpRealLifeItem: 真空管
+  imagePath: Indomitable_CPU_icon.png
+- usId: 91
+  euId: 90
+  jpId: 89
+  enName: Network Mainbrain
+  jpName: グリッドコンピュータ
+  weight: 10
+  maxCarriers: 18
+  value: 100
+  location: Subterranean Complex
+  sublevel: 2
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: NCL processor
+  jpRealLifeItem: 真空管
+  imagePath: Network_Mainbrain_icon.png
+- usId: 92
+  euId: 91
+  jpId: 90
+  enName: Space Wave Receiver
+  jpName: 毒電波レシーバ
+  weight: 10
+  maxCarriers: 20
+  value: 80
+  location: Subterranean Complex
+  sublevel: 6
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: TV dial
+  jpRealLifeItem: 電子レンジのダイヤル
+  imagePath: Space_Wave_Receiver_icon.png
+- usId: 93
+  euId: 92
+  jpId: 91
+  enName: Sulking Antenna
+  jpName: むっつりアンテナ
+  weight: 35
+  maxCarriers: 45
+  value: 150
+  location: Glutton's Kitchen
+  sublevel: 5
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: TV antenna
+  jpRealLifeItem: テレビのアンテナ
+  imagePath: Sulking_Antenna_icon.png
+- usId: 94
+  euId: 93
+  jpId: 92
+  enName: Nouveau Table
+  jpName: ゲイジュツ・テーブル
+  weight: 25
+  maxCarriers: 35
+  value: 100
+  location: Subterranean Complex
+  sublevel: 1
+  enSeries: Hyper-technology Series
+  jpSeries: テクノロジーシリーズ
+  enRealLifeItem: Rotary phone dial
+  jpRealLifeItem: アナログ電話のダイヤル
+  imagePath: Nouveau_Table_icon.png
+- usId: 95
+  euId: 94
+  jpId: 93
+  enName: Omega Flywheel
+  jpName: オメガブースター
+  weight: 20
+  maxCarriers: 30
+  value: 60
+  location: Subterranean Complex
+  sublevel: 3
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Rusty gear
+  jpRealLifeItem: 歯車
+  imagePath: Omega_Flywheel_icon.png
+- usId: 96
+  euId: 95
+  jpId: 94
+  enName: Spirit Flogger
+  jpName: 社員の手本
+  weight: 20
+  maxCarriers: 30
+  value: 70
+  location: Subterranean Complex
+  sublevel: 2
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Hollow rusty gear
+  jpRealLifeItem: 歯車
+  imagePath: Spirit_Flogger_icon.png
+- usId: 97
+  euId: 96
+  jpId: 95
+  enName: Superstrong Stabilizer
+  jpName: 怪力金具フィックスマン
+  weight: 10
+  maxCarriers: 15
+  value: 60
+  location: Subterranean Complex
+  sublevel: 3
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Shiny bolt
+  jpRealLifeItem: ネジ
+  imagePath: Superstrong_Stabilizer_icon.png
+- usId: 98
+  euId: 97
+  jpId: 96
+  enName: Repair Juggernaut
+  jpName: フィックスマニア
+  weight: 20
+  maxCarriers: 30
+  value: 85
+  location: Subterranean Complex
+  sublevel: 6
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Rusty bolt
+  jpRealLifeItem: ネジ
+  imagePath: Repair_Juggernaut_icon.png
+- usId: 99
+  euId: 98
+  jpId: 97
+  enName: Adamantine Girdle
+  jpName: はがねのはらまき
+  weight: 12
+  maxCarriers: 20
+  value: 70
+  location: Subterranean Complex
+  sublevel: 5
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Lugnut
+  jpRealLifeItem: ナット
+  imagePath: Adamantine_Girdle_icon.png
+- usId: 100
+  euId: 99
+  jpId: 98
+  enName: Massage Girdle
+  jpName: マッサージはらまき
+  weight: 20
+  maxCarriers: 30
+  value: 100
+  location: Perplexing Pool
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Flat lugnut
+  jpRealLifeItem: ナット
+  imagePath: Massage_Girdle_icon.png
+- usId: 101
+  euId: 100
+  jpId: 99
+  enName: Superstick Textile
+  jpName: ネンチャッキーG
+  weight: 30
+  maxCarriers: 50
+  value: 80
+  location: White Flower Garden
+  sublevel: 3
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Roll of tape
+  jpRealLifeItem: ガムテープ
+  imagePath: Superstick_Textile_icon.png
+- usId: 102
+  euId: 101
+  jpId: 100
+  enName: Exhausted Superstick
+  jpName: くたびれたネンチャッキー
+  weight: 12
+  maxCarriers: 20
+  value: 50
+  location: Subterranean Complex
+  sublevel: 1
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Thin roll of tape
+  jpRealLifeItem: 残りわずかのガムテープ
+  imagePath: Exhausted_Superstick_icon.png
+- usId: 103
+  euId: 102
+  jpId: 101
+  enName: Furious Adhesive
+  jpName: ネンチャクシツ
+  weight: 10
+  maxCarriers: 15
+  value: 60
+  location: Subterranean Complex
+  sublevel: 7
+  enSeries: Industrial Set
+  jpSeries: 宇宙船修理キット
+  enRealLifeItem: Electrical tape
+  jpRealLifeItem: 赤のビニールテープ
+  imagePath: Furious_Adhesive_icon.png
+- usId: 104
+  euId: 103
+  jpId: 102
+  enName: Petrified Heart
+  jpName: ピュア・ハート
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: White Flower Garden
+  sublevel: 2
+  enSeries: Husband's Tears Series
+  jpSeries: 夫泣かせシリーズ
+  enRealLifeItem: Heart-shaped diamond
+  jpRealLifeItem: ハートのピンクダイヤ
+  imagePath: Petrified_Heart_icon.png
+- usId: 105
+  euId: 104
+  jpId: 103
+  enName: Eternal Emerald Eye
+  jpName: エターナル・グリーン
+  weight: 20
+  maxCarriers: 30
+  value: 150
+  location: Bulblax Kingdom
+  sublevel: 6
+  enSeries: Husband's Tears Series
+  jpSeries: 夫泣かせシリーズ
+  enRealLifeItem: Brooch with green diamond
+  jpRealLifeItem: 金飾りのエメラルド
+  imagePath: Eternal_Emerald_Eye_icon.png
+- usId: 106
+  euId: 105
+  jpId: 104
+  enName: Regal Diamond
+  jpName: ロイヤル・ダイヤモンド
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Citadel of Spiders
+  sublevel: 5
+  enSeries: Husband's Tears Series
+  jpSeries: 夫泣かせシリーズ
+  enRealLifeItem: Diamond
+  jpRealLifeItem: ダイヤモンド
+  imagePath: Regal_Diamond_icon.png
+- usId: 107
+  euId: 106
+  jpId: 105
+  enName: Tear Stone
+  jpName: ティア・ストーン
+  weight: 5
+  maxCarriers: 10
+  value: 150
+  location: Bulblax Kingdom
+  sublevel: 2
+  enSeries: Husband's Tears Series
+  jpSeries: 夫泣かせシリーズ
+  enRealLifeItem: Tear-shaped diamond
+  jpRealLifeItem: ブルーダイヤ
+  imagePath: Tear_Stone_icon.png
+- usId: 108
+  euId: 107
+  jpId: 106
+  enName: Princess Pearl
+  jpName: ヒメシンジュ
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Cavern of Chaos
+  sublevel: 6
+  enSeries: Husband's Tears Series
+  jpSeries: 夫泣かせシリーズ
+  enRealLifeItem: Pearl earring
+  jpRealLifeItem: 真珠の飾り
+  imagePath: Princess_Pearl_icon.png
+- usId: 109
+  euId: 108
+  jpId: 107
+  enName: Crystal Clover
+  jpName: フォー・リーフ
+  weight: 20
+  maxCarriers: 30
+  value: 150
+  location: Bulblax Kingdom
+  sublevel: 1
+  enSeries: Husband's Tears Series
+  jpSeries: 夫泣かせシリーズ
+  enRealLifeItem: Clover-shaped brooch
+  jpRealLifeItem: 四葉のエメラルド
+  imagePath: Crystal_Clover_icon.png
+- usId: 110
+  euId: 109
+  jpId: 108
+  enName: Unspeakable Wonder
+  jpName: トレジャー・オブ・ワンダー
+  weight: 30
+  maxCarriers: 40
+  value: 120
+  location: Valley of Repose
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Gem-encrusted crown
+  jpRealLifeItem: 王冠
+  imagePath: Unspeakable_Wonder_icon.png
+- usId: 111
+  euId: 110
+  jpId: 109
+  enName: Essence of Rage
+  jpName: ココロナシカ
+  weight: 8
+  maxCarriers: 16
+  value: 70
+  location: Frontier Cavern
+  sublevel: 1
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Ruby mounted on silver circle
+  jpRealLifeItem: ルビー
+  imagePath: Essence_of_Rage_icon.png
+- usId: 112
+  euId: 111
+  jpId: 110
+  enName: Essence of Despair
+  jpName: グリーン・アイ
+  weight: 6
+  maxCarriers: 12
+  value: 80
+  location: Cavern of Chaos
+  sublevel: 2
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Emerald mounted on silver circle
+  jpRealLifeItem: ペリドット
+  imagePath: Essence_of_Despair_icon.png
+- usId: 113
+  euId: 112
+  jpId: 111
+  enName: Essence of True Love
+  jpName: 宇宙愛のモニュメント
+  weight: 5
+  maxCarriers: 10
+  value: 60
+  location: Hole of Heroes
+  sublevel: 2
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Sapphire mounted on gold square
+  jpRealLifeItem: サファイア
+  imagePath: Essence_of_True_Love_icon.png
+- usId: 114
+  euId: 113
+  jpId: 112
+  enName: Essence of Desire
+  jpName: 銀河愛のモニュメント
+  weight: 8
+  maxCarriers: 16
+  value: 90
+  location: Dream Den
+  sublevel: 7
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Amethyst mounted on gold square
+  jpRealLifeItem: アメジスト
+  imagePath: Essence_of_Desire_icon.png
+- usId: 115
+  euId: 114
+  jpId: 113
+  enName: Pink Menace
+  jpName: オーバーキル・レッド
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Valley of Repose
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Pink heart mounted on gold ring
+  jpRealLifeItem: ピンクのハートの指輪
+  imagePath: Pink_Menace_icon.png
+- usId: 116
+  euId: 115
+  jpId: 114
+  enName: Joyless Jewel
+  jpName: ぬかよろこびジュエル
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Hole of Heroes
+  sublevel: 7
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Green heart mounted on silver ring
+  jpRealLifeItem: 緑のハートの指輪
+  imagePath: Joyless_Jewel_icon.png
+- usId: 117
+  euId: 116
+  jpId: 115
+  enName: Frosty Bauble
+  jpName: アイス・ハート
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Cavern of Chaos
+  sublevel: 2
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Blue square mounted on gold ring
+  jpRealLifeItem: 青の四角の指輪（金）
+  imagePath: Frosty_Bauble_icon.png
+- usId: 118
+  euId: 117
+  jpId: 116
+  enName: Gemstar Wife
+  jpName: 宝石生物ヒトデメラルド♀
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Cavern of Chaos
+  sublevel: 2
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Pink star mounted on silver ring
+  jpRealLifeItem: ピンクの星の指輪
+  imagePath: Gemstar_Wife_icon.png
+- usId: 119
+  euId: 118
+  jpId: 117
+  enName: Gemstar Husband
+  jpName: 宝石生物ヒトデメラルド♂
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Frontier Cavern
+  sublevel: 3
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Green star mounted on gold ring
+  jpRealLifeItem: 緑の指輪
+  imagePath: Gemstar_Husband_icon.png
+- usId: 120
+  euId: 119
+  jpId: 118
+  enName: Universal Com
+  jpName: ねぼけまなこモニター
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Dream Den
+  sublevel: 12
+  enSeries: Space Love Series
+  jpSeries: 宇宙愛シリーズ
+  enRealLifeItem: Blue square mounted on silver ring
+  jpRealLifeItem: 青の四角い指輪（銀）
+  imagePath: Universal_Com_icon.png
+- usId: 121
+  euId: 120
+  jpId: 119
+  enName: Omniscient Sphere
+  jpName: 思考結晶IKARI
+  weight: 1
+  maxCarriers: 8
+  value: 85
+  location: Frontier Cavern
+  sublevel: 4
+  enSeries: Crystallized Emotion Series
+  jpSeries: 思考結晶シリーズ
+  enRealLifeItem: Small orange marble
+  jpRealLifeItem: 赤いビー玉（小）
+  imagePath: Omniscient_Sphere_icon.png
+- usId: 122
+  euId: 121
+  jpId: 120
+  enName: Crystallized Telepathy
+  jpName: テレパシー・クリスタル
+  weight: 10
+  maxCarriers: 20
+  value: 120
+  location: Snagret Hole
+  sublevel: 4
+  enSeries: Crystallized Emotion Series
+  jpSeries: 思考結晶シリーズ
+  enRealLifeItem: Large red marble
+  jpRealLifeItem: 赤いビー玉
+  imagePath: Crystallized_Telepathy_icon.png
+  weight2PBattle: 1
+  maxCarriers2PBattle: 8
+- usId: 123
+  euId: 122
+  jpId: 121
+  enName: Love Sphere
+  jpName: 思考結晶AI
+  weight: 1
+  maxCarriers: 8
+  value: 85
+  location: Hole of Heroes
+  sublevel: 3
+  enSeries: Crystallized Emotion Series
+  jpSeries: 思考結晶シリーズ
+  enRealLifeItem: Small yellow marble
+  jpRealLifeItem: 黄色いビー玉（小）
+  imagePath: Love_Sphere_icon.png
+- usId: 124
+  euId: 123
+  jpId: 122
+  enName: Crystallized Telekinesis
+  jpName: サイコキネシス・クリスタル
+  weight: 10
+  maxCarriers: 20
+  value: 120
+  location: Snagret Hole
+  sublevel: 1
+  enSeries: Crystallized Emotion Series
+  jpSeries: 思考結晶シリーズ
+  enRealLifeItem: Large yellow marble
+  jpRealLifeItem: 黄色いビー玉
+  imagePath: Crystallized_Telekinesis_icon.png
+  weight2PBattle: 1
+  maxCarriers2PBattle: 8
+- usId: 125
+  euId: 124
+  jpId: 123
+  enName: Mirth Sphere
+  jpName: 思考結晶WARAI
+  weight: 1
+  maxCarriers: 8
+  value: 85
+  location: Cavern of Chaos
+  sublevel: 1
+  enSeries: Crystallized Emotion Series
+  jpSeries: 思考結晶シリーズ
+  enRealLifeItem: Small blue marble
+  jpRealLifeItem: 青いビー玉（小）
+  imagePath: Mirth_Sphere_icon.png
+- usId: 126
+  euId: 125
+  jpId: 124
+  enName: Crystallized Clairvoyance
+  jpName: チャネリング・クリスタル
+  weight: 10
+  maxCarriers: 20
+  value: 120
+  location: Snagret Hole
+  sublevel: 5
+  enSeries: Crystallized Emotion Series
+  jpSeries: 思考結晶シリーズ
+  enRealLifeItem: Large blue marble
+  jpRealLifeItem: 青いビー玉
+  imagePath: Crystallized_Clairvoyance_icon.png
+  weight2PBattle: 1
+  maxCarriers2PBattle: 8
+- usId: 127
+  euId: 126
+  jpId: 125
+  enName: Maternal Sculpture
+  jpName: 母と子のカタチ
+  weight: 15
+  maxCarriers: 25
+  value: 55
+  location: Cavern of Chaos
+  sublevel: 9
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Baby bottle top
+  jpRealLifeItem: 哺乳瓶の乳首
+  imagePath: Maternal_Sculpture_icon.png
+- usId: 128
+  euId: 127
+  jpId: 126
+  enName: Extreme Perspirator
+  jpName: トレーニングマシン
+  weight: 15
+  maxCarriers: 25
+  value: 150
+  location: Dream Den
+  sublevel: 8
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Wobbling doll
+  jpRealLifeItem: おきあがりこぼし
+  imagePath: Extreme_Perspirator_icon.png
+- usId: 129
+  euId: 128
+  jpId: 127
+  enName: Rubber Ugly
+  jpName: 天下一ブサイク
+  weight: 8
+  maxCarriers: 15
+  value: 90
+  location: Shower Room
+  sublevel: 6
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Rubber duck
+  jpRealLifeItem: アヒル隊長
+  imagePath: Rubber_Ugly_icon.png
+- usId: 130
+  euId: 129
+  jpId: 128
+  enName: Paradoxical Enigma
+  jpName: 超存在
+  weight: 4
+  maxCarriers: 8
+  value: 80
+  location: Citadel of Spiders
+  sublevel: 2
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Rubber duck head
+  jpRealLifeItem: アヒルの頭
+  imagePath: Paradoxical_Enigma_icon.png
+- usId: 131
+  euId: 130
+  enName: Silencer
+  weight: 20
+  maxCarriers: 25
+  value: 670
+  location: Cavern of Chaos
+  sublevel: 10
+  enSeries: Dream Series
+  enRealLifeItem: Baby doll head
+  imagePath: Silencer_icon.png
+- jpId: 129
+  enName: Silencer
+  jpName: サイレンサー
+  weight: 20
+  maxCarriers: 25
+  value: 666
+  location: Cavern of Chaos
+  sublevel: 10
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Baby doll head
+  jpRealLifeItem: キモイ人形の首
+  imagePath: Silencer_icon.png
+- usId: 132
+  euId: 131
+  jpId: 130
+  enName: Wiggle Noggin
+  jpName: 宇宙ネコ目
+  weight: 15
+  maxCarriers: 25
+  value: 85
+  location: Cavern of Chaos
+  sublevel: 9
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Cat bobble-head
+  jpRealLifeItem: ネコのおもちゃ
+  imagePath: Wiggle_Noggin_icon.png
+- usId: 133
+  euId: 132
+  jpId: 131
+  enName: Coiled Launcher
+  jpName: サイコジャンパー
+  weight: 15
+  maxCarriers: 25
+  value: 70
+  location: Subterranean Complex
+  sublevel: 3
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Semi-rusted spring
+  jpRealLifeItem: バネ
+  imagePath: Coiled_Launcher_icon.png
+- euId: 133
+  jpId: 132
+  enName: Magical Stage
+  jpName: ミラクルマジカルステージ
+  weight: 30
+  maxCarriers: 45
+  value: 150
+  location: Glutton's Kitchen
+  sublevel: 5
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Baby toy
+  jpRealLifeItem: ラブリーユーリ
+  imagePath: Magical_Stage_icon.png
+- usId: 134
+  enName: Boom Cone
+  weight: 10
+  maxCarriers: 15
+  value: 100
+  location: Glutton's Kitchen
+  sublevel: 5
+  enSeries: Dream Series
+  enRealLifeItem: Firework cone
+  imagePath: Boom_Cone_icon.png
+- usId: 135
+  euId: 134
+  jpId: 133
+  enName: Flame Tiller
+  jpName: コンバイン・ローラー
+  weight: 20
+  maxCarriers: 30
+  value: 120
+  location: Frontier Cavern
+  sublevel: 7
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Yo-yo
+  jpRealLifeItem: ヨーヨー
+  imagePath: Flame_Tiller_icon.png
+- usId: 136
+  euId: 135
+  jpId: 134
+  enName: Doomsday Apparatus
+  jpName: 超重ギガンティス
+  weight: 1000
+  maxCarriers: 128
+  value: 3000
+  location: Wistful Wild
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Dumbell
+  jpRealLifeItem: 鉄アレイ
+  imagePath: Doomsday_Apparatus_icon.png
+- usId: 137
+  euId: 136
+  jpId: 135
+  enName: Aquatic Mine
+  jpName: アクアティックマイン
+  weight: 3
+  maxCarriers: 6
+  value: 80
+  location: Perplexing Pool
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Fishing bobber
+  jpRealLifeItem: 釣りの浮き
+  imagePath: Aquatic_Mine_icon.png
+- jpId: 136
+  enName: Ultimate Spinner
+  jpName: アルティメット・スピナー
+  weight: 10
+  maxCarriers: 15
+  value: 120
+  location: Snagret Hole
+  sublevel: 6
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Beigoma toy
+  jpRealLifeItem: ベーゴマ
+  imagePath: Bey_goma_J_icon.png
+- usId: 138
+  enName: Stupendous Lens
+  weight: 10
+  maxCarriers: 15
+  value: 120
+  location: Snagret Hole
+  sublevel: 6
+  enSeries: Dream Series
+  enRealLifeItem: Magnifying glass
+  imagePath: Stupendous_Lens_icon.png
+- usId: 139
+  euId: 137
+  jpId: 137
+  enName: Air Brake
+  jpName: エアシューター
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Awakening Wood
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Badminton birdie
+  jpRealLifeItem: バトミントンの羽
+  imagePath: Air_Brake_icon.png
+- usId: 140
+  euId: 138
+  jpId: 138
+  enName: Worthless Statue
+  jpName: えらそうでえらくない石像
+  weight: 10
+  maxCarriers: 15
+  value: 80
+  location: Frontier Cavern
+  sublevel: 6
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: White king chess piece
+  jpRealLifeItem: チェスの白
+  imagePath: Worthless_Statue_icon.png
+- usId: 141
+  euId: 139
+  jpId: 139
+  enName: Priceless Statue
+  jpName: えらそうでえらい石像
+  weight: 10
+  maxCarriers: 15
+  value: 80
+  location: Frontier Cavern
+  sublevel: 6
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Black queen chess piece
+  jpRealLifeItem: チェスの黒
+  imagePath: Priceless_Statue_icon.png
+- usId: 142
+  euId: 140
+  jpId: 140
+  enName: Boss Stone
+  jpName: ショーグン石
+  weight: 8
+  maxCarriers: 15
+  value: 110
+  location: Dream Den
+  sublevel: 11
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Ah fu tile
+  jpRealLifeItem: 王将
+  imagePath: Boss_Stone_icon.png
+- usId: 143
+  euId: 141
+  jpId: 141
+  enName: Luck Wafer
+  jpName: エレメンタル・フォース
+  weight: 1
+  maxCarriers: 3
+  value: 140
+  location: Hole of Beasts
+  sublevel: 4
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Ace of spades playing card
+  jpRealLifeItem: スペードのエース
+  imagePath: Luck_Wafer_icon.png
+- usId: 144
+  euId: 142
+  jpId: 142
+  enName: Talisman of Life
+  jpName: 人生花道
+  weight: 15
+  maxCarriers: 25
+  value: 90
+  location: Dream Den
+  sublevel: 10
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Case of playing cards
+  jpRealLifeItem: 花札
+  imagePath: Talisman_of_Life_icon.png
+- usId: 145
+  euId: 143
+  jpId: 143
+  enName: Strife Monolith
+  jpName: 勝負石
+  weight: 12
+  maxCarriers: 20
+  value: 150
+  location: Hole of Beasts
+  sublevel: 3
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: 7 of Circles Mahjong tile
+  jpRealLifeItem: マージャン牌
+  imagePath: Strife_Monolith_icon.png
+- usId: 146
+  euId: 144
+  jpId: 144
+  enName: Chance Totem
+  jpName: 運試しストーン
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Awakening Wood
+  enSeries: Dream Series
+  jpSeries: 夢商品シリーズ
+  enRealLifeItem: Six-sided die
+  jpRealLifeItem: サイコロ
+  imagePath: Chance_Totem_icon.png
+- usId: 147
+  euId: 145
+  jpId: 145
+  enName: Dream Architect
+  jpName: 機械じかけの夢
+  weight: 20
+  maxCarriers: 30
+  value: 280
+  location: Hole of Beasts
+  sublevel: 4
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: Game and Watch
+  jpRealLifeItem: ゲーム＆ウォッチ（BALL）
+  imagePath: Dream_Architect_icon.png
+- usId: 148
+  euId: 146
+  jpId: 146
+  enName: Stone of Glory
+  jpName: 栄光の石
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Hole of Beasts
+  sublevel: 1
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: NES D-pad
+  jpRealLifeItem: ファミコンの十字キー
+  imagePath: Stone_of_Glory_icon.png
+- usId: 149
+  euId: 147
+  jpId: 147
+  enName: Glee Spinner
+  jpName: たましいの石
+  weight: 6
+  maxCarriers: 12
+  value: 140
+  location: Dream Den
+  sublevel: 3
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: GameCube control stick
+  jpRealLifeItem: GCの3Dスティック
+  imagePath: Glee_Spinner_icon.png
+- usId: 150
+  euId: 148
+  jpId: 148
+  enName: Cosmic Archive
+  jpName: コズミック・アーカイブ
+  weight: 15
+  maxCarriers: 25
+  value: 230
+  location: Hole of Beasts
+  sublevel: 3
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: Famicom disk
+  jpRealLifeItem: 謎の村雨城のディスク
+  imagePath: Cosmic_Archive_icon.png
+- usId: 151
+  euId: 149
+  jpId: 149
+  enName: Remembered Old Buddy
+  jpName: オヤジのおもいで
+  weight: 30
+  maxCarriers: 45
+  value: 250
+  location: Hole of Heroes
+  sublevel: 15
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: R.O.B.'s head
+  jpRealLifeItem: ﾌｧﾐｺﾝﾛﾎﾞｯﾄの頭部パーツ
+  imagePath: Remembered_Old_Buddy_icon.png
+- usId: 152
+  euId: 150
+  jpId: 150
+  enName: Fond Gyro Block
+  jpName: なつかしのジャイロブロック
+  weight: 5
+  maxCarriers: 10
+  value: 80
+  location: Hole of Heroes
+  sublevel: 14
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: Red Stack-Up block
+  jpRealLifeItem: ﾌｧﾐｺﾝﾛﾎﾞｯﾄの赤ブロック
+  imagePath: Fond_Gyro_Block_icon.png
+- usId: 153
+  euId: 151
+  jpId: 151
+  enName: Memorable Gyro Block
+  jpName: わすれえぬジャイロブロック
+  weight: 5
+  maxCarriers: 10
+  value: 80
+  location: Hole of Heroes
+  sublevel: 13
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: Yellow Stack-Up block
+  jpRealLifeItem: ﾌｧﾐｺﾝﾛﾎﾞｯﾄの黄ブロック
+  imagePath: Memorable_Gyro_Block_icon.png
+- usId: 154
+  euId: 152
+  jpId: 152
+  enName: Lost Gyro Block
+  jpName: なくしてないたジャイロブロック
+  weight: 5
+  maxCarriers: 10
+  value: 80
+  location: Hole of Heroes
+  sublevel: 12
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: Green Stack-Up block
+  jpRealLifeItem: ﾌｧﾐｺﾝﾛﾎﾞｯﾄの緑ブロック
+  imagePath: Lost_Gyro_Block_icon.png
+- usId: 155
+  euId: 153
+  jpId: 153
+  enName: Favorite Gyro Block
+  jpName: おきにいりジャイロブロック
+  weight: 5
+  maxCarriers: 10
+  value: 80
+  location: Hole of Heroes
+  sublevel: 11
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: Blue Stack-Up block
+  jpRealLifeItem: ﾌｧﾐｺﾝﾛﾎﾞｯﾄの青ブロック
+  imagePath: Favorite_Gyro_Block_icon.png
+- usId: 156
+  euId: 154
+  jpId: 154
+  enName: Treasured Gyro Block
+  jpName: たからものジャイロブロック
+  weight: 5
+  maxCarriers: 10
+  value: 80
+  location: Hole of Heroes
+  sublevel: 10
+  enSeries: Blast from the Past Series
+  jpSeries: なつかしシリーズ
+  enRealLifeItem: White Stack-Up block
+  jpRealLifeItem: ﾌｧﾐｺﾝﾛﾎﾞｯﾄの白ブロック
+  imagePath: Treasured_Gyro_Block_icon.png
+- usId: 157
+  euId: 155
+  enName: Proton AA
+  weight: 6
+  maxCarriers: 12
+  value: 90
+  location: Submerged Castle
+  sublevel: 4
+  enSeries: Mystical Energy Series
+  enRealLifeItem: AA Duracell battery
+  imagePath: Proton_AA_icon.png
+- jpId: 155
+  enName: Proton X
+  jpName: プロトンX
+  weight: 6
+  maxCarriers: 12
+  value: 90
+  location: Submerged Castle
+  sublevel: 4
+  enSeries: Mystical Energy Series
+  jpSeries: 謎エネルギーシリーズ
+  enRealLifeItem: National Hi-Top AA battery
+  jpRealLifeItem: 赤の単三乾電池（細）
+  imagePath: Denchi_3_red_J_icon.png
+- usId: 158
+  euId: 156
+  enName: Durable Energy Cell
+  weight: 15
+  maxCarriers: 20
+  value: 160
+  location: Shower Room
+  sublevel: 2
+  enSeries: Mystical Energy Series
+  enRealLifeItem: C Duracell battery
+  imagePath: Durable_Energy_Cell_icon.png
+- jpId: 156
+  enName: Omegatron
+  jpName: オメガトロン
+  weight: 6
+  maxCarriers: 12
+  value: 120
+  location: Cavern of Chaos
+  sublevel: 7
+  enSeries: Mystical Energy Series
+  jpSeries: 謎エネルギーシリーズ
+  enRealLifeItem: National NEO Hi-Top AA battery
+  jpRealLifeItem: 黒の単三乾電池（細）
+  imagePath: Denchi_3_black_J_icon.png
+- usId: 159
+  euId: 157
+  enName: Courage Reactor
+  weight: 20
+  maxCarriers: 20
+  value: 280
+  location: Valley of Repose
+  enSeries: Mystical Energy Series
+  enRealLifeItem: D Duracell battery
+  imagePath: Courage_Reactor_icon.png
+- jpId: 157
+  enName: Yell Battery
+  jpName: きあいバッテリー
+  weight: 15
+  maxCarriers: 20
+  value: 140
+  location: Perplexing Pool
+  enSeries: Mystical Energy Series
+  jpSeries: 謎エネルギーシリーズ
+  enRealLifeItem: National Hi-Top C battery
+  jpRealLifeItem: 赤の単二乾電池
+  imagePath: Denchi_2_red_J_icon.png
+- usId: 160
+  euId: 158
+  enName: Fuel Reservoir
+  weight: 8
+  maxCarriers: 15
+  value: 120
+  location: Cavern of Chaos
+  sublevel: 7
+  enSeries: Mystical Energy Series
+  enRealLifeItem: 9-Volt Duracell battery
+  imagePath: Fuel_Reservoir_icon.png
+- jpId: 158
+  enName: Revised Eternal Fuel Dynamo
+  jpName: 永久燃料ダイナモ改
+  weight: 15
+  maxCarriers: 20
+  value: 160
+  location: Shower Room
+  sublevel: 2
+  enSeries: Mystical Energy Series
+  jpSeries: 謎エネルギーシリーズ
+  enRealLifeItem: National NEO Hi-Top C battery
+  jpRealLifeItem: 黒の単二乾電池
+  imagePath: Denchi_2_black_J_icon.png
+- jpId: 159
+  enName: Love and Courage Reactor
+  jpName: あいとゆうきリアクター
+  weight: 20
+  maxCarriers: 20
+  value: 280
+  location: Valley of Repose
+  enSeries: Mystical Energy Series
+  jpSeries: 謎エネルギーシリーズ
+  enRealLifeItem: National Hi-Top D battery
+  jpRealLifeItem: 赤の単一乾電池（太）
+  imagePath: Denchi_1_red_J_icon.png
+- jpId: 160
+  enName: Alternative Reactor
+  jpName: オルタナティブ・リアクター
+  weight: 20
+  maxCarriers: 35
+  value: 300
+  location: Subterranean Complex
+  sublevel: 7
+  enSeries: Mystical Energy Series
+  jpSeries: 謎エネルギーシリーズ
+  enRealLifeItem: National NEO Hi-Top D battery
+  jpRealLifeItem: 黒の単一乾電池（太）
+  imagePath: Denchi_1_black_J_icon.png
+- euId: 159
+  enName: Container of Knowledge
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Cavern of Chaos
+  sublevel: 4
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Connétable sardines container
+  imagePath: Container_of_Knowledge_icon.png
+- euId: 160
+  enName: Container of Sea Bounty
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: White Flower Garden
+  sublevel: 4
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Herring container
+  imagePath: Container_of_Sea_Bounty_icon.png
+- usId: 161
+  enName: Drone Supplies
+  weight: 15
+  maxCarriers: 25
+  value: 130
+  location: Submerged Castle
+  sublevel: 4
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Underwood deviled ham spread container
+  imagePath: Drone_Supplies_US_icon.png
+- usId: 162
+  enName: Patience Tester
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Citadel of Spiders
+  sublevel: 3
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Water chestnuts container
+  imagePath: Patience_Tester_icon.png
+- euId: 161
+  enName: Patience Tester
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Hole of Heroes
+  sublevel: 9
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Water chestnuts container
+  imagePath: Patience_Tester_icon.png
+- usId: 163
+  enName: Endless Repository
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Shower Room
+  sublevel: 5
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Beach Cliff Sardines container
+  imagePath: Endless_Repository_US_icon.png
+- euId: 162
+  enName: Perfect Container
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Subterranean Complex
+  sublevel: 7
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Beach Cliff Sardines container
+  imagePath: Endless_Repository_US_icon.png
+- usId: 164
+  enName: Fruit Guard
+  weight: 15
+  maxCarriers: 25
+  value: 130
+  location: Cavern of Chaos
+  sublevel: 8
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Tree Top juice can
+  imagePath: Fruit_Guard_icon.png
+- usId: 165
+  enName: Nutrient Silo
+  weight: 15
+  maxCarriers: 25
+  value: 130
+  location: Hole of Heroes
+  sublevel: 6
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Skippy peanut butter
+  imagePath: Nutrient_Silo_icon.png
+- euId: 170
+  enName: Nutrient Silo
+  weight: 15
+  maxCarriers: 25
+  value: 130
+  location: White Flower Garden
+  sublevel: 1
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Skippy peanut butter
+  imagePath: Nutrient_Silo_icon.png
+- usId: 166
+  enName: Stringent Container
+  weight: 10
+  maxCarriers: 15
+  value: 130
+  location: Dream Den
+  sublevel: 12
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Clabber Girl baking powder
+  imagePath: Stringent_Container_US_icon.png
+- euId: 163
+  enName: Survival Container
+  weight: 10
+  maxCarriers: 15
+  value: 130
+  location: Glutton's Kitchen
+  sublevel: 4
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Clabber Girl baking powder
+  imagePath: Stringent_Container_US_icon.png
+- euId: 164
+  jpId: 161
+  enName: Endless Repository
+  jpName: つきぬコンテナ
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Dream Den
+  sublevel: 12
+  enSeries: Massive Receptacle Series
+  jpSeries: 収納王シリーズ
+  enRealLifeItem: Baby clams container
+  jpRealLifeItem: アサリの缶詰
+  imagePath: Endless_Repository_EU_icon.png
+- euId: 165
+  jpId: 162
+  enName: Open Architecture
+  jpName: オープン・アーキテクチャ
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Citadel of Spiders
+  sublevel: 3
+  enSeries: Massive Receptacle Series
+  jpSeries: 収納王シリーズ
+  enRealLifeItem: Open can of salmon
+  jpRealLifeItem: サケの缶詰
+  imagePath: Open_Architecture_icon.png
+- euId: 166
+  jpId: 163
+  enName: Permanent Container
+  jpName: パーマネントコンテナ
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Shower Room
+  sublevel: 5
+  enSeries: Massive Receptacle Series
+  jpSeries: 収納王シリーズ
+  enRealLifeItem: ICC sealed tin
+  jpRealLifeItem: サンマの蒲焼きの缶詰
+  imagePath: Permanent_Container_icon.png
+- euId: 167
+  jpId: 164
+  enName: Empty space container
+  jpName: 亜空間コンテナ
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Cavern of Chaos
+  sublevel: 8
+  enSeries: Massive Receptacle Series
+  jpSeries: 収納王シリーズ
+  enRealLifeItem: Open shellfish can
+  jpRealLifeItem: 赤貝の缶詰
+  imagePath: Empty_space_container_icon.png
+- euId: 168
+  jpId: 165
+  enName: Stringent Container
+  jpName: みっちりコンテナ
+  weight: 12
+  maxCarriers: 20
+  value: 130
+  location: Hole of Heroes
+  sublevel: 6
+  enSeries: Massive Receptacle Series
+  jpSeries: 収納王シリーズ
+  enRealLifeItem: Meidi-Ya corned beef can
+  jpRealLifeItem: コンビーフ
+  imagePath: Stringent_Container_EU_icon.png
+- euId: 169
+  jpId: 166
+  enName: Open Archive
+  jpName: 丸見えアーカイブ
+  weight: 20
+  maxCarriers: 30
+  value: 130
+  location: Submerged Castle
+  sublevel: 4
+  enSeries: Massive Receptacle Series
+  jpSeries: 収納王シリーズ
+  enRealLifeItem: Open bean tin
+  jpRealLifeItem: あずき缶
+  imagePath: Open_Archive_icon.png
+- euId: 171
+  enName: Plentiful Tank
+  weight: 8
+  maxCarriers: 16
+  value: 50
+  location: Shower Room
+  sublevel: 6
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Breitsamer Honey jar
+  imagePath: Plentiful_Tank_icon.png
+- euId: 172
+  enName: Drone Supplies
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Glutton's Kitchen
+  sublevel: 2
+  enSeries: Massive Receptacle Series
+  enRealLifeItem: Haribo sweets
+  imagePath: Drone_Supplies_EU_icon.png
+- usId: 167
+  enName: Survival Ointment
+  weight: 6
+  maxCarriers: 12
+  value: 90
+  location: White Flower Garden
+  sublevel: 4
+  enSeries: Survival Series
+  enRealLifeItem: ChapStick lip balm
+  imagePath: Survival_Ointment_icon.png
+- usId: 168
+  enName: Healing Cask
+  weight: 6
+  maxCarriers: 10
+  value: 60
+  location: Awakening Wood
+  enSeries: Survival Series
+  enRealLifeItem: Carmex lip balm
+  imagePath: Healing_Cask_icon.png
+- jpId: 167
+  enName: Estimated Object GF
+  jpName: 推定物体GF
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Shower Room
+  sublevel: 6
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Ohayo-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（オハヨーママイ）
+  imagePath: Milk_cap_J_icon.png
+- jpId: 168
+  enName: Coiny The Refined
+  jpName: ハイセンス・ゼニー
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Snagret Hole
+  sublevel: 6
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Kyodo-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（名糖3.4牛乳）
+  imagePath: P2_Coiny_The_Refined_Treasure_Hoard_Icon.png
+- jpId: 169
+  enName: Milky Figure
+  jpName: ミルキーズ
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Citadel of Spiders
+  sublevel: 2
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Chichiyasu-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（チチヤス特濃牛乳）
+  imagePath: P2_Milky_Figure_Treasure_Hoard_Icon.png
+- jpId: 170
+  enName: Milk Cover
+  jpName: ちちぶた
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Glutton's Kitchen
+  sublevel: 2
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Kyusyu-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（みどりデカ牛乳）
+  imagePath: P2_Milk_Lid_Treasure_Hoard_Icon.png
+- jpId: 171
+  enName: Good Old Memories
+  jpName: あの日々の思い出
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Glutton's Kitchen
+  sublevel: 4
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Rakuren-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（らくれん牛乳）
+  imagePath: P2_Good_Old_Memories_Treasure_Hoard_Icon.png
+- jpId: 172
+  enName: Paper Slider
+  jpName: ペーパースライダー
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: White Flower Garden
+  sublevel: 4
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Kajihara-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（MILK COUNTRY）
+  imagePath: P2_Paper_Slider_Treasure_Hoard_Icon.png
+- jpId: 173
+  enName: Understood Person Symbol
+  jpName: わかる者のシンボル
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Cavern of Chaos
+  sublevel: 4
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Koiwai-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（小岩井まきば）
+  imagePath: P2_Understood_Person_Symbol_Treasure_Hoard_Icon.png
+- jpId: 174
+  enName: Flying Saucer
+  jpName: フライング・ソーサー
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Hole of Heroes
+  sublevel: 9
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Kuriomoto-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（クリモト3.5牛乳）
+  imagePath: P2_Flying_Saucer_Treasure_Hoard_Icon.png
+- jpId: 175
+  enName: Universally Best Art
+  jpName: 宇宙一アート
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Dream Den
+  sublevel: 11
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Kyoshin-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（共進フリー牛乳）
+  imagePath: P2_Universally_Best_Art_Treasure_Hoard_Icon.png
+- jpId: 176
+  enName: Inviting...Thing
+  jpName: まねきしもの
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Dream Den
+  sublevel: 13
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Sagotani-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（砂谷牛乳）
+  imagePath: P2_Inviting...Thing_Treasure_Hoard_Icon.png
+- jpId: 177
+  enName: Idea Assistant
+  jpName: 発想アシスタント
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Perplexing Pool
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Daisen-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（白バラｿﾌﾄｺｰﾋｰ70）
+  imagePath: P2_Idea_Assistant_Treasure_Hoard_Icon.png
+- jpId: 178
+  enName: Seat of Enlightenment
+  jpName: さとりの座
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Awakening Wood
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Hiruzen-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（蒜山ｼﾞｬｰｼﾞｰ牛乳）
+  imagePath: P2_Seat_of_Enlightenment_Treasure_Hoard_Icon.png
+- jpId: 179
+  enName: Milky Cradle
+  jpName: ミルキーゆりかご
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Shower Room
+  sublevel: 5
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Kitaama-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（農協特濃牛乳）
+  imagePath: P2_Milky_Cradle_Treasure_Hoard_Icon.png
+- jpId: 180
+  enName: Anywhere Floater
+  jpName: どこでもフローター
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Submerged Castle
+  sublevel: 3
+  enSeries: Mystery Disk Series
+  jpSeries: 謎の円盤群シリーズ
+  enRealLifeItem: Mainichi-brand milk cover
+  jpRealLifeItem: 牛乳のフタ（毎日ドリブシ）
+  imagePath: P2_Anywhere_Floater_Treasure_Hoard_Icon.png
+- usId: 169
+  enName: Abstract Masterpiece
+  weight: 6
+  maxCarriers: 12
+  value: 30
+  location: Shower Room
+  sublevel: 6
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Snapple cap
+  imagePath: Abstract_Masterpiece_US_icon.png
+- usId: 170
+  enName: Optical Illustration
+  weight: 15
+  maxCarriers: 20
+  value: 140
+  location: Perplexing Pool
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Ragú cap
+  imagePath: Optical_Illustration_icon.png
+- usId: 171
+  enName: Thirst Activator
+  weight: 20
+  maxCarriers: 35
+  value: 300
+  location: Subterranean Complex
+  sublevel: 7
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Tree Top cap
+  imagePath: Thirst_Activator_icon.png
+- usId: 172
+  euId: 173
+  enName: Yellow Taste Tyrant
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Dream Den
+  sublevel: 11
+  enSeries: Ancient Ad Series
+  enRealLifeItem: French's cap
+  imagePath: Yellow_Taste_Tyrant_icon.png
+- usId: 173
+  euId: 174
+  enName: Salivatrix
+  weight: 20
+  maxCarriers: 30
+  value: 30
+  location: Snagret Hole
+  sublevel: 6
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Dannon cap
+  imagePath: Salivatrix_icon.png
+- usId: 174
+  euId: 175
+  enName: Gherkin Gate
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Perplexing Pool
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Vlasic cap
+  imagePath: Gherkin_Gate_icon.png
+- usId: 175
+  enName: Alien Billboard
+  weight: 15
+  maxCarriers: 25
+  value: 80
+  location: White Flower Garden
+  sublevel: 1
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Kiwi shoe polish
+  imagePath: Alien_Billboard_icon.png
+- euId: 176
+  enName: Alien Billboard
+  weight: 15
+  maxCarriers: 25
+  value: 80
+  location: Dream Den
+  sublevel: 13
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Kiwi shoe polish
+  imagePath: Alien_Billboard_icon.png
+- jpId: 183
+  enName: Alien Billboard
+  jpName: 古代の広告
+  weight: 15
+  maxCarriers: 25
+  value: 80
+  location: White Flower Garden
+  sublevel: 1
+  enSeries: Odd Logo Series
+  jpSeries: エンブレムシリーズ
+  enRealLifeItem: Kiwi shoe polish
+  jpRealLifeItem: 靴の保湿剤の缶
+  imagePath: Alien_Billboard_icon.png
+- usId: 176
+  enName: Activity Arouser
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Submerged Castle
+  sublevel: 3
+  enSeries: Ancient Ad Series
+  enRealLifeItem: Wilson tennis balls cap
+  imagePath: Activity_Arouser_US_icon.png
+- usId: 177
+  enName: Hypnotic Platter
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Dream Den
+  sublevel: 13
+  enSeries: Odd Logo Series
+  enRealLifeItem: A&amp;W bottle cap
+  imagePath: Hypnotic_Platter_US_icon.png
+- euId: 177
+  enName: Hypnotic Platter
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Awakening Wood
+  enSeries: Odd Logo Series
+  enRealLifeItem: Vitamalz cap
+  imagePath: Hypnotic_Platter_EU_icon.png
+- usId: 178
+  enName: Massive Lid
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Glutton's Kitchen
+  sublevel: 2
+  enSeries: Odd Logo Series
+  enRealLifeItem: Yoo-hoo cola bottle cap
+  imagePath: Massive_Lid_icon.png
+- euId: 178
+  enName: Happiness Emblem
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Shower Room
+  sublevel: 5
+  enSeries: Odd Logo Series
+  enRealLifeItem: Fristi cap
+  imagePath: Happiness_Emblem_EU_icon.png
+- usId: 179
+  enName: Pondering Emblem
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Shower Room
+  sublevel: 5
+  enSeries: Odd Logo Series
+  enRealLifeItem: Yoo-hoo chocolate milk bottle cap
+  imagePath: Pondering_Emblem_US_icon.png
+- euId: 179
+  enName: Abstract Masterpiece
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Perplexing Pool
+  sublevel: 6
+  enSeries: Odd Logo Series
+  enRealLifeItem: PscHitt! cap
+  imagePath: Abstract_Masterpiece_EU_icon.png
+- usId: 180
+  enName: Happiness Emblem
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Glutton's Kitchen
+  sublevel: 4
+  enSeries: Odd Logo Series
+  enRealLifeItem: Squirt bottle cap
+  imagePath: Happiness_Emblem_US_icon.png
+- euId: 180
+  enName: Pondering Emblem
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Submerged Castle
+  sublevel: 3
+  enSeries: Odd Logo Series
+  enRealLifeItem: Tizer cap
+  imagePath: Pondering_Emblem_EU_icon.png
+- euId: 181
+  enName: Activity Arouser
+  weight: 4
+  maxCarriers: 8
+  value: 30
+  location: Citadel of Spiders
+  sublevel: 2
+  enSeries: Odd Logo Series
+  enRealLifeItem: Sinalco cap
+  imagePath: Activity_Arouser_EU_icon.png
+- usId: 181
+  euId: 182
+  jpId: 181
+  enName: Quenching Emblem
+  jpName: かわきのエンブレム
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Emergence Cave
+  sublevel: 1
+  enSeries: Odd Logo Series
+  jpSeries: エンブレムシリーズ
+  enRealLifeItem: 7 Up bottle cap
+  jpRealLifeItem: 7upのフタ
+  imagePath: Quenching_Emblem_icon.png
+- usId: 182
+  euId: 183
+  jpId: 182
+  enName: Drought Ender
+  jpName: あらがえぬエンブレム
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: White Flower Garden
+  sublevel: 2
+  enSeries: Odd Logo Series
+  jpSeries: エンブレムシリーズ
+  enRealLifeItem: Dr Pepper bottle cap
+  jpRealLifeItem: ドクターペッパーのフタ
+  imagePath: Drought_Ender_icon.png
+- usId: 183
+  enName: Creative Inspiration
+  weight: 4
+  maxCarriers: 8
+  value: 100
+  location: Citadel of Spiders
+  sublevel: 2
+  enSeries: Odd Logo Series
+  enRealLifeItem: Royal Crown cola bottle cap
+  imagePath: Creative_Inspiration_icon.png
+- usId: 184
+  euId: 184
+  jpId: 184
+  enName: Spherical Atlas
+  jpName: スフィアマップ
+  weight: 101
+  maxCarriers: 101
+  value: 200
+  location: Emergence Cave
+  sublevel: 2
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Top half of a globe
+  jpRealLifeItem: 地球儀（上）
+  imagePath: Spherical_Atlas_icon.png
+- usId: 185
+  euId: 185
+  jpId: 185
+  enName: Geographic Projection
+  jpName: ジオグラフィックシステム
+  weight: 101
+  maxCarriers: 101
+  value: 200
+  location: Awakening Wood
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Bottom half of a globe
+  jpRealLifeItem: 地球儀（下）
+  imagePath: Geographic_Projection_icon.png
+- usId: 186
+  euId: 186
+  jpId: 186
+  enName: Prototype Detector
+  jpName: おたからセンサープロトタイプ
+  weight: 35
+  maxCarriers: 45
+  value: 200
+  location: Hole of Beasts
+  sublevel: 5
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Love Tester
+  jpRealLifeItem: ラブテスター
+  imagePath: Prototype_Detector_icon.png
+- usId: 187
+  euId: 187
+  jpId: 187
+  enName: Five-man Napsack
+  jpName: 快眠アシスタント
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: White Flower Garden
+  sublevel: 5
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Glove
+  jpRealLifeItem: てぶくろ
+  imagePath: Five-man_Napsack_icon.png
+- usId: 188
+  euId: 188
+  jpId: 188
+  enName: Brute Knuckles
+  jpName: 鉄人のコブシ
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Frontier Cavern
+  sublevel: 5
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Fist statue
+  jpRealLifeItem: ロケットパンチ
+  imagePath: Brute_Knuckles_icon.png
+- usId: 189
+  euId: 189
+  jpId: 189
+  enName: Repugnant Appendage
+  jpName: かぐわしき存在
+  weight: 20
+  maxCarriers: 30
+  value: 100
+  location: Frontier Cavern
+  sublevel: 8
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Pink doll shoe
+  jpRealLifeItem: 子供のくつ
+  imagePath: Repugnant_Appendage_icon.png
+- usId: 190
+  euId: 190
+  jpId: 190
+  enName: Stellar Orb
+  jpName: 日焼けマシン
+  weight: 5
+  maxCarriers: 10
+  value: 100
+  location: Subterranean Complex
+  sublevel: 9
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Light bulb
+  jpRealLifeItem: 豆電球
+  imagePath: Stellar_Orb_icon.png
+- usId: 191
+  euId: 191
+  jpId: 191
+  enName: Forged Courage
+  jpName: 情熱合金ド・コンジョー
+  weight: 20
+  maxCarriers: 30
+  value: 100
+  location: Bulblax Kingdom
+  sublevel: 7
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Red robot toy
+  jpRealLifeItem: 赤い超合金ロボ
+  imagePath: Forged_Courage_icon.png
+- usId: 192
+  euId: 192
+  jpId: 192
+  enName: Dream Material
+  jpName: ドリーム・マテリアル
+  weight: 10
+  maxCarriers: 20
+  value: 100
+  location: Glutton's Kitchen
+  sublevel: 6
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Eraser
+  jpRealLifeItem: 消しゴム
+  imagePath: Dream_Material_icon.png
+- usId: 193
+  euId: 193
+  jpId: 193
+  enName: Justice Alloy
+  jpName: 正義合金ジャスティスZ
+  weight: 20
+  maxCarriers: 30
+  value: 100
+  location: Snagret Hole
+  sublevel: 7
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Blue robot toy
+  jpRealLifeItem: 白い超合金ロボ
+  imagePath: Justice_Alloy_icon.png
+- usId: 194
+  euId: 194
+  jpId: 194
+  enName: Amplified Amplifier
+  jpName: 真空波動スピーカー
+  weight: 20
+  maxCarriers: 30
+  value: 100
+  location: Shower Room
+  sublevel: 7
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Stereo speaker
+  jpRealLifeItem: スピーカー
+  imagePath: Amplified_Amplifier_icon.png
+- usId: 195
+  euId: 195
+  jpId: 195
+  enName: Professional Noisemaker
+  jpName: やかましメカ
+  weight: 15
+  maxCarriers: 25
+  value: 100
+  location: Submerged Castle
+  sublevel: 5
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Megaphone head
+  jpRealLifeItem: 拡声器
+  imagePath: Professional_Noisemaker_icon.png
+- usId: 196
+  euId: 196
+  jpId: 196
+  enName: The Key
+  jpName: あのカギ
+  weight: 1
+  maxCarriers: 3
+  value: 100
+  location: Citadel of Spiders
+  sublevel: 5
+  enSeries: Explorer's Friend Series
+  jpSeries: 探検家の友シリーズ
+  enRealLifeItem: Gold key (unlocks Challenge Mode)
+  jpRealLifeItem: チャレンジモードのカギ
+  imagePath: The_Key_icon.png
+- usId: 197
+  euId: 197
+  jpId: 197
+  enName: Shock Therapist
+  jpName: マイナスイオン・コンバータ
+  weight: 30
+  maxCarriers: 40
+  value: 1000
+  location: Dream Den
+  sublevel: 14
+  enSeries: Titan Dweevil Series
+  jpSeries: 大怪虫シリーズ
+  enRealLifeItem: Crookes tube
+  jpRealLifeItem: ヒューズ
+  imagePath: Shock_Therapist_icon.png
+- usId: 198
+  euId: 198
+  jpId: 198
+  enName: Flare Cannon
+  jpName: フレア・キャノン
+  weight: 30
+  maxCarriers: 40
+  value: 1000
+  location: Dream Den
+  sublevel: 14
+  enSeries: Titan Dweevil Series
+  jpSeries: 大怪虫シリーズ
+  enRealLifeItem: Camping stove
+  jpRealLifeItem: バーナー
+  imagePath: Flare_Cannon_icon.png
+- usId: 199
+  euId: 199
+  jpId: 199
+  enName: Comedy Bomb
+  jpName: ケミカル・ウェポン
+  weight: 30
+  maxCarriers: 40
+  value: 1000
+  location: Dream Den
+  sublevel: 14
+  enSeries: Titan Dweevil Series
+  jpSeries: 大怪虫シリーズ
+  enRealLifeItem: Poison gas container
+  jpRealLifeItem: ガスタンク
+  imagePath: Comedy_Bomb_icon.png
+- usId: 200
+  euId: 200
+  jpId: 200
+  enName: Monster Pump
+  jpName: モンスター・ポンプ
+  weight: 30
+  maxCarriers: 40
+  value: 1000
+  location: Dream Den
+  sublevel: 14
+  enSeries: Titan Dweevil Series
+  jpSeries: 大怪虫シリーズ
+  enRealLifeItem: Spigot with pressure gauge
+  jpRealLifeItem: 蛇口
+  imagePath: Monster_Pump_icon.png
+- usId: 201
+  euId: 201
+  jpId: 201
+  enName: King of Bugs
+  jpName: 虫の王
+  weight: 1
+  maxCarriers: 5
+  value: 10
+  location: Dream Den
+  sublevel: 14
+  enSeries: Titan Dweevil Series
+  jpSeries: 大怪虫シリーズ
+  enRealLifeItem: Louie
+  jpRealLifeItem: ルーイ
+  imagePath: King_of_Bugs_icon.png

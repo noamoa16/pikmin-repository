@@ -23,6 +23,8 @@ document_info:
         title: お宝一覧
         icon: fa-solid fa-crown color-gold
         favicon: images/pixel-arts/BreadBug_48x48.png
+        data:
+          - pikmin2-treasures.yaml
       cave-surveys:
         title: 洞窟調査
         icon: fas fa-sharp fa-solid fa-archway color-brown
