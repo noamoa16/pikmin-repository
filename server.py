@@ -45,7 +45,7 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
     # データの解析
     if (category, page_name) == ('pikmin2', 'cave-surveys'):
         data['pikmin2-cave-surveys'] = \
-            pikmin2_cave_surveys.parse_data(data['pikmin2-cave-surveys.yaml'])
+            pikmin2_cave_surveys.generate(data['pikmin2-cave-surveys.yaml'])
     elif (category, page_name) == ('others', 'pixel-arts'):
         data['pixel-arts'] = pixel_arts.generate(
             Path(__file__).parent / 'static/images/pixel-arts'

@@ -227,7 +227,7 @@ def load_cavegen_image(soup: BeautifulSoup, stage_name_full: str, seed: int) -> 
     img = soup.new_tag('img', src = img_src, width = 480, decoding = "async", alt = f'{stage_name_full} - 0x{seed:08X}')
     return img
 
-def parse_data(data_str: str):
+def generate(data_str: str):
     data: dict[str, Any] = yaml.safe_load(data_str)
     stage_names = list(data.keys())
     soup = BeautifulSoup()
