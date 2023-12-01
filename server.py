@@ -31,6 +31,8 @@ def load_data_file(data_file: Path) -> str:
     return open(data_file, encoding = 'utf-8').read()
 
 def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
+
+    # 必要なデータの取得
     try:
         data_files = document_info[category]['pages'][page_name]['data']
     except:
@@ -39,6 +41,8 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
     for data_file in data_files:
         path = Path(__file__).parent / f'data/{data_file}'
         data[data_file] = load_data_file(path)
+    
+    # データの解析
     if (category, page_name) == ('pikmin2', 'cave-surveys'):
         data['pikmin2-cave-surveys'] = \
             pikmin2_cave_surveys.parse_data(data['pikmin2-cave-surveys.yaml'])
@@ -46,6 +50,7 @@ def get_data(category: str, page_name: str) -> dict[str, str | Markup]:
         data['pixel-arts'] = pixel_arts.generate(
             Path(__file__).parent / 'static/images/pixel-arts'
         )
+    
     return data
 
 @app.route('/')
